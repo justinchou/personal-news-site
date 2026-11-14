@@ -18,11 +18,11 @@
   <main class="main"><div class="wrap">
 <p class="kicker">定量对照</p>
 <h1>变化追踪</h1>
-<p class="lede">对照上一工作日的快照。工作日 2026-11-14，生成于 2026-11-15T01:35:29+08:00。</p>
+<p class="lede">对照上一工作日的快照。工作日 2026-11-14，生成于 2026-11-15T01:40:18+08:00。</p>
 <ul class='note'>
 <li>openrouter：Prompt/completion prices from the public OpenRouter models API (USD per token as reported).</li>
 <li>huggingface：Hugging Face API does not accept sort=trending; snapshot uses downloads as a public proxy, not the website trending list.</li>
-<li>github：Star counts come from the daily GitHub Trending snapshot, not a full-history velocity API.</li>
+<li>github：Trending star counts come from the daily HTML snapshot; github_star_series also snapshots official GitHub repo API counts to build a velocity series over time.</li>
 <li>leaderboards：Arena from the official HF leaderboard-dataset; Artificial Analysis from the public models page; LiveBench from official CSV (category mean); SWE-bench Verified from official JSON; Aider polyglot from the official HTML table.</li>
 </ul>
 <h2>API 价格变化（OpenRouter 公开报价）</h2>
@@ -108,7 +108,7 @@
 <div class="change-row"><div><strong>https://github.com/martin-olivier/airgorah</strong> · <span>stars 5646</span></div><div class="bar"><i style="width:4.7%"></i></div><div></div></div>
 </div>
 <h2>评测榜排名变化</h2>
-<p class='note'>榜单快照生成于 2026-11-15T01:35:34+08:00。排名变化相对上一工作日；第一天没有对照基线。</p>
+<p class='note'>榜单快照生成于 2026-11-15T01:40:23+08:00。排名变化相对上一工作日；第一天没有对照基线。</p>
 <h3>LMArena Text (style control, overall)</h3>
 <p class='note'>Official Hugging Face leaderboard-dataset, latest split, overall category.</p>
 <p class='meta'><a href='https://arena.ai/leaderboard' rel='noopener noreferrer'>来源页</a></p>
@@ -233,6 +233,25 @@
 <div class="change-row"><div><strong>#18 DeepSeek-V3.2-Exp (Chat)</strong> · percent_correct 70.2</div><div class="bar"><i style="width:79.8%"></i></div><div></div></div>
 <div class="change-row"><div><strong>#19 claude-3-7-sonnet-20250219 (32k thinking tokens)</strong> · percent_correct 64.9</div><div class="bar"><i style="width:73.8%"></i></div><div></div></div>
 <div class="change-row"><div><strong>#20 DeepSeek R1 + claude-3-5-sonnet-20241022</strong> · percent_correct 64.0</div><div class="bar"><i style="width:72.7%"></i></div><div></div></div>
+</div>
+<h2>GitHub 星标速度</h2>
+<p class='note'>Star counts come from the official GitHub repos API. Velocity is the change versus earlier snapshots in this series, not a third-party history product. A day with only one point has no velocity yet.</p>
+<div class="panel">
+<div class="change-row star-row"><div><a href="https://github.com/JuliusBrussee/caveman" rel="noopener noreferrer"><strong>JuliusBrussee/caveman</strong></a> · 119915 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 119915"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" rel="noopener noreferrer"><strong>ChromeDevTools/chrome-devtools-mcp</strong></a> · 56139 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 56139"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/alibaba/open-code-review" rel="noopener noreferrer"><strong>alibaba/open-code-review</strong></a> · 51248 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 51248"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer"><strong>QwenLM/qwen-code</strong></a> · 30231 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 30231"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/dream-num/univer" rel="noopener noreferrer"><strong>dream-num/univer</strong></a> · 24350 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 24350"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/ag-ui-protocol/ag-ui" rel="noopener noreferrer"><strong>ag-ui-protocol/ag-ui</strong></a> · 17257 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 17257"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/backnotprop/plannotator" rel="noopener noreferrer"><strong>backnotprop/plannotator</strong></a> · 10889 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 10889"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer"><strong>GoogleChrome/modern-web-guidance-src</strong></a> · 5671 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 5671"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/martin-olivier/airgorah" rel="noopener noreferrer"><strong>martin-olivier/airgorah</strong></a> · 5653 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 5653"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/tradermonty/claude-trading-skills" rel="noopener noreferrer"><strong>tradermonty/claude-trading-skills</strong></a> · 4619 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 4619"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/ashhart/TensorFold" rel="noopener noreferrer"><strong>ashhart/TensorFold</strong></a> · 2118 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 2118"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/Likely7/Veyra-NRVideo" rel="noopener noreferrer"><strong>Likely7/Veyra-NRVideo</strong></a> · 1964 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 1964"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/Tencent/LoopForge" rel="noopener noreferrer"><strong>Tencent/LoopForge</strong></a> · 792 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 792"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/paul-nameless/agweb" rel="noopener noreferrer"><strong>paul-nameless/agweb</strong></a> · 83 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 83"></i></div><div></div></div>
+<div class="change-row star-row"><div><a href="https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax" rel="noopener noreferrer"><strong>Vaibhaav-Tiwari/deepseek-v3-jax</strong></a> · 10 ★ 日变化暂无（序列不足）</div><div class="spark"><i class="spark-bar" style="height:12.0px" title="2026-11-14: 10"></i></div><div></div></div>
 </div>
   </div></main>
   <footer class="footer"><div class="footer-inner">

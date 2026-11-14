@@ -189,3 +189,7 @@ table.table { width: 100%; border-collapse: collapse; background: var(--card); b
 .related h4 { font-size: .85rem; margin: .4rem 0 .2rem; }
 .related ul { margin: 0; padding-left: 1.1rem; }
 .related li { margin: .15rem 0; }
+
+.spark { display: flex; align-items: flex-end; gap: 2px; height: 44px; }
+.spark-bar { width: 8px; background: var(--accent); border-radius: 2px 2px 0 0; display: inline-block; }
+.star-row { grid-template-columns: 2fr auto 1fr; }
