@@ -182,3 +182,10 @@ table.table { width: 100%; border-collapse: collapse; background: var(--card); b
   .timeline { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
   h1 { font-size: 1.55rem; }
 }
+
+.rank-up { color: var(--ok); }
+.rank-down { color: var(--danger); }
+.related { margin-top: .6rem; }
+.related h4 { font-size: .85rem; margin: .4rem 0 .2rem; }
+.related ul { margin: 0; padding-left: 1.1rem; }
+.related li { margin: .15rem 0; }

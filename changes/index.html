@@ -18,12 +18,12 @@
   <main class="main"><div class="wrap">
 <p class="kicker">定量对照</p>
 <h1>变化追踪</h1>
-<p class="lede">对照上一工作日的快照。工作日 2026-11-14，生成于 2026-11-15T01:31:41+08:00。</p>
+<p class="lede">对照上一工作日的快照。工作日 2026-11-14，生成于 2026-11-15T01:35:29+08:00。</p>
 <ul class='note'>
 <li>openrouter：Prompt/completion prices from the public OpenRouter models API (USD per token as reported).</li>
 <li>huggingface：Hugging Face API does not accept sort=trending; snapshot uses downloads as a public proxy, not the website trending list.</li>
 <li>github：Star counts come from the daily GitHub Trending snapshot, not a full-history velocity API.</li>
-<li>leaderboards：No stable unauthenticated public API was found for Arena / Artificial Analysis rank tables in this pass; reserved for a later snapshot.</li>
+<li>leaderboards：Arena from the official HF leaderboard-dataset; Artificial Analysis from the public models page; LiveBench from official CSV (category mean); SWE-bench Verified from official JSON; Aider polyglot from the official HTML table.</li>
 </ul>
 <h2>API 价格变化（OpenRouter 公开报价）</h2>
 <div class="panel">
@@ -99,15 +99,141 @@
 <div class="change-row"><div><strong>https://github.com/Tencent/LoopForge</strong> · <span>stars 790</span></div><div class="bar"><i style="width:2.0%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/alibaba/open-code-review</strong> · <span>stars 51240</span></div><div class="bar"><i style="width:42.7%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/GoogleChrome/modern-web-guidance-src</strong> · <span>stars 5655</span></div><div class="bar"><i style="width:4.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>https://github.com/backnotprop/plannotator</strong> · <span>stars 10881</span></div><div class="bar"><i style="width:9.1%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/ashhart/TensorFold</strong> · <span>stars 2118</span></div><div class="bar"><i style="width:2.0%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/ChromeDevTools/chrome-devtools-mcp</strong> · <span>stars 56131</span></div><div class="bar"><i style="width:46.8%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/JuliusBrussee/caveman</strong> · <span>stars 119910</span></div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>https://github.com/ag-ui-protocol/ag-ui</strong> · <span>stars 17254</span></div><div class="bar"><i style="width:14.4%"></i></div><div></div></div>
-<div class="change-row"><div><strong>https://github.com/backnotprop/plannotator</strong> · <span>stars 10881</span></div><div class="bar"><i style="width:9.1%"></i></div><div></div></div>
-<div class="change-row"><div><strong>https://github.com/martin-olivier/airgorah</strong> · <span>stars 5646</span></div><div class="bar"><i style="width:4.7%"></i></div><div></div></div>
 <div class="change-row"><div><strong>https://github.com/Likely7/Veyra-NRVideo</strong> · <span>stars 1954</span></div><div class="bar"><i style="width:2.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>https://github.com/ag-ui-protocol/ag-ui</strong> · <span>stars 17254</span></div><div class="bar"><i style="width:14.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>https://github.com/martin-olivier/airgorah</strong> · <span>stars 5646</span></div><div class="bar"><i style="width:4.7%"></i></div><div></div></div>
 </div>
-<h2>评测榜排名变化</h2><p class='note'>本轮未找到稳定的未认证公开排行榜 API，此模块已预留，待后续接入 Arena / Artificial Analysis 等快照。</p>
+<h2>评测榜排名变化</h2>
+<p class='note'>榜单快照生成于 2026-11-15T01:35:34+08:00。排名变化相对上一工作日；第一天没有对照基线。</p>
+<h3>LMArena Text (style control, overall)</h3>
+<p class='note'>Official Hugging Face leaderboard-dataset, latest split, overall category.</p>
+<p class='meta'><a href='https://arena.ai/leaderboard' rel='noopener noreferrer'>来源页</a></p>
+<div class="panel">
+<div class="change-row"><div><strong>#1 Gemini 4 Carbon (High)</strong> · elo 1526.182</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#2 Gemini 4 Argon (High)</strong> · elo 1521.6933</div><div class="bar"><i style="width:99.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#3 Muse Wonder (Max)</strong> · elo 1510.8561</div><div class="bar"><i style="width:99.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#4 Claude Opus 5.5 (High)</strong> · elo 1506.7849</div><div class="bar"><i style="width:98.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#5 Claude Fable 5 (High)</strong> · elo 1503.9797</div><div class="bar"><i style="width:98.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#6 Claude Opus 4.6 (High)</strong> · elo 1502.8295</div><div class="bar"><i style="width:98.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#7 Claude Fable 5.1 (Max)</strong> · elo 1502.323</div><div class="bar"><i style="width:98.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#8 Claude Opus 4.7 (High)</strong> · elo 1501.1331</div><div class="bar"><i style="width:98.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#9 Gemini 3.8 Flash (High)</strong> · elo 1496.6647</div><div class="bar"><i style="width:98.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#10 Muse Spark 1.3 (Max)</strong> · elo 1496.5016</div><div class="bar"><i style="width:98.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#11 Claude Opus 4.6</strong> · elo 1496.4296</div><div class="bar"><i style="width:98.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#12 Claude Opus 4.7</strong> · elo 1493.8662</div><div class="bar"><i style="width:97.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#13 Muse Spark 1.2 (xHigh)</strong> · elo 1492.8924</div><div class="bar"><i style="width:97.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#14 Muse Spark 1.1</strong> · elo 1490.8717</div><div class="bar"><i style="width:97.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#15 Gemini 4 Hydrogen (High)</strong> · elo 1490.4275</div><div class="bar"><i style="width:97.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#16 Claude Opus 5 (High)</strong> · elo 1489.6765</div><div class="bar"><i style="width:97.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#17 Gemini 3.7 Flash (High)</strong> · elo 1489.2789</div><div class="bar"><i style="width:97.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#18 Muse Spark</strong> · elo 1489.1901</div><div class="bar"><i style="width:97.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#19 Claude Opus 5 (Max)</strong> · elo 1488.9666</div><div class="bar"><i style="width:97.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#20 Kimi K3 (Max)</strong> · elo 1487.4377</div><div class="bar"><i style="width:97.5%"></i></div><div></div></div>
+</div>
+<h3>Artificial Analysis Intelligence Index</h3>
+<p class='note'>Parsed from the official public leaderboard page payload (no API key). Official Data API remains key-gated.</p>
+<p class='meta'><a href='https://artificialanalysis.ai/leaderboards/models' rel='noopener noreferrer'>来源页</a></p>
+<div class="panel">
+<div class="change-row"><div><strong>#1 Claude Fable 5.2 (Max)</strong> · intelligence_index 64.5636</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#2 Claude Fable 5.2 (Xhigh)</strong> · intelligence_index 62.2167</div><div class="bar"><i style="width:96.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#3 Claude Fable 5.2 (High)</strong> · intelligence_index 61.8219</div><div class="bar"><i style="width:95.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#4 Gemini 4 Carbon (High)</strong> · intelligence_index 60.0257</div><div class="bar"><i style="width:93.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#5 Claude Opus 5.5 (Max)</strong> · intelligence_index 59.106</div><div class="bar"><i style="width:91.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#6 Gemini 4 Carbon (Medium)</strong> · intelligence_index 58.2588</div><div class="bar"><i style="width:90.2%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#7 Claude Opus 5.5 (Xhigh)</strong> · intelligence_index 57.4447</div><div class="bar"><i style="width:89.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#8 GPT-6 Astra (Max)</strong> · intelligence_index 56.8539</div><div class="bar"><i style="width:88.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#9 Claude Fable 5.2 (Medium)</strong> · intelligence_index 56.4083</div><div class="bar"><i style="width:87.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#10 GPT-6 Astra (Xhigh)</strong> · intelligence_index 55.3057</div><div class="bar"><i style="width:85.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#11 GPT-6 Astra (High)</strong> · intelligence_index 54.8498</div><div class="bar"><i style="width:85.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#12 GPT-6.1 Sol (Max)</strong> · intelligence_index 54.6087</div><div class="bar"><i style="width:84.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#13 Claude Sonnet 5.5 (Max)</strong> · intelligence_index 54.5413</div><div class="bar"><i style="width:84.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#14 Gemini 4 Carbon (Low)</strong> · intelligence_index 54.2206</div><div class="bar"><i style="width:84.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#15 Claude Fable 5.2 (Low)</strong> · intelligence_index 53.9249</div><div class="bar"><i style="width:83.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#16 Gemini 4 Hydrogen (Xhigh)</strong> · intelligence_index 53.9192</div><div class="bar"><i style="width:83.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#17 GPT-6.1 Sol (Xhigh)</strong> · intelligence_index 52.4582</div><div class="bar"><i style="width:81.3%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#18 Claude Opus 5.5 (High)</strong> · intelligence_index 51.836</div><div class="bar"><i style="width:80.3%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#19 GPT-6 Astra (Medium)</strong> · intelligence_index 51.5548</div><div class="bar"><i style="width:79.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#20 GPT-6.1 Terra (Max)</strong> · intelligence_index 51.3265</div><div class="bar"><i style="width:79.5%"></i></div><div></div></div>
+</div>
+<h3>LiveBench</h3>
+<p class='note'>Official GitHub Pages table table_2026_06_25.csv. Overall score is the mean of the published category columns, because the CSV has no single official overall column.</p>
+<p class='meta'><a href='https://livebench.ai/' rel='noopener noreferrer'>来源页</a></p>
+<div class="panel">
+<div class="change-row"><div><strong>#1 gpt-5.5-xhigh</strong> · category_mean 80.5343</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#2 claude-fable-5-xhigh-effort</strong> · category_mean 80.1342</div><div class="bar"><i style="width:99.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#3 claude-opus-4-8-xhigh-effort</strong> · category_mean 79.8089</div><div class="bar"><i style="width:99.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#4 gpt-5.5-high</strong> · category_mean 79.5625</div><div class="bar"><i style="width:98.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#5 gpt-5.4-xhigh</strong> · category_mean 78.7983</div><div class="bar"><i style="width:97.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#6 gemini-3.1-pro-preview-high</strong> · category_mean 78.151</div><div class="bar"><i style="width:97.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#7 claude-opus-4-7-xhigh-effort</strong> · category_mean 77.0353</div><div class="bar"><i style="width:95.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#8 claude-sonnet-5-xhigh-effort</strong> · category_mean 75.5064</div><div class="bar"><i style="width:93.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#9 gemini-3.5-flash-high</strong> · category_mean 75.4373</div><div class="bar"><i style="width:93.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#10 gpt-5.2-2025-12-11-high</strong> · category_mean 75.1918</div><div class="bar"><i style="width:93.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#11 claude-opus-4-6-thinking-auto-high-effort</strong> · category_mean 75.132</div><div class="bar"><i style="width:93.3%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#12 qwen3.7-max</strong> · category_mean 74.099</div><div class="bar"><i style="width:92.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#13 gpt-5.2-codex</strong> · category_mean 74.0344</div><div class="bar"><i style="width:91.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#14 claude-sonnet-4-6-thinking-auto-medium-effort</strong> · category_mean 73.4132</div><div class="bar"><i style="width:91.2%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#15 glm-5.2</strong> · category_mean 73.3827</div><div class="bar"><i style="width:91.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#16 claude-opus-4-5-20251101-thinking-64k-high-effort</strong> · category_mean 72.9388</div><div class="bar"><i style="width:90.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#17 deepseek-v4-pro</strong> · category_mean 72.554</div><div class="bar"><i style="width:90.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#18 gpt-5.5</strong> · category_mean 72.1472</div><div class="bar"><i style="width:89.6%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#19 kimi-k2.6-thinking</strong> · category_mean 70.9025</div><div class="bar"><i style="width:88.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#20 gpt-5.4-nano-xhigh</strong> · category_mean 70.8497</div><div class="bar"><i style="width:88.0%"></i></div><div></div></div>
+</div>
+<h3>SWE-bench Verified</h3>
+<p class='note'>Official leaderboards.json, Verified board, ranked by resolved percentage.</p>
+<p class='meta'><a href='https://www.swebench.com/' rel='noopener noreferrer'>来源页</a></p>
+<div class="panel">
+<div class="change-row"><div><strong>#1 Sonar Foundation Agent + Claude 4.5 Opus</strong> · resolved_pct 79.2</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#2 live-SWE-agent + Claude 4.5 Opus medium (20251101)</strong> · resolved_pct 79.2</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#3 TRAE + Doubao-Seed-Code</strong> · resolved_pct 78.8</div><div class="bar"><i style="width:99.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#4 live-SWE-agent + Gemini 3 Pro Preview (2025-11-18)</strong> · resolved_pct 77.4</div><div class="bar"><i style="width:97.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#5 EPAM AI/Run Developer Agent v20250719 + Claude 4 Sonnet</strong> · resolved_pct 76.8</div><div class="bar"><i style="width:97.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#6 Atlassian Rovo Dev (2025-09-02)</strong> · resolved_pct 76.8</div><div class="bar"><i style="width:97.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#7 Claude 4.5 Opus (high)</strong> · resolved_pct 76.8</div><div class="bar"><i style="width:97.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#8 ACoder</strong> · resolved_pct 76.4</div><div class="bar"><i style="width:96.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#9 Gemini 3 Flash (high)</strong> · resolved_pct 75.8</div><div class="bar"><i style="width:95.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#10 MiniMax M2.5 (high)</strong> · resolved_pct 75.8</div><div class="bar"><i style="width:95.7%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#11 Warp</strong> · resolved_pct 75.6</div><div class="bar"><i style="width:95.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#12 Claude 4.6 Opus</strong> · resolved_pct 75.6</div><div class="bar"><i style="width:95.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#13 TRAE + Claude Sonnet 4 + Opus 4 + Sonnet 3.7 + Gemini 2.5 Pro</strong> · resolved_pct 75.2</div><div class="bar"><i style="width:94.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#14 Harness AI</strong> · resolved_pct 74.8</div><div class="bar"><i style="width:94.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#15 Sonar Foundation Agent + Claude 4.5 Sonnet</strong> · resolved_pct 74.8</div><div class="bar"><i style="width:94.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#16 Lingxi-v1.5_claude-4-sonnet-20250514</strong> · resolved_pct 74.6</div><div class="bar"><i style="width:94.2%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#17 JoyCode + Claude 4 Sonnet + GPT-4.1</strong> · resolved_pct 74.6</div><div class="bar"><i style="width:94.2%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#18 Refact.ai Agent + Claude 4 Sonnet + o4-mini</strong> · resolved_pct 74.4</div><div class="bar"><i style="width:93.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#19 Prometheus-v1.2.1 + GPT-5</strong> · resolved_pct 74.4</div><div class="bar"><i style="width:93.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#20 Claude 4.5 Opus (20251101) (medium)</strong> · resolved_pct 74.4</div><div class="bar"><i style="width:93.9%"></i></div><div></div></div>
+</div>
+<h3>Aider polyglot coding leaderboard</h3>
+<p class='note'>Official Aider polyglot HTML table, ranked as published.</p>
+<p class='meta'><a href='https://aider.chat/docs/leaderboards/' rel='noopener noreferrer'>来源页</a></p>
+<div class="panel">
+<div class="change-row"><div><strong>#1 gpt-5 (high)</strong> · percent_correct 88.0</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#2 gpt-5 (medium)</strong> · percent_correct 86.7</div><div class="bar"><i style="width:98.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#3 o3-pro (high)</strong> · percent_correct 84.9</div><div class="bar"><i style="width:96.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#4 gemini-2.5-pro-preview-06-05 (32k think)</strong> · percent_correct 83.1</div><div class="bar"><i style="width:94.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#5 gpt-5 (low)</strong> · percent_correct 81.3</div><div class="bar"><i style="width:92.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#6 o3 (high)</strong> · percent_correct 81.3</div><div class="bar"><i style="width:92.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#7 grok-4 (high)</strong> · percent_correct 79.6</div><div class="bar"><i style="width:90.5%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#8 gemini-2.5-pro-preview-06-05 (default think)</strong> · percent_correct 79.1</div><div class="bar"><i style="width:89.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#9 o3 (high) + gpt-4.1</strong> · percent_correct 78.2</div><div class="bar"><i style="width:88.9%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#10 o3</strong> · percent_correct 76.9</div><div class="bar"><i style="width:87.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#11 Gemini 2.5 Pro Preview 05-06</strong> · percent_correct 76.9</div><div class="bar"><i style="width:87.4%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#12 DeepSeek-V3.2-Exp (Reasoner)</strong> · percent_correct 74.2</div><div class="bar"><i style="width:84.3%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#13 Gemini 2.5 Pro Preview 03-25</strong> · percent_correct 72.9</div><div class="bar"><i style="width:82.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#14 claude-opus-4-20250514 (32k thinking)</strong> · percent_correct 72.0</div><div class="bar"><i style="width:81.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#15 o4-mini (high)</strong> · percent_correct 72.0</div><div class="bar"><i style="width:81.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#16 DeepSeek R1 (0528)</strong> · percent_correct 71.4</div><div class="bar"><i style="width:81.1%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#17 claude-opus-4-20250514 (no think)</strong> · percent_correct 70.7</div><div class="bar"><i style="width:80.3%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#18 DeepSeek-V3.2-Exp (Chat)</strong> · percent_correct 70.2</div><div class="bar"><i style="width:79.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#19 claude-3-7-sonnet-20250219 (32k thinking tokens)</strong> · percent_correct 64.9</div><div class="bar"><i style="width:73.8%"></i></div><div></div></div>
+<div class="change-row"><div><strong>#20 DeepSeek R1 + claude-3-5-sonnet-20241022</strong> · percent_correct 64.0</div><div class="bar"><i style="width:72.7%"></i></div><div></div></div>
+</div>
   </div></main>
   <footer class="footer"><div class="footer-inner">
     <p>按北京时间工作日窗口整理。原始抓取数据与个人项目细节不在本站点发布。</p>
