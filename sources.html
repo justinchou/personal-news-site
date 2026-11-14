@@ -36,33 +36,69 @@
 <tr><td><a href="https://arxiv.org/" rel="noopener noreferrer">arXiv (cs.AI / cs.CL / cs.LG)</a></td><td>enabled</td><td>arxiv_api</td><td>research</td><td>HTTPS API OK. HTTP export endpoint returned 500 in probing. Daily brief keeps abstracts only.</td></tr>
 <tr><td><a href="https://news.ycombinator.com/" rel="noopener noreferrer">Hacker News</a></td><td>enabled</td><td>hn_algolia</td><td>community</td><td>Probed 2026-11-15, official Algolia API OK.</td></tr>
 <tr><td><a href="https://github.com/trending" rel="noopener noreferrer">GitHub Trending</a></td><td>enabled</td><td>github_trending</td><td>community</td><td>Probed 2026-11-15, public HTML OK. No official API and no first-seen timestamp; snapshot is attached to the run&#x27;s workday. AI-keyword filter applied.</td></tr>
-<tr><td><a href="https://www.jiqizhixin.com/" rel="noopener noreferrer">机器之心</a></td><td>disabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15. /rss returned HTML, not a feed. /feed and /atom.xml 404. Flagged until a stable HTTPS feed exists.</td></tr>
-<tr><td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer">Meta AI Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. Official blog RSS returned 400. engineering.fb.com ML feed exists but is a substitute, not the Meta AI blog; left unused in MVP to avoid mixing sources.</td></tr>
-<tr><td><a href="https://qwenlm.github.io/blog/" rel="noopener noreferrer">Qwen Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. index.xml/feed.xml 404; blog page is HTML (redirects to qwen.ai). GitHub releases Atom is not the blog and was not used.</td></tr>
-<tr><td><a href="https://blog.langchain.com/" rel="noopener noreferrer">LangChain Blog</a></td><td>disabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15. RSS URLs returned marketing HTML, not a feed.</td></tr>
+<tr><td><a href="https://www.jiqizhixin.com/" rel="noopener noreferrer">机器之心</a></td><td>enabled</td><td>html_index</td><td>news</td><td>No public RSS (legacy /rss is HTML). Public /api/v1/articles is stale. Collected via headless Chrome on the article index. Paid data-service API is not used.</td></tr>
+<tr><td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer">Meta AI Blog</a></td><td>enabled</td><td>html_index</td><td>official</td><td>Official RSS still returns 400. Headless Chrome is the fallback. Meta Newsroom and Engineering ML feeds are separate sources.</td></tr>
+<tr><td><a href="https://qwen.ai/research" rel="noopener noreferrer">Qwen Research</a></td><td>enabled</td><td>json_qwen</td><td>official</td><td>Official JSON API for qwen.ai/research. The old qwenlm.github.io blog is frozen and is not used. Posts link to qwen.ai/blog?id=...</td></tr>
+<tr><td><a href="https://www.langchain.com/blog" rel="noopener noreferrer">LangChain Blog</a></td><td>enabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15. blog.langchain.com/rss is a marketing HTML page; www.langchain.com/blog/rss.xml is a working RSS feed.</td></tr>
 <tr><td><a href="https://www.anthropic.com/news" rel="noopener noreferrer">Anthropic News</a></td><td>enabled</td><td>html_anthropic</td><td>official</td><td>No public RSS. HTML article list parsed on 2026-11-15.</td></tr>
 <tr><td><a href="https://engineering.fb.com/category/ml-applications/" rel="noopener noreferrer">Meta Engineering (ML)</a></td><td>enabled</td><td>rss</td><td>official</td><td>Official Meta AI blog RSS returned 400. This is the working Meta Engineering ML applications feed, clearly labeled as a substitute.</td></tr>
 <tr><td><a href="https://www.deeplearning.ai/the-batch/" rel="noopener noreferrer">The Batch</a></td><td>enabled</td><td>html_the_batch</td><td>news</td><td>No stable RSS. HTML issue/article links parsed; some entries may lack dates.</td></tr>
 <tr><td><a href="https://huggingface.co/papers" rel="noopener noreferrer">Hugging Face Papers</a></td><td>enabled</td><td>html_hf_papers</td><td>research</td><td>Daily papers pages parsed. Paper dates follow the HF daily page.</td></tr>
 <tr><td><a href="https://www.producthunt.com/" rel="noopener noreferrer">Product Hunt</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public Atom feed is general products; AI-keyword filter applied.</td></tr>
-<tr><td><a href="https://www.reddit.com/r/LocalLLaMA/" rel="noopener noreferrer">Reddit r/LocalLLaMA</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. Other Reddit feeds may rate-limit; retries apply.</td></tr>
-<tr><td><a href="https://www.reddit.com/r/ClaudeAI/" rel="noopener noreferrer">Reddit r/ClaudeAI</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. May 429; collected with retries.</td></tr>
-<tr><td><a href="https://www.reddit.com/r/MachineLearning/" rel="noopener noreferrer">Reddit r/MachineLearning</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS with AI-keyword filter. May 429.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/LocalLLaMA/" rel="noopener noreferrer">Reddit r/LocalLLaMA</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. Requests are spaced and retried on HTTP 429.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/ClaudeAI/" rel="noopener noreferrer">Reddit r/ClaudeAI</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. Requests are spaced and retried on HTTP 429.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/MachineLearning/" rel="noopener noreferrer">Reddit r/MachineLearning</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS with AI-keyword filter. Requests are spaced and retried on HTTP 429.</td></tr>
+<tr><td><a href="https://x.ai/news" rel="noopener noreferrer">xAI / SpaceXSI News</a></td><td>enabled</td><td>html_xai</td><td>official</td><td>No public RSS. Official news index (branded SpaceXSI on the page in 2026) parsed from server-rendered HTML.</td></tr>
+<tr><td><a href="https://news.microsoft.com/source/topics/ai/" rel="noopener noreferrer">Microsoft Source (AI)</a></td><td>enabled</td><td>rss</td><td>official</td><td>Official Microsoft AI topic feed. blogs.microsoft.com/ai was archived (410).</td></tr>
+<tr><td><a href="https://www.microsoft.com/en-us/research/blog/" rel="noopener noreferrer">Microsoft Research Blog</a></td><td>enabled</td><td>rss</td><td>official</td><td>Official Microsoft Research blog RSS with an AI-keyword filter.</td></tr>
+<tr><td><a href="https://azure.microsoft.com/en-us/blog/" rel="noopener noreferrer">Microsoft Azure Blog</a></td><td>enabled</td><td>rss</td><td>official</td><td>General Azure blog; AI-keyword filter applied.</td></tr>
+<tr><td><a href="https://about.fb.com/news/" rel="noopener noreferrer">Meta Newsroom</a></td><td>enabled</td><td>rss</td><td>official</td><td>Official Meta Newsroom RSS. ai.meta.com/blog RSS still returns 400; this is the working company newsroom feed, AI-filtered.</td></tr>
+<tr><td><a href="https://cohere.com/blog" rel="noopener noreferrer">Cohere Blog</a></td><td>enabled</td><td>html_cohere</td><td>official</td><td>No public RSS (common /rss paths redirect to the HTML blog). Index parsed, with headless render if the first HTML pass is sparse.</td></tr>
+<tr><td><a href="https://www.zhipuai.cn/" rel="noopener noreferrer">智谱 / Z.ai</a></td><td>enabled</td><td>html_index</td><td>official</td><td>No public RSS. Official news index parsed (site currently brands as Z.ai).</td></tr>
+<tr><td><a href="https://platform.kimi.com/blog" rel="noopener noreferrer">月之暗面 / Kimi Blog</a></td><td>enabled</td><td>html_index</td><td>official</td><td>Official platform blog (redirects from platform.moonshot.cn/blog). No public RSS.</td></tr>
+<tr><td><a href="https://www.minimax.io/news" rel="noopener noreferrer">MiniMax News</a></td><td>enabled</td><td>html_index</td><td>official</td><td>Official news index. Chinese mirror is minimax.cn/news.</td></tr>
+<tr><td><a href="https://seed.bytedance.com/en/blog" rel="noopener noreferrer">ByteDance Seed</a></td><td>enabled</td><td>html_index</td><td>official</td><td>Official ByteDance Seed research blog. Used as the lab news channel for 字节跳动.</td></tr>
+<tr><td><a href="https://www.deepseek.com/en/news/" rel="noopener noreferrer">DeepSeek Research &amp; News</a></td><td>enabled</td><td>html_deepseek</td><td>official</td><td>Official research &amp; news index parsed from HTML. No public RSS.</td></tr>
+<tr><td><a href="https://api-docs.deepseek.com/updates" rel="noopener noreferrer">DeepSeek API Changelog</a></td><td>enabled</td><td>markdown_changelog</td><td>official</td><td>Official API changelog markdown. Dated sections become individual items.</td></tr>
+<tr><td><a href="https://research.google/blog/" rel="noopener noreferrer">Google Research Blog</a></td><td>enabled</td><td>rss</td><td>research</td><td>Official Google Research blog RSS.</td></tr>
+<tr><td><a href="https://bair.berkeley.edu/blog/" rel="noopener noreferrer">BAIR Blog</a></td><td>enabled</td><td>rss</td><td>research</td><td>Berkeley AI Research blog Atom/RSS.</td></tr>
+<tr><td><a href="https://epoch.ai/latest" rel="noopener noreferrer">Epoch AI</a></td><td>enabled</td><td>rss</td><td>research</td><td>Official Epoch AI Atom feed.</td></tr>
+<tr><td><a href="https://hai.stanford.edu/news" rel="noopener noreferrer">Stanford HAI News</a></td><td>enabled</td><td>html_index</td><td>research</td><td>No public RSS (common feed URLs 404). News index parsed, with headless render if needed.</td></tr>
+<tr><td><a href="https://paperswithcode.com/" rel="noopener noreferrer">Papers with Code</a></td><td>disabled</td><td>html_list</td><td>research</td><td>Probed 2026-11-15. paperswithcode.com now redirects to huggingface.co/papers/trending. Not collected separately to avoid duplicating the enabled Hugging Face Papers source.</td></tr>
+<tr><td><a href="https://www.bensbites.com/" rel="noopener noreferrer">Ben&#x27;s Bites</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public newsletter RSS.</td></tr>
+<tr><td><a href="https://www.ycombinator.com/blog" rel="noopener noreferrer">Y Combinator Blog</a></td><td>enabled</td><td>rss</td><td>news</td><td>Official YC blog RSS with an AI-keyword filter.</td></tr>
+<tr><td><a href="https://semianalysis.com/" rel="noopener noreferrer">SemiAnalysis</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public RSS. Most posts are behind a paywall, so only titles and URLs are stored.</td></tr>
+<tr><td><a href="https://www.theinformation.com/" rel="noopener noreferrer">The Information</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public RSS with an AI-keyword filter. Paywalled; titles and URLs only.</td></tr>
+<tr><td><a href="https://www.cbinsights.com/research/artificial-intelligence/" rel="noopener noreferrer">CB Insights AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public research RSS. Paywalled or registration-walled; titles and URLs only.</td></tr>
+<tr><td><a href="https://menlovc.com/" rel="noopener noreferrer">Menlo Ventures</a></td><td>enabled</td><td>rss</td><td>news</td><td>Firm insights RSS with an AI-keyword filter.</td></tr>
+<tr><td><a href="https://www.mckinsey.com/insights" rel="noopener noreferrer">McKinsey Insights</a></td><td>enabled</td><td>rss</td><td>news</td><td>McKinsey insights RSS with an AI-keyword filter.</td></tr>
+<tr><td><a href="https://aiindex.stanford.edu/" rel="noopener noreferrer">Stanford AI Index</a></td><td>disabled</td><td>html_index</td><td>research</td><td>Annual report, not a daily feed. Review during the monthly report rather than the daily crawl.</td></tr>
+<tr><td><a href="https://36kr.com/information/AI" rel="noopener noreferrer">36氪 AI</a></td><td>enabled</td><td>html_index</td><td>news</td><td>Public RSS URLs return an anti-bot HTML page. Collected via headless Chrome on the AI column. AI-keyword filter applied because the column can include adjacent tech news.</td></tr>
+<tr><td><a href="https://www.infoq.com/ai-ml-data-eng/" rel="noopener noreferrer">InfoQ</a></td><td>enabled</td><td>rss</td><td>engineering</td><td>Official InfoQ RSS with an AI-keyword filter. Topic-specific /ai-ml-data-eng/rss returned 404.</td></tr>
+<tr><td><a href="https://www.infoq.cn/topic/ai" rel="noopener noreferrer">InfoQ 中文</a></td><td>enabled</td><td>html_index</td><td>engineering</td><td>No public RSS. Unauthenticated list API is restricted (HTTP 451 / empty). Collected via headless Chrome on the AI topic page.</td></tr>
+<tr><td><a href="https://zhidx.com/" rel="noopener noreferrer">智东西</a></td><td>enabled</td><td>html_index</td><td>news</td><td>WordPress /feed returned 500 or SSL errors in probing. Homepage index parsed, with headless render if sparse.</td></tr>
+<tr><td><a href="https://www.jazzyear.com/" rel="noopener noreferrer">甲子光年</a></td><td>enabled</td><td>html_index</td><td>news</td><td>/feed redirects to a 404 HTML page. Collected via headless Chrome on the homepage.</td></tr>
+<tr><td><a href="https://www.aizex.com/" rel="noopener noreferrer">新智元</a></td><td>disabled</td><td>html_list</td><td>news</td><td>Primarily a WeChat account. No stable public HTTPS article index was confirmed in this pass. X @ and 机器之心/量子位 remain the Chinese substitutes until a durable page is found.</td></tr>
+<tr><td><a href="https://www.leiphone.com/" rel="noopener noreferrer">AI 科技评论</a></td><td>disabled</td><td>rss</td><td>news</td><td>AI 科技评论 is a 雷峰网 property without a separate durable feed. Covered by the enabled 雷峰网 source rather than collected twice.</td></tr>
 </tbody></table>
 <h2>最近一次运行（2026-11-14）</h2>
 <p class="meta">窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
 <div class="stats">
-<div class="stat"><b>98</b><span>去重后条目</span></div>
-<div class="stat ok"><b>23</b><span>采集成功来源</span></div>
-<div class="stat danger"><b>2</b><span>采集失败</span></div>
-<div class="stat"><b>11</b><span>窗口内无新条目</span></div>
+<div class="stat"><b>135</b><span>去重后条目</span></div>
+<div class="stat ok"><b>51</b><span>采集成功来源</span></div>
+<div class="stat danger"><b>6</b><span>采集失败</span></div>
+<div class="stat"><b>34</b><span>窗口内无新条目</span></div>
 <div class="stat"><b>38</b><span>导入的 X 帖</span></div>
 </div>
 <p>采集失败：</p><ul>
-<li>Reddit r/ClaudeAI：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/ClaudeAI/.rss</li>
-<li>Reddit r/MachineLearning：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/MachineLearning/.rss</li>
+<li>机器之心：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://www.jiqizhixin.com/articles</li>
+<li>智谱 / Z.ai：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://www.zhipuai.cn/news</li>
+<li>ByteDance Seed：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://seed.bytedance.com/en/blog</li>
+<li>36氪 AI：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://36kr.com/information/AI</li>
+<li>InfoQ 中文：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://www.infoq.cn/topic/ai</li>
+<li>甲子光年：RuntimeError: index sparse and render failed: chrome timed out after 20s rendering https://www.jazzyear.com/</li>
 </ul>
-<p class='note'>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)、Anthropic News、Meta Engineering (ML)</p>
+<p class='note'>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)、Meta AI Blog、Qwen Research、Anthropic News、Meta Engineering (ML)、The Batch、xAI / SpaceXSI News、Microsoft Source (AI)、Microsoft Research Blog、Microsoft Azure Blog、Meta Newsroom、Cohere Blog、月之暗面 / Kimi Blog、MiniMax News、DeepSeek Research &amp; News、DeepSeek API Changelog、BAIR Blog、Epoch AI、Stanford HAI News、Ben&#x27;s Bites、Y Combinator Blog、SemiAnalysis、CB Insights AI、Menlo Ventures、McKinsey Insights、智东西</p>
   </div></main>
   <footer class="footer"><div class="footer-inner">
     <p>按北京时间工作日窗口整理。原始抓取数据与个人项目细节不在本站点发布。</p>
