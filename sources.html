@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>来源与覆盖 · 个人 AI 情报</title>
+  <meta name="description" content="按工作日整理的 AI 行业简报与知识库">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <p class="brand"><a href="index.html">个人 AI 情报</a></p>
+    <nav class="nav"><a href="index.html">首页</a> <a href="archive.html">归档</a> <a href="sources.html">来源</a> <a href="catalog/products.html">产品地图</a> <a href="catalog/rankings.html">排行榜</a> <a href="catalog/keywords.html">关键词</a> <a href="catalog/gateways.html">聚合与网关</a> <a href="catalog/coding.html">编程与 Agent</a> <a href="catalog/knowledge.html">知识库分类</a></nav>
+  </header>
+  <main class="main">
+<h1>信息源与覆盖</h1>
+<p>以下为当前配置的信息源。禁用项在探测中没有稳定可用的 HTTPS 源，采集时不会请求它们，但会在每日覆盖里列明。</p>
+<table class="table"><thead><tr><th>名称</th><th>状态</th><th>类型</th><th>层级</th><th>说明</th></tr></thead><tbody>
+<tr><td><a href="https://tldr.tech/ai" rel="noopener noreferrer">TLDR AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://www.therundown.ai/" rel="noopener noreferrer">The Rundown AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://techcrunch.com/category/artificial-intelligence/" rel="noopener noreferrer">TechCrunch AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://www.technologyreview.com/topic/artificial-intelligence/" rel="noopener noreferrer">MIT Technology Review AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://www.theverge.com/ai-artificial-intelligence" rel="noopener noreferrer">The Verge AI</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, Atom feed OK.</td></tr>
+<tr><td><a href="https://www.qbitai.com/" rel="noopener noreferrer">量子位</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK. Chinese market coverage.</td></tr>
+<tr><td><a href="https://www.leiphone.com/" rel="noopener noreferrer">雷峰网</a></td><td>enabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15, RSS OK. General tech feed; AI-keyword filter applied. Used because 机器之心 has no usable RSS.</td></tr>
+<tr><td><a href="https://openai.com/news" rel="noopener noreferrer">OpenAI News</a></td><td>enabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15, RSS OK. Official vendor channel.</td></tr>
+<tr><td><a href="https://deepmind.google/blog/" rel="noopener noreferrer">Google DeepMind Blog</a></td><td>enabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15, RSS OK. Official vendor channel.</td></tr>
+<tr><td><a href="https://blogs.nvidia.com/blog/category/generative-ai/" rel="noopener noreferrer">NVIDIA Generative AI Blog</a></td><td>enabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15, category RSS OK.</td></tr>
+<tr><td><a href="https://mistral.ai/news" rel="noopener noreferrer">Mistral AI Blog</a></td><td>enabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://huggingface.co/blog" rel="noopener noreferrer">Hugging Face Blog</a></td><td>enabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://www.latent.space/" rel="noopener noreferrer">Latent Space</a></td><td>enabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15, RSS OK.</td></tr>
+<tr><td><a href="https://simonwillison.net/" rel="noopener noreferrer">Simon Willison&#x27;s Weblog</a></td><td>enabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15. /atom.xml 404; homepage advertised /atom/everything/ and that feed works.</td></tr>
+<tr><td><a href="https://arxiv.org/" rel="noopener noreferrer">arXiv (cs.AI / cs.CL / cs.LG)</a></td><td>enabled</td><td>arxiv_api</td><td>research</td><td>HTTPS API OK. HTTP export endpoint returned 500 in probing. Daily brief keeps abstracts only.</td></tr>
+<tr><td><a href="https://news.ycombinator.com/" rel="noopener noreferrer">Hacker News</a></td><td>enabled</td><td>hn_algolia</td><td>community</td><td>Probed 2026-11-15, official Algolia API OK.</td></tr>
+<tr><td><a href="https://github.com/trending" rel="noopener noreferrer">GitHub Trending</a></td><td>enabled</td><td>github_trending</td><td>community</td><td>Probed 2026-11-15, public HTML OK. No official API and no first-seen timestamp; snapshot is attached to the run&#x27;s workday. AI-keyword filter applied.</td></tr>
+<tr><td><a href="https://www.jiqizhixin.com/" rel="noopener noreferrer">机器之心</a></td><td>disabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15. /rss returned HTML, not a feed. /feed and /atom.xml 404. Flagged until a stable HTTPS feed exists.</td></tr>
+<tr><td><a href="https://www.deeplearning.ai/the-batch/" rel="noopener noreferrer">The Batch</a></td><td>disabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15. Common RSS paths 404 or returned HTML. No stable feed found.</td></tr>
+<tr><td><a href="https://www.anthropic.com/news" rel="noopener noreferrer">Anthropic News</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. No public RSS (/news/rss and /rss.xml 404). Official channel remains important; add when a feed or HTML parser is ready.</td></tr>
+<tr><td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer">Meta AI Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. Official blog RSS returned 400. engineering.fb.com ML feed exists but is a substitute, not the Meta AI blog; left unused in MVP to avoid mixing sources.</td></tr>
+<tr><td><a href="https://qwenlm.github.io/blog/" rel="noopener noreferrer">Qwen Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. index.xml/feed.xml 404; blog page is HTML (redirects to qwen.ai). GitHub releases Atom is not the blog and was not used.</td></tr>
+<tr><td><a href="https://blog.langchain.com/" rel="noopener noreferrer">LangChain Blog</a></td><td>disabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15. RSS URLs returned marketing HTML, not a feed.</td></tr>
+</tbody></table>
+<h2>最近一次运行（2026-11-14）</h2>
+<section class="coverage">
+<h2>来源覆盖</h2>
+<p>窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
+<p>采集成功：TLDR AI（0）、The Rundown AI（0）、TechCrunch AI（1）、MIT Technology Review AI（0）、The Verge AI（4）、量子位（6）、雷峰网（1）、OpenAI News（0）、Google DeepMind Blog（0）、NVIDIA Generative AI Blog（0）、Mistral AI Blog（0）、Hugging Face Blog（0）、Latent Space（1）、Simon Willison&#x27;s Weblog（2）、arXiv (cs.AI / cs.CL / cs.LG)（0）、Hacker News（11）、GitHub Trending（13）</p>
+<p>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)</p>
+<p>采集失败：无</p>
+</section>
+  </main>
+  <footer class="footer">
+    <p>按北京时间工作日窗口整理。原始抓取数据不在本站点发布。</p>
+  </footer>
+</body>
+</html>
