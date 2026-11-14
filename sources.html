@@ -9,10 +9,13 @@
 </head>
 <body>
   <header class="header">
-    <p class="brand"><a href="index.html">个人 AI 情报</a></p>
-    <nav class="nav"><a href="index.html">首页</a> <a href="archive.html">归档</a> <a href="sources.html">来源</a> <a href="catalog/products.html">产品地图</a> <a href="catalog/rankings.html">排行榜</a> <a href="catalog/keywords.html">关键词</a> <a href="catalog/gateways.html">聚合与网关</a> <a href="catalog/coding.html">编程与 Agent</a> <a href="catalog/knowledge.html">知识库分类</a></nav>
+    <div class="header-inner">
+      <p class="brand"><a href="index.html">个人 AI 情报</a><small>按工作日整理的行业简报</small></p>
+      <nav class="nav"><a href="index.html">首页</a> <a href="archive.html">归档</a> <a href="changes/index.html">变化追踪</a> <a href="sources.html">来源</a> <a href="catalog/products.html">产品地图</a> <a href="catalog/rankings.html">排行榜</a> <a href="catalog/keywords.html">关键词</a> <a href="catalog/gateways.html">聚合与网关</a> <a href="catalog/coding.html">编程与 Agent</a> <a href="catalog/knowledge.html">知识库分类</a></nav>
+      <button type="button" class="icon-btn" data-theme-toggle>浅色 / 深色</button>
+    </div>
   </header>
-  <main class="main">
+  <main class="main"><div class="wrap">
 <h1>信息源与覆盖</h1>
 <p>以下为当前配置的信息源。禁用项在探测中没有稳定可用的 HTTPS 源，采集时不会请求它们，但会在每日覆盖里列明。</p>
 <table class="table"><thead><tr><th>名称</th><th>状态</th><th>类型</th><th>层级</th><th>说明</th></tr></thead><tbody>
@@ -34,23 +37,36 @@
 <tr><td><a href="https://news.ycombinator.com/" rel="noopener noreferrer">Hacker News</a></td><td>enabled</td><td>hn_algolia</td><td>community</td><td>Probed 2026-11-15, official Algolia API OK.</td></tr>
 <tr><td><a href="https://github.com/trending" rel="noopener noreferrer">GitHub Trending</a></td><td>enabled</td><td>github_trending</td><td>community</td><td>Probed 2026-11-15, public HTML OK. No official API and no first-seen timestamp; snapshot is attached to the run&#x27;s workday. AI-keyword filter applied.</td></tr>
 <tr><td><a href="https://www.jiqizhixin.com/" rel="noopener noreferrer">机器之心</a></td><td>disabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15. /rss returned HTML, not a feed. /feed and /atom.xml 404. Flagged until a stable HTTPS feed exists.</td></tr>
-<tr><td><a href="https://www.deeplearning.ai/the-batch/" rel="noopener noreferrer">The Batch</a></td><td>disabled</td><td>rss</td><td>news</td><td>Probed 2026-11-15. Common RSS paths 404 or returned HTML. No stable feed found.</td></tr>
-<tr><td><a href="https://www.anthropic.com/news" rel="noopener noreferrer">Anthropic News</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. No public RSS (/news/rss and /rss.xml 404). Official channel remains important; add when a feed or HTML parser is ready.</td></tr>
 <tr><td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer">Meta AI Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. Official blog RSS returned 400. engineering.fb.com ML feed exists but is a substitute, not the Meta AI blog; left unused in MVP to avoid mixing sources.</td></tr>
 <tr><td><a href="https://qwenlm.github.io/blog/" rel="noopener noreferrer">Qwen Blog</a></td><td>disabled</td><td>rss</td><td>official</td><td>Probed 2026-11-15. index.xml/feed.xml 404; blog page is HTML (redirects to qwen.ai). GitHub releases Atom is not the blog and was not used.</td></tr>
 <tr><td><a href="https://blog.langchain.com/" rel="noopener noreferrer">LangChain Blog</a></td><td>disabled</td><td>rss</td><td>engineering</td><td>Probed 2026-11-15. RSS URLs returned marketing HTML, not a feed.</td></tr>
+<tr><td><a href="https://www.anthropic.com/news" rel="noopener noreferrer">Anthropic News</a></td><td>enabled</td><td>html_anthropic</td><td>official</td><td>No public RSS. HTML article list parsed on 2026-11-15.</td></tr>
+<tr><td><a href="https://engineering.fb.com/category/ml-applications/" rel="noopener noreferrer">Meta Engineering (ML)</a></td><td>enabled</td><td>rss</td><td>official</td><td>Official Meta AI blog RSS returned 400. This is the working Meta Engineering ML applications feed, clearly labeled as a substitute.</td></tr>
+<tr><td><a href="https://www.deeplearning.ai/the-batch/" rel="noopener noreferrer">The Batch</a></td><td>enabled</td><td>html_the_batch</td><td>news</td><td>No stable RSS. HTML issue/article links parsed; some entries may lack dates.</td></tr>
+<tr><td><a href="https://huggingface.co/papers" rel="noopener noreferrer">Hugging Face Papers</a></td><td>enabled</td><td>html_hf_papers</td><td>research</td><td>Daily papers pages parsed. Paper dates follow the HF daily page.</td></tr>
+<tr><td><a href="https://www.producthunt.com/" rel="noopener noreferrer">Product Hunt</a></td><td>enabled</td><td>rss</td><td>news</td><td>Public Atom feed is general products; AI-keyword filter applied.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/LocalLLaMA/" rel="noopener noreferrer">Reddit r/LocalLLaMA</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. Other Reddit feeds may rate-limit; retries apply.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/ClaudeAI/" rel="noopener noreferrer">Reddit r/ClaudeAI</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS. May 429; collected with retries.</td></tr>
+<tr><td><a href="https://www.reddit.com/r/MachineLearning/" rel="noopener noreferrer">Reddit r/MachineLearning</a></td><td>enabled</td><td>rss</td><td>community</td><td>Official subreddit RSS with AI-keyword filter. May 429.</td></tr>
 </tbody></table>
 <h2>最近一次运行（2026-11-14）</h2>
-<section class="coverage">
-<h2>来源覆盖</h2>
-<p>窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
-<p>采集成功：TLDR AI（0）、The Rundown AI（0）、TechCrunch AI（1）、MIT Technology Review AI（0）、The Verge AI（4）、量子位（6）、雷峰网（1）、OpenAI News（0）、Google DeepMind Blog（0）、NVIDIA Generative AI Blog（0）、Mistral AI Blog（0）、Hugging Face Blog（0）、Latent Space（1）、Simon Willison&#x27;s Weblog（2）、arXiv (cs.AI / cs.CL / cs.LG)（0）、Hacker News（11）、GitHub Trending（13）</p>
-<p>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)</p>
-<p>采集失败：无</p>
-</section>
-  </main>
-  <footer class="footer">
-    <p>按北京时间工作日窗口整理。原始抓取数据不在本站点发布。</p>
-  </footer>
+<p class="meta">窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
+<div class="stats">
+<div class="stat"><b>98</b><span>去重后条目</span></div>
+<div class="stat ok"><b>23</b><span>采集成功来源</span></div>
+<div class="stat danger"><b>2</b><span>采集失败</span></div>
+<div class="stat"><b>11</b><span>窗口内无新条目</span></div>
+<div class="stat"><b>38</b><span>导入的 X 帖</span></div>
+</div>
+<p>采集失败：</p><ul>
+<li>Reddit r/ClaudeAI：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/ClaudeAI/.rss</li>
+<li>Reddit r/MachineLearning：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/MachineLearning/.rss</li>
+</ul>
+<p class='note'>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)、Anthropic News、Meta Engineering (ML)</p>
+  </div></main>
+  <footer class="footer"><div class="footer-inner">
+    <p>按北京时间工作日窗口整理。原始抓取数据与个人项目细节不在本站点发布。</p>
+  </div></footer>
+  <script src="app.js" defer></script>
 </body>
 </html>

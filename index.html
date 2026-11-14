@@ -9,273 +9,1139 @@
 </head>
 <body>
   <header class="header">
-    <p class="brand"><a href="index.html">个人 AI 情报</a></p>
-    <nav class="nav"><a href="index.html">首页</a> <a href="archive.html">归档</a> <a href="sources.html">来源</a> <a href="catalog/products.html">产品地图</a> <a href="catalog/rankings.html">排行榜</a> <a href="catalog/keywords.html">关键词</a> <a href="catalog/gateways.html">聚合与网关</a> <a href="catalog/coding.html">编程与 Agent</a> <a href="catalog/knowledge.html">知识库分类</a></nav>
+    <div class="header-inner">
+      <p class="brand"><a href="index.html">个人 AI 情报</a><small>按工作日整理的行业简报</small></p>
+      <nav class="nav"><a href="index.html">首页</a> <a href="archive.html">归档</a> <a href="changes/index.html">变化追踪</a> <a href="sources.html">来源</a> <a href="catalog/products.html">产品地图</a> <a href="catalog/rankings.html">排行榜</a> <a href="catalog/keywords.html">关键词</a> <a href="catalog/gateways.html">聚合与网关</a> <a href="catalog/coding.html">编程与 Agent</a> <a href="catalog/knowledge.html">知识库分类</a></nav>
+      <button type="button" class="icon-btn" data-theme-toggle>浅色 / 深色</button>
+    </div>
   </header>
-  <main class="main">
-<p class="kicker">最新工作日</p>
+  <main class="main"><div class="wrap">
+<p class="kicker">工作日简报</p>
 <h1>AI 情报日报 · 2026-11-14</h1>
-<section class="coverage">
-<h2>来源覆盖</h2>
-<p>窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
-<p>采集成功：TLDR AI（0）、The Rundown AI（0）、TechCrunch AI（1）、MIT Technology Review AI（0）、The Verge AI（4）、量子位（6）、雷峰网（1）、OpenAI News（0）、Google DeepMind Blog（0）、NVIDIA Generative AI Blog（0）、Mistral AI Blog（0）、Hugging Face Blog（0）、Latent Space（1）、Simon Willison&#x27;s Weblog（2）、arXiv (cs.AI / cs.CL / cs.LG)（0）、Hacker News（11）、GitHub Trending（13）</p>
-<p>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)</p>
-<p>采集失败：无</p>
-</section>
+<nav class="date-nav"><span class="meta">没有相邻工作日</span><span>2026-11-14</span><span class="meta">没有相邻工作日</span></nav>
+<p class="meta">窗口 2026-11-14T04:00:00+08:00 — 2026-11-15T04:00:00+08:00 · 状态：部分（窗口尚未结束或数据不完整）</p>
+<div class="stats">
+<div class="stat"><b>98</b><span>去重后条目</span></div>
+<div class="stat ok"><b>23</b><span>采集成功来源</span></div>
+<div class="stat danger"><b>2</b><span>采集失败</span></div>
+<div class="stat"><b>11</b><span>窗口内无新条目</span></div>
+<div class="stat"><b>38</b><span>导入的 X 帖</span></div>
+</div>
+<p>采集失败：</p><ul>
+<li>Reddit r/ClaudeAI：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/ClaudeAI/.rss</li>
+<li>Reddit r/MachineLearning：FetchError: HTTPError: 429 Client Error: Too Many Requests for url: https://www.reddit.com/r/MachineLearning/.rss</li>
+</ul>
+<p class='note'>成功但窗口内无条目：TLDR AI、The Rundown AI、MIT Technology Review AI、OpenAI News、Google DeepMind Blog、NVIDIA Generative AI Blog、Mistral AI Blog、Hugging Face Blog、arXiv (cs.AI / cs.CL / cs.LG)、Anthropic News、Meta Engineering (ML)</p>
+<p class="kicker">必须知道</p><div class="hero"><div class="hero-card"><article class="item-card" id="item-it_1922d9d520f9ceba">
+  <h3><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer">QwenLM/qwen-code</a></h3>
+  <div class="badges"><span class="badge badge-must">重要性 72</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_1922d9d520f9ceba">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 30218</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">An open-source AI coding agent that lives in your terminal.</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></div>
 <section class="section" id="models_evals">
-<h2>模型与评测</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://github.com/alibaba/open-code-review" rel="noopener noreferrer">alibaba/open-code-review</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 36</p>
-<p class="summary">Secure, fast, efficient, battle-tested at Alibaba&#x27;s scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/" rel="noopener noreferrer">Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM</a></h3>
-<p class="meta">2026-11-14T22:09:25+08:00 · Hacker News · 重要性 31</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.netmeister.org/blog/claude-delusion.html" rel="noopener noreferrer">The Claude Delusion</a></h3>
-<p class="meta">2026-11-14T21:36:17+08:00 · Hacker News · 重要性 30</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://claude.com/resources/articles/claude-meetings" rel="noopener noreferrer">Claude Meetings</a></h3>
-<p class="meta">2026-11-14T06:39:15+08:00 · Hacker News · 重要性 28</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/ashhart/TensorFold" rel="noopener noreferrer">ashhart/TensorFold</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 27</p>
-<p class="summary">LLM Inference Engine for Metal, CUDA and Vulkan.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo" rel="noopener noreferrer">Jensen Huang and the decline of the visionary showman founder CEO</a></h3>
-<p class="meta">2026-11-14T20:00:00+08:00 · The Verge AI · 重要性 25</p>
-<p class="summary">On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their faces awash in blue glow, as he made his entr…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1" rel="noopener noreferrer">Llama.cpp hits v1.0 with a native app for macOS</a></h3>
-<p class="meta">2026-11-14T10:05:37+08:00 · Hacker News · 重要性 20</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>模型与评测</h2><span class="meta">13 条</span></div>
+<div class="items"><article class="item-card" id="item-it_b42946bca86d4002">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw5nzn/rustingstrata_runs_flint_40b_on_a_12_gb_card_64/" rel="noopener noreferrer">RustingStrata runs Flint 40B on a 12 GB card: 64 tok/s decode, 1.3x llama.cpp</a></h3>
+  <div class="badges"><span class="badge ">重要性 46</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 12</span></div>
+  <p class="meta">2026-11-14T23:51:48+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_b42946bca86d4002">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（12 个跟踪账号）</span></div>
+  <p class="summary">I tested new trending Recursive Flint UD-Q5_K_XL (27.9 GiB) on an RTX 3060 12 GB with 30 GB RAM, comparing RustingStrata against llama.cpp using the same model, prompt, and generation settings. RustingStrata llama.cpp Warm decode speed 64.6 tok/s (63.8–65.6) 48.6 tok/s (47.5–49.3…</p>
+  
+  <p class="relevance">与你相关：与开放模型或本地部署相关</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw5nzn/rustingstrata_runs_flint_40b_on_a_12_gb_card_64/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c489e6fb5febf2ab">
+  <h3><a href="https://github.com/alibaba/open-code-review" rel="noopener noreferrer">alibaba/open-code-review</a></h3>
+  <div class="badges"><span class="badge ">重要性 42</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_c489e6fb5febf2ab">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 51228</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">Secure, fast, efficient, battle-tested at Alibaba&#x27;s scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/alibaba/open-code-review" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_23615cde4c891aae">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvuit5/paper_read_less_solve_more_tokenefficient_sparse/" rel="noopener noreferrer">[Paper] Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 38</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 8</span></div>
+  <p class="meta">2026-11-14T13:41:22+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_23615cde4c891aae">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">X 讨论热度（8 个跟踪账号）</span></div>
+  <p class="summary">Web-facing AI agents repeatedly access webpages, documents, repositories, and tool responses, yet reading interfaces often expose entire objects when only sparse evidence is needed. This over-reading increases token and latency costs and can dilute relevant evidence. We present S…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvuit5/paper_read_less_solve_more_tokenefficient_sparse/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_052ed6bb2022659a">
+  <h3><a href="https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo" rel="noopener noreferrer">Jensen Huang and the decline of the visionary showman founder CEO</a></h3>
+  <div class="badges"><span class="badge ">重要性 37</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T20:00:00+08:00 · The Verge AI <a class="meta" href="#item-it_052ed6bb2022659a">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">模型或评测</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their faces awash in blue glow, as he made his entr…</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_afe19bd014a42e97">
+  <h3><a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/" rel="noopener noreferrer">Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM</a></h3>
+  <div class="badges"><span class="badge ">重要性 36</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T22:09:25+08:00 · Hacker News <a class="meta" href="#item-it_afe19bd014a42e97">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">HN 热度 71</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  <p class="relevance">与你相关：与开放模型或本地部署相关</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_10a453890373aeb9">
+  <h3><a href="https://www.netmeister.org/blog/claude-delusion.html" rel="noopener noreferrer">The Claude Delusion</a></h3>
+  <div class="badges"><span class="badge ">重要性 30</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T21:36:17+08:00 · Hacker News <a class="meta" href="#item-it_10a453890373aeb9">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">HN 热度 123</span></div>
+  
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://www.netmeister.org/blog/claude-delusion.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_779abe288b1c01da">
+  <h3><a href="https://claude.com/resources/articles/claude-meetings" rel="noopener noreferrer">Claude Meetings</a></h3>
+  <div class="badges"><span class="badge ">重要性 28</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T06:39:15+08:00 · Hacker News <a class="meta" href="#item-it_779abe288b1c01da">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">HN 热度 104</span></div>
+  
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://claude.com/resources/articles/claude-meetings" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_8c3204e0095f8429">
+  <h3><a href="https://github.com/ashhart/TensorFold" rel="noopener noreferrer">ashhart/TensorFold</a></h3>
+  <div class="badges"><span class="badge ">重要性 27</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_8c3204e0095f8429">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 2117</span></div>
+  <p class="summary">LLM Inference Engine for Metal, CUDA and Vulkan.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/ashhart/TensorFold" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_5f723730bef891eb">
+  <h3><a href="https://huggingface.co/papers/2611.17190" rel="noopener noreferrer">Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_5f723730bef891eb">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  <p class="relevance">与你相关：与 AI 行业跟踪方法相关</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17190" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_82d88faaa52205f9">
+  <h3><a href="https://huggingface.co/papers/2611.16009" rel="noopener noreferrer">JustRUA: A Controlled Study of GPT-6 Robot-Use Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_82d88faaa52205f9">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16009" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_87f0ddfd825b26d6">
+  <h3><a href="https://huggingface.co/papers/2611.15777" rel="noopener noreferrer">SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_87f0ddfd825b26d6">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  <p class="relevance">与你相关：与 AI 行业跟踪方法相关</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.15777" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_afbcdb2768e3669c">
+  <h3><a href="https://huggingface.co/papers/2611.09567" rel="noopener noreferrer">TurtLES: A Large-Scale Benchmark for Turbulent 3D Neural PDE Surrogates</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_afbcdb2768e3669c">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  <p class="relevance">与你相关：与 AI 行业跟踪方法相关</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.09567" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_6841e619fcd7e8d9">
+  <h3><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1" rel="noopener noreferrer">Llama.cpp hits v1.0 with a native app for macOS</a></h3>
+  <div class="badges"><span class="badge ">重要性 20</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T10:05:37+08:00 · Hacker News <a class="meta" href="#item-it_6841e619fcd7e8d9">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">HN 热度 24</span></div>
+  
+  
+  <p class="relevance">与你相关：与开放模型或本地部署相关</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
 <section class="section" id="coding_agents">
-<h2>编程与 Agent</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer">QwenLM/qwen-code</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 66</p>
-<p class="summary">An open-source AI coding agent that lives in your terminal.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/tradermonty/claude-trading-skills" rel="noopener noreferrer">tradermonty/claude-trading-skills</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 38</p>
-<p class="summary">Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://claude.com/resources/articles/projects-redesigned" rel="noopener noreferrer">Anthropic upgrades Claude Code Projects to run parallel AI workers</a></h3>
-<p class="meta">2026-11-14T08:28:11+08:00 · Hacker News · 重要性 37</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/Tencent/LoopForge" rel="noopener noreferrer">Tencent/LoopForge</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 36</p>
-<p class="summary">Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer">GoogleChrome/modern-web-guidance-src</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 28</p>
-<p class="summary">Keep your coding agent up to date with the latest web best practices</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>编程与 Agent</h2><span class="meta">5 条</span></div>
+<div class="items"><article class="item-card" id="item-it_1922d9d520f9ceba">
+  <h3><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer">QwenLM/qwen-code</a></h3>
+  <div class="badges"><span class="badge badge-must">重要性 72</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_1922d9d520f9ceba">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 30218</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">An open-source AI coding agent that lives in your terminal.</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/QwenLM/qwen-code" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_f9da1acd54ca3864">
+  <h3><a href="https://github.com/tradermonty/claude-trading-skills" rel="noopener noreferrer">tradermonty/claude-trading-skills</a></h3>
+  <div class="badges"><span class="badge ">重要性 44</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_f9da1acd54ca3864">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 4581</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/tradermonty/claude-trading-skills" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_438083b2e386d259">
+  <h3><a href="https://github.com/Tencent/LoopForge" rel="noopener noreferrer">Tencent/LoopForge</a></h3>
+  <div class="badges"><span class="badge ">重要性 42</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_438083b2e386d259">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.</p>
+  
+  <p class="relevance">与你相关：可能影响云端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/Tencent/LoopForge" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_60e5719ddad5001d">
+  <h3><a href="https://claude.com/resources/articles/projects-redesigned" rel="noopener noreferrer">Anthropic upgrades Claude Code Projects to run parallel AI workers</a></h3>
+  <div class="badges"><span class="badge ">重要性 40</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T08:28:11+08:00 · Hacker News <a class="meta" href="#item-it_60e5719ddad5001d">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">HN 热度 94</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://claude.com/resources/articles/projects-redesigned" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_301f2d14985e5303">
+  <h3><a href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer">GoogleChrome/modern-web-guidance-src</a></h3>
+  <div class="badges"><span class="badge ">重要性 37</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_301f2d14985e5303">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 5626</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">Keep your coding agent up to date with the latest web best practices</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
 <section class="section" id="opensource_eng">
-<h2>开源与工程</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://github.com/dream-num/univer" rel="noopener noreferrer">dream-num/univer</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 46</p>
-<p class="summary">Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" rel="noopener noreferrer">ChromeDevTools/chrome-devtools-mcp</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 26</p>
-<p class="summary">Chrome DevTools for coding agents</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/JuliusBrussee/caveman" rel="noopener noreferrer">JuliusBrussee/caveman</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 26</p>
-<p class="summary">🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/ag-ui-protocol/ag-ui" rel="noopener noreferrer">ag-ui-protocol/ag-ui</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 24</p>
-<p class="summary">AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/backnotprop/plannotator" rel="noopener noreferrer">backnotprop/plannotator</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 21</p>
-<p class="summary">The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/martin-olivier/airgorah" rel="noopener noreferrer">martin-olivier/airgorah</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 18</p>
-<p class="summary">A WiFi security auditing software</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/Likely7/Veyra-NRVideo" rel="noopener noreferrer">Likely7/Veyra-NRVideo</a></h3>
-<p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending · 重要性 16</p>
-<p class="summary">Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-gener…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>开源与工程</h2><span class="meta">40 条</span></div>
+<div class="items"><article class="item-card" id="item-it_d148e3d2c2843c2b">
+  <h3><a href="https://github.com/dream-num/univer" rel="noopener noreferrer">dream-num/univer</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 61</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 5</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_d148e3d2c2843c2b">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 24337</span><span class="chip">X 讨论热度（5 个跟踪账号）</span></div>
+  <p class="summary">Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/dream-num/univer" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_ae9687957408885e">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvst4u/salesforcesovereignintelligencesovtranscribe1/" rel="noopener noreferrer">salesforce-sovereign-intelligence/SOV-Transcribe-1 · Hugging Face</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 51</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 5</span></div>
+  <p class="meta">2026-11-14T12:06:46+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_ae9687957408885e">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（5 个跟踪账号）</span></div>
+  <p class="summary">SOV-Transcribe-1 SOV-Transcribe-1 is Salesforce&#x27;s open-weight speech-augmented language model built for non-streaming automatic speech recognition (ASR). It combines leading English transcription accuracy with multilingual support and natural-language control over how speech is t…</p>
+  
+  <p class="relevance">与你相关：与云基础设施或可观测性相关</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvst4u/salesforcesovereignintelligencesovtranscribe1/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_87baf3e05aaa353e">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvwuhi/curated_list_of_resources_theory_code_and_math/" rel="noopener noreferrer">Curated list of resources: Theory, Code and math for Reinforcement Learning for beginners</a></h3>
+  <div class="badges"><span class="badge ">重要性 34</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 6</span></div>
+  <p class="meta">2026-11-14T15:59:01+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_87baf3e05aaa353e">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（6 个跟踪账号）</span></div>
+  <p class="summary">[Curated list: Beginners] Personal favorite resources on learning Reinforcement Learning from Scratch: Deep RL Course Amazing course by HuggingFace to understand the basics of classic and deep RL DeepMind x UCL Reinforcement Learning (2015) Give intuition and more towards theory…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvwuhi/curated_list_of_resources_theory_code_and_math/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_e6357f1e7e944cc8">
+  <h3><a href="https://github.com/backnotprop/plannotator" rel="noopener noreferrer">backnotprop/plannotator</a></h3>
+  <div class="badges"><span class="badge ">重要性 30</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_e6357f1e7e944cc8">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 10861</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/backnotprop/plannotator" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_379642deb53f3714">
+  <h3><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" rel="noopener noreferrer">ChromeDevTools/chrome-devtools-mcp</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_379642deb53f3714">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 56119</span></div>
+  <p class="summary">Chrome DevTools for coding agents</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_bac657e60ae022eb">
+  <h3><a href="https://github.com/JuliusBrussee/caveman" rel="noopener noreferrer">JuliusBrussee/caveman</a></h3>
+  <div class="badges"><span class="badge ">重要性 26</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_bac657e60ae022eb">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 119899</span></div>
+  <p class="summary">🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/JuliusBrussee/caveman" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_79a5275f168e3497">
+  <h3><a href="https://github.com/Likely7/Veyra-NRVideo" rel="noopener noreferrer">Likely7/Veyra-NRVideo</a></h3>
+  <div class="badges"><span class="badge ">重要性 25</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_79a5275f168e3497">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-gener…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/Likely7/Veyra-NRVideo" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_11e01068673fca0d">
+  <h3><a href="https://huggingface.co/papers/2611.16321" rel="noopener noreferrer">From Large Language Models to Efficient System One Models via Adaptive Computation</a></h3>
+  <div class="badges"><span class="badge ">重要性 25</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_11e01068673fca0d">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16321" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_27d39d658de76158">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvw34k/kittenmlkittentts2mini_hugging_face_texttospeech/" rel="noopener noreferrer">KittenML/kitten-tts-2-mini · Hugging Face - Text-to-Speech</a></h3>
+  <div class="badges"><span class="badge ">重要性 25</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T15:11:58+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_27d39d658de76158">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">Kitten TTS 2 Mini 82M parameters, 16 languages, 118 voices, 24 kHz. ONNX with int8 weights ( 82.7 MB ; runs on CPU, no PyTorch needed), and the float32 PyTorch weights. Kitten TTS 2 Nano 17M parameters per language model, 8 languages, 37 voices, 24 kHz. ONNX with int8 weights ( 1…</p>
+  
+  <p class="relevance">与你相关：与开放模型或本地部署相关</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvw34k/kittenmlkittentts2mini_hugging_face_texttospeech/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_10a12acb9645adcc">
+  <h3><a href="https://github.com/ag-ui-protocol/ag-ui" rel="noopener noreferrer">ag-ui-protocol/ag-ui</a></h3>
+  <div class="badges"><span class="badge ">重要性 24</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_10a12acb9645adcc">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 17247</span></div>
+  <p class="summary">AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/ag-ui-protocol/ag-ui" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c4e64ec122b346fd">
+  <h3><a href="https://huggingface.co/papers/2611.14815" rel="noopener noreferrer">BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model</a></h3>
+  <div class="badges"><span class="badge ">重要性 22</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_c4e64ec122b346fd">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.14815" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_3de7cc686974828a">
+  <h3><a href="https://huggingface.co/papers/2611.17167" rel="noopener noreferrer">Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 19</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_3de7cc686974828a">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17167" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_66421629b6c0b7aa">
+  <h3><a href="https://huggingface.co/papers/2611.17336" rel="noopener noreferrer">Back to Pixels: Lifting Latent Video Diffusion into Pixel Space</a></h3>
+  <div class="badges"><span class="badge ">重要性 19</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_66421629b6c0b7aa">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17336" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_4680af47eca80996">
+  <h3><a href="https://huggingface.co/papers/2610.41453" rel="noopener noreferrer">Evidence-Guided Recovery for AI Agents with Ambiguous Tool Outcomes and Partial Execution</a></h3>
+  <div class="badges"><span class="badge ">重要性 19</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_4680af47eca80996">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2610.41453" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_49d4abd763242709">
+  <h3><a href="https://huggingface.co/papers/2611.16409" rel="noopener noreferrer">Experience-Handoff Reinforcement Learning for Recursive Self-Improvement</a></h3>
+  <div class="badges"><span class="badge ">重要性 19</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_49d4abd763242709">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16409" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_fa467b5fc1b82426">
+  <h3><a href="https://huggingface.co/papers/2611.16961" rel="noopener noreferrer">The Value of Thinking: Learning When to Reason in Hybrid Decision Models</a></h3>
+  <div class="badges"><span class="badge ">重要性 19</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_fa467b5fc1b82426">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16961" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_2d5a9366b1c0aff1">
+  <h3><a href="https://github.com/martin-olivier/airgorah" rel="noopener noreferrer">martin-olivier/airgorah</a></h3>
+  <div class="badges"><span class="badge ">重要性 18</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:00:00+08:00 · GitHub Trending <a class="meta" href="#item-it_2d5a9366b1c0aff1">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 5627</span></div>
+  <p class="summary">A WiFi security auditing software</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/martin-olivier/airgorah" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_81666f11802af49e">
+  <h3><a href="https://huggingface.co/papers/2611.14256" rel="noopener noreferrer">A Cross-Scenario Survey and Analysis of Self-Evolving Multimodal Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_81666f11802af49e">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.14256" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_cb6bd25068f4fccf">
+  <h3><a href="https://huggingface.co/papers/2611.15094" rel="noopener noreferrer">A frontier machine intelligence for human neuroimaging</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_cb6bd25068f4fccf">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.15094" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_d58eb9e91510695c">
+  <h3><a href="https://huggingface.co/papers/2611.08219" rel="noopener noreferrer">Agent-R^2: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_d58eb9e91510695c">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.08219" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_e4dd85212e7d161b">
+  <h3><a href="https://huggingface.co/papers/2607.13920" rel="noopener noreferrer">DeepStress: Stress-Testing Deep Search Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_e4dd85212e7d161b">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2607.13920" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_0a4ec1b786a43945">
+  <h3><a href="https://huggingface.co/papers/2611.00428" rel="noopener noreferrer">Do Multimodal Models Decide Consistently on Equivalent Optical Spectra?</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_0a4ec1b786a43945">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.00428" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_b5d30539ebcbf535">
+  <h3><a href="https://huggingface.co/papers/2611.15131" rel="noopener noreferrer">Duo: A Reciprocal World Model for Full-Duplex Interaction</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_b5d30539ebcbf535">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.15131" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_82d14f4913d4309f">
+  <h3><a href="https://huggingface.co/papers/2611.16728" rel="noopener noreferrer">EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_82d14f4913d4309f">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16728" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_da894a5859591fbd">
+  <h3><a href="https://huggingface.co/papers/2611.16905" rel="noopener noreferrer">Factored One-sided Adam-Moment for Practical and Scalable SOAP</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_da894a5859591fbd">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16905" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_587f465c2cf27663">
+  <h3><a href="https://huggingface.co/papers/2611.13004" rel="noopener noreferrer">G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_587f465c2cf27663">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.13004" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_ddb32b42866a9399">
+  <h3><a href="https://huggingface.co/papers/2611.12872" rel="noopener noreferrer">HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for Multimodal Agents</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_ddb32b42866a9399">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.12872" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_9d5e3de654b6c2f9">
+  <h3><a href="https://huggingface.co/papers/2611.00359" rel="noopener noreferrer">Humanized but Still True? Auditing Facts and Detection in AI-Text Humanizers</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_9d5e3de654b6c2f9">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.00359" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_d4263e900a806576">
+  <h3><a href="https://huggingface.co/papers/2611.08318" rel="noopener noreferrer">Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_d4263e900a806576">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.08318" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_166f5c27ff0ae649">
+  <h3><a href="https://huggingface.co/papers/2611.05984" rel="noopener noreferrer">On the Design of Hyper-Connections: Simplification, Stability, and Scalability</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_166f5c27ff0ae649">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.05984" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_355d7cf8997cb176">
+  <h3><a href="https://huggingface.co/papers/2611.15844" rel="noopener noreferrer">Open Vision Banana: A Fully Open Recipe for Generative Visual Perception</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_355d7cf8997cb176">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.15844" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_67de00eb9751210d">
+  <h3><a href="https://huggingface.co/papers/2611.16748" rel="noopener noreferrer">PhysLoop: Harnessing LLMs&#x27; Physics Awareness for Self-Improving Video Generation Models</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_67de00eb9751210d">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16748" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_19708c1e8149204e">
+  <h3><a href="https://huggingface.co/papers/2611.17060" rel="noopener noreferrer">Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_19708c1e8149204e">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17060" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_53e59433a4a37cf0">
+  <h3><a href="https://huggingface.co/papers/2611.14046" rel="noopener noreferrer">Structured Confidence Perturbation via Fisher Geometry for Adversarial Training</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_53e59433a4a37cf0">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.14046" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_800246fb9a5a7fef">
+  <h3><a href="https://huggingface.co/papers/2611.17331" rel="noopener noreferrer">TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_800246fb9a5a7fef">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17331" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_a9e357e00d1632f0">
+  <h3><a href="https://huggingface.co/papers/2611.12750" rel="noopener noreferrer">The Narrative Gap: Can LLMs Help Us Navigate Diverse Narratives Across Languages?</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_a9e357e00d1632f0">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.12750" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_aaf194677c45f29c">
+  <h3><a href="https://huggingface.co/papers/2611.17334" rel="noopener noreferrer">Unbundling Multimodal Vision Encoding</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_aaf194677c45f29c">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.17334" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_d0507bc9120c821a">
+  <h3><a href="https://huggingface.co/papers/2611.16517" rel="noopener noreferrer">UniSpark: Exploring Hybrid Attention for Multimodal Understanding and Generation</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_d0507bc9120c821a">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16517" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_ecccff57e343da5c">
+  <h3><a href="https://huggingface.co/papers/2611.10439" rel="noopener noreferrer">Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_ecccff57e343da5c">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.10439" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_002c3adc69f717e8">
+  <h3><a href="https://huggingface.co/papers/2611.16217" rel="noopener noreferrer">WorldDraft: If Code Builds the World, Can Video Models Just Render It?</a></h3>
+  <div class="badges"><span class="badge ">重要性 16</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T12:00:00+08:00 · Hugging Face Papers <a class="meta" href="#item-it_002c3adc69f717e8">条目链接</a></p>
+  <div class="reasons"><span class="chip">研究来源</span><span class="chip">开源或基础设施</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://huggingface.co/papers/2611.16217" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
+<section class="section" id="products_startups">
+<div class="section-head"><h2>产品与创业</h2><span class="meta">2 条</span></div>
+<div class="items"><article class="item-card" id="item-it_4f027bfc1e60e60d">
+  <h3><a href="https://www.producthunt.com/products/thunder-3" rel="noopener noreferrer">Thunder</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T05:27:29+08:00 · Product Hunt <a class="meta" href="#item-it_4f027bfc1e60e60d">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">A blazing-fast, persistent, key-value AI workload database Discussion | Link</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.producthunt.com/products/thunder-3" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_7ee9f0abbfbb2ff2">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvsb5f/instead_of_lowering_gpu_prices_former_nvidia_ceo/" rel="noopener noreferrer">Instead Of Lowering GPU Prices, Former NVIDIA CEO Jensen Huang Reportedly Financed AI Startups To Absorb Excess Silicon, Shattering The Shortage Perception</a></h3>
+  <div class="badges"><span class="badge ">重要性 14</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T11:40:06+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_7ee9f0abbfbb2ff2">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">submitted by /u/billy_booboo [link] [comments]</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvsb5f/instead_of_lowering_gpu_prices_former_nvidia_ceo/" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
 <section class="section" id="china">
-<h2>中文市场</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://www.leiphone.com/category/industrynews/cqPXhF38rM4VcVa7.html" rel="noopener noreferrer">百度词元所发布首日：供应商暴增超100家，客户新增超1000家</a></h3>
-<p class="meta">2026-11-14T13:45:00+08:00 · 雷峰网 · 重要性 45</p>
-<p class="summary">11月14日，从百度获悉，百度词元所发布首日，新增申请入驻的供应商已超过100家，新增超过1000家客户接入。 词元所在11月12日举行的百度世界2026上正式发布，百度创始人李彦宏将其称为“大模型的交易所”。据介绍，词元所一端汇聚模型和模型提供商，另一端服务企业和个人，让用户便捷地找到、购买和使用可信的模型Token。 词元所主打验真与征信两大能力：模型入平台前需通过模型指纹比对、模型能力测试、性能指标与可用性测试等准入核验，上线后接受定期抽检拨测与全链路实时监测，相关结果沉淀为供应商的信用评级。 李彦宏提到，今年前9个月几乎每天都有不止一款新模型发布…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510232.html" rel="noopener noreferrer">「史上最严」湿实验预测基准发布！推理拉满、算力翻5倍也白搭</a></h3>
-<p class="meta">2026-11-14T17:58:22+08:00 · 量子位 · 重要性 35</p>
-<p class="summary">斯坦福、哈佛、康奈尔……十余家顶尖团队齐坐一桌了</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510003.html" rel="noopener noreferrer">突发！DeepSeek开放全家桶API</a></h3>
-<p class="meta">2026-11-14T10:39:56+08:00 · 量子位 · 重要性 15</p>
-<p class="summary">官方App功能均可自由组合调用</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510013.html" rel="noopener noreferrer">中专生拍出《哈利·波特》爆款！欧美明星、好莱坞制片人集体点赞</a></h3>
-<p class="meta">2026-11-14T10:59:35+08:00 · 量子位 · 重要性 15</p>
-<p class="summary">狂揽3000万播放量</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510094.html" rel="noopener noreferrer">绿电进Token出！联想重新定义词元工厂</a></h3>
-<p class="meta">2026-11-14T17:41:02+08:00 · 量子位 · 重要性 15</p>
-<p class="summary">年产2000万亿Token，成本狂降70%</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510150.html" rel="noopener noreferrer">程序员集体沉迷折纸飞机！最长滞空31.2秒</a></h3>
-<p class="meta">2026-11-14T17:48:34+08:00 · 量子位 · 重要性 15</p>
-<p class="summary">童年的纸飞机，现在终于飞回我手里～</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.qbitai.com/2026/11/510297.html" rel="noopener noreferrer">英伟达上演“奥特曼2.0”，员工集体请愿：让老黄回家！</a></h3>
-<p class="meta">2026-11-14T18:08:08+08:00 · 量子位 · 重要性 15</p>
-<p class="summary">马斯克也签名了</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>中文市场</h2><span class="meta">15 条</span></div>
+<div class="items"><article class="item-card" id="item-it_b4acd4f85e43c616">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvxyhj/can_openweight_llms_can_predict_the_effects_of/" rel="noopener noreferrer">Can open-weight LLMs can predict the effects of weight edits without running the model (9B–30B)</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 66</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 7</span></div>
+  <p class="meta">2026-11-14T17:07:32+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_b4acd4f85e43c616">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（7 个跟踪账号）</span></div>
+  <p class="summary">I’ve been experimenting with weight-space reading using Qwen and Muse models (9B–30B). The goal: can an LLM inspect raw model weights and predict the behavioral effects of weight edits without running the target model? A few findings: 🔹Qwen 27B reached 73.0% balanced accuracy on…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvxyhj/can_openweight_llms_can_predict_the_effects_of/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_0ab30880002ee292">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw4ue3/why_dont_we_have_national_open_ai_models/" rel="noopener noreferrer">Why don’t we have national open AI models?</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 61</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 5</span></div>
+  <p class="meta">2026-11-14T23:17:07+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_0ab30880002ee292">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（5 个跟踪账号）</span></div>
+  <p class="summary">Deepseek spent about $6m on 4.1 apparently. Published all of their work. US gov says don’t trust China, blah blah… As a US citizen why are we not training national open source? The cost is nothing compared to the budget, solves security issues, and prevents monopolistic practices…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw4ue3/why_dont_we_have_national_open_ai_models/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_4f55bd564f263178">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw0xeu/how_long_are_we_gonna_depend_bunch_of_model/" rel="noopener noreferrer">How long are we gonna depend bunch of model creators (like Qwen, Gemma, NVIDIA, etc.,) for ~100B models?</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 50</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T20:10:50+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_4f55bd564f263178">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">I think we&#x27;re fine till 2027 with models(~100B .... Qwen 4.X &amp; 5, Gemma-5, NVIDIA would release some Medium/Big size 25-200B models). After that it&#x27;s gonna be critical, as many model creators are increased/increasing model size to 300B+. Future trend probably gonna be around 500B…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw0xeu/how_long_are_we_gonna_depend_bunch_of_model/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c4a86433911cfb77">
+  <h3><a href="https://www.leiphone.com/category/industrynews/cqPXhF38rM4VcVa7.html" rel="noopener noreferrer">百度词元所发布首日：供应商暴增超100家，客户新增超1000家</a></h3>
+  <div class="badges"><span class="badge ">重要性 45</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T13:45:00+08:00 · 雷峰网 <a class="meta" href="#item-it_c4a86433911cfb77">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span></div>
+  <p class="summary">11月14日，从百度获悉，百度词元所发布首日，新增申请入驻的供应商已超过100家，新增超过1000家客户接入。 词元所在11月12日举行的百度世界2026上正式发布，百度创始人李彦宏将其称为“大模型的交易所”。据介绍，词元所一端汇聚模型和模型提供商，另一端服务企业和个人，让用户便捷地找到、购买和使用可信的模型Token。 词元所主打验真与征信两大能力：模型入平台前需通过模型指纹比对、模型能力测试、性能指标与可用性测试等准入核验，上线后接受定期抽检拨测与全链路实时监测，相关结果沉淀为供应商的信用评级。 李彦宏提到，今年前9个月几乎每天都有不止一款新模型发布…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.leiphone.com/category/industrynews/cqPXhF38rM4VcVa7.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_79c14c69af2f854a">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvyol3/qwen_38_flash_next_for_gamedev_its_very_capable/" rel="noopener noreferrer">Qwen 3.8 Flash Next for gamedev - it&#x27;s very capable!</a></h3>
+  <div class="badges"><span class="badge ">重要性 44</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 6</span></div>
+  <p class="meta">2026-11-14T17:55:18+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_79c14c69af2f854a">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（6 个跟踪账号）</span></div>
+  <p class="summary">I&#x27;ve shared the project I&#x27;m working on approx a month ago, today it&#x27;s completed. I wanted to know a simple thing: how good is Qwen 3.8FN at gamedev? And I had so much fun in the process that I am shipping a finished product, free to play. tl,dr + link at the bottom. My experience…</p>
+  
+  <p class="relevance">与你相关：可能影响本地/终端编程 Agent 工作流</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvyol3/qwen_38_flash_next_for_gamedev_its_very_capable/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_efa3116cc0289833">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvysss/sensenovasensenovaloop9bpreview_hugging_face/" rel="noopener noreferrer">sensenova/SenseNova-Loop-9B-Preview · Hugging Face</a></h3>
+  <div class="badges"><span class="badge ">重要性 38</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T18:02:25+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_efa3116cc0289833">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">Very interesting model/architecture. Seems to match Qwen 3.5 27b overall at only 9b parameters. Could be useful for some and it looks like it’s not even fully cooked yet. I haven’t tried it yet. I’m not sure if it’d be slower than qwen, it’s smaller but inference parameters are ~…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvysss/sensenovasensenovaloop9bpreview_hugging_face/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_3b3b5455fd6baf0c">
+  <h3><a href="https://www.qbitai.com/2026/11/510232.html" rel="noopener noreferrer">「史上最严」湿实验预测基准发布！推理拉满、算力翻5倍也白搭</a></h3>
+  <div class="badges"><span class="badge ">重要性 35</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T17:58:22+08:00 · 量子位 <a class="meta" href="#item-it_3b3b5455fd6baf0c">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">发布或上线</span></div>
+  <p class="summary">斯坦福、哈佛、康奈尔……十余家顶尖团队齐坐一桌了</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510232.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_326a3340db3c8c8d">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvwi81/spark_26_4b_and_17b_fixed_a_reasoning_loop_by/" rel="noopener noreferrer">SPARK 2.6 4b and 1.7b Fixed a reasoning loop by editing one row of weights.</a></h3>
+  <div class="badges"><span class="badge ">重要性 28</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T15:37:39+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_326a3340db3c8c8d">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">Just put my first two models up on Hugging Face. I used Qwen4 to do direct weight editing and fixed the reasoning loop problem. Got up to a 97% reduction on the 1.7B and a solid drop on the full 4B. The problem: the “but wait…” spiral Spark-X2.6 has this nasty failure mode where…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvwi81/spark_26_4b_and_17b_fixed_a_reasoning_loop_by/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_506d150b016e1e2c">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvz070/nace_quants_vs_unsloth_dynamic_v31_has_anyone/" rel="noopener noreferrer">Nace quants vs Unsloth Dynamic v3.1, has anyone compared them on actual tasks?</a></h3>
+  <div class="badges"><span class="badge ">重要性 17</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T18:15:10+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_506d150b016e1e2c">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">Two quant updates landed in the last day: the Nace weight-space quants claiming up to 2x better KL divergence, and Unsloth&#x27;s Dynamic v3.1 for Qwen3.8-27B. I&#x27;ve been trying to work out how much KL really tells you compared to running task evals. Has anyone put them side by side on…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvz070/nace_quants_vs_unsloth_dynamic_v31_has_anyone/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c4751f38fca860ad">
+  <h3><a href="https://www.qbitai.com/2026/11/510003.html" rel="noopener noreferrer">突发！DeepSeek开放全家桶API</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T10:39:56+08:00 · 量子位 <a class="meta" href="#item-it_c4751f38fca860ad">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">官方App功能均可自由组合调用</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510003.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_77fa28b45334209d">
+  <h3><a href="https://www.qbitai.com/2026/11/510013.html" rel="noopener noreferrer">中专生拍出《哈利·波特》爆款！欧美明星、好莱坞制片人集体点赞</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T10:59:35+08:00 · 量子位 <a class="meta" href="#item-it_77fa28b45334209d">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">狂揽3000万播放量</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510013.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_0e8c0f4482c713b3">
+  <h3><a href="https://www.qbitai.com/2026/11/510094.html" rel="noopener noreferrer">绿电进Token出！联想重新定义词元工厂</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T17:41:02+08:00 · 量子位 <a class="meta" href="#item-it_0e8c0f4482c713b3">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">年产2000万亿Token，成本狂降70%</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510094.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_a1578710db0783e2">
+  <h3><a href="https://www.qbitai.com/2026/11/510150.html" rel="noopener noreferrer">程序员集体沉迷折纸飞机！最长滞空31.2秒</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T17:48:34+08:00 · 量子位 <a class="meta" href="#item-it_a1578710db0783e2">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">童年的纸飞机，现在终于飞回我手里～</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510150.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_a103577a69642c3e">
+  <h3><a href="https://www.qbitai.com/2026/11/510297.html" rel="noopener noreferrer">英伟达上演“奥特曼2.0”，员工集体请愿：让老黄回家！</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T18:08:08+08:00 · 量子位 <a class="meta" href="#item-it_a103577a69642c3e">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span></div>
+  <p class="summary">马斯克也签名了</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.qbitai.com/2026/11/510297.html" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_b7fd9b8ee054489c">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw36op/qwen4_flash_wishlist/" rel="noopener noreferrer">Qwen4 Flash wishlist</a></h3>
+  <div class="badges"><span class="badge ">重要性 14</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T22:04:38+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_b7fd9b8ee054489c">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">After using 3.8QFN for some time I have to the conclusion that my wish list for QF4 now only consists of these points. The model can talk to you in a human understandable language See point 1 General improvement in reasoning/intelligence, but mostly see point 1 That&#x27;s about it. I…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw36op/qwen4_flash_wishlist/" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
 <section class="section" id="funding_industry">
-<h2>融资与产业</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" rel="noopener noreferrer">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a></h3>
-<p class="meta">2026-11-14T06:43:00+08:00 · TechCrunch AI · 重要性 37</p>
-<p class="summary">Nvidia poured tens of billions into AI startups under Huang. Without him at the helm, founders and VCs are bracing for smaller checks and lower valuations.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787" rel="noopener noreferrer">Sam Bankman-Fried would have made nearly $40B in Anthropic IPO</a></h3>
-<p class="meta">2026-11-14T10:30:28+08:00 · Hacker News · 重要性 21</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>融资与产业</h2><span class="meta">3 条</span></div>
+<div class="items"><article class="item-card" id="item-it_9d694fa95af0cfae">
+  <h3><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" rel="noopener noreferrer">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a></h3>
+  <div class="badges"><span class="badge ">重要性 43</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T06:43:00+08:00 · TechCrunch AI <a class="meta" href="#item-it_9d694fa95af0cfae">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">融资或交易</span><span class="chip">模型或评测</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">Nvidia poured tens of billions into AI startups under Huang. Without him at the helm, founders and VCs are bracing for smaller checks and lower valuations.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_67d63ff301a6d1fb">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvubha/crazy_theres_a_probable_connection_between_my/" rel="noopener noreferrer">Crazy there&#x27;s a probable connection between my desktop running Qwen 3.8 27B and a major geo-economic-political event</a></h3>
+  <div class="badges"><span class="badge ">重要性 30</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T13:29:37+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_67d63ff301a6d1fb">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">融资或交易</span><span class="chip">模型或评测</span></div>
+  <p class="summary">https://www.tbsnews.net/explainer/nvidia-ceos-alleged-affair-tech-entrepreneur-raises-questions-over-china-chip-links submitted by /u/nathan555 [link] [comments]</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvubha/crazy_theres_a_probable_connection_between_my/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_93ac12eeacd92c31">
+  <h3><a href="https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787" rel="noopener noreferrer">Sam Bankman-Fried would have made nearly $40B in Anthropic IPO</a></h3>
+  <div class="badges"><span class="badge ">重要性 24</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T10:30:28+08:00 · Hacker News <a class="meta" href="#item-it_93ac12eeacd92c31">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">融资或交易</span><span class="chip">HN 热度 10</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://www.ft.com/content/0ef40ac9-6d01-428f-98c8-a52bf5b9a787" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
+<section class="section" id="x_feed">
+<div class="section-head"><h2>X 动态</h2><span class="meta">2 条</span></div>
+<div class="items"><article class="item-card" id="item-it_5b9a0b63f3eb61ca">
+  <h3><a href="https://x.com/NVIDIAAI/status/2121382664720863533" rel="noopener noreferrer">Congrats @thinkymachines team on Inkling 2 Small!
+
+A 594B model pretrained in just 68 hours with NVIDIA NVFP4 on GB300 NVL72 racks.
+
+Read how the team made low-precision training w</a></h3>
+  <div class="badges"><span class="badge badge-score-high">重要性 58</span><span class="badge badge-official">官方发布</span><span class="badge badge-multi">X 热度 6</span></div>
+  <p class="meta">2026-11-14T07:20:15+08:00 · X @NVIDIAAI <a class="meta" href="#item-it_5b9a0b63f3eb61ca">条目链接</a></p>
+  <div class="reasons"><span class="chip">官方来源</span><span class="chip">跟踪实验室的官方账号发布</span><span class="chip">X 讨论热度（6 个跟踪账号）</span></div>
+  <p class="summary">Congrats @thinkymachines team on Inkling 2 Small!
+
+A 594B model pretrained in just 68 hours with NVIDIA NVFP4 on GB300 NVL72 racks.
+
+Read how the team made low-precision training work at this scale. 👇 https://t.co/URTLhRaiRb</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://x.com/NVIDIAAI/status/2121382664720863533" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_f05887243c7b7888">
+  <h3><a href="https://x.com/nvidia/status/2121647261155570145" rel="noopener noreferrer">AI is helping recyclers see more value in waste. ♻️
+
+Discover how vision AI and robotics sort used clothing, bottles and mixed recyclables, recovering reusable materials and divert</a></h3>
+  <div class="badges"><span class="badge ">重要性 46</span><span class="badge badge-official">官方发布</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-15T00:51:40+08:00 · X @nvidia <a class="meta" href="#item-it_f05887243c7b7888">条目链接</a></p>
+  <div class="reasons"><span class="chip">官方来源</span><span class="chip">跟踪实验室的官方账号发布</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">AI is helping recyclers see more value in waste. ♻️
+
+Discover how vision AI and robotics sort used clothing, bottles and mixed recyclables, recovering reusable materials and diverting thousands of tons from landfills.
+
+Meet the startups giving everyday materials another life 🧵</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://x.com/nvidia/status/2121647261155570145" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
 <section class="section" id="watch">
-<h2>待跟踪</h2>
-<ol class="items">
-<li class='item'>
-<h3><a href="https://simonwillison.net/2026/Nov/13/datasette-leaflet/" rel="noopener noreferrer">datasette-leaflet 0.3</a></h3>
-<p class="meta">2026-11-14T06:30:54+08:00 · Simon Willison&#x27;s Weblog · 重要性 32</p>
-<p class="summary">Release: datasette-leaflet 0.3 OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violat…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://simonwillison.net/2026/Nov/13/datasette-cluster-map/" rel="noopener noreferrer">datasette-cluster-map 0.19</a></h3>
-<p class="meta">2026-11-14T07:02:45+08:00 · Simon Willison&#x27;s Weblog · 重要性 32</p>
-<p class="summary">Release: datasette-cluster-map 0.19 One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header. Here&#x27;s a map of power plants ow…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://twitter.com/willdepue/status/2120992457630326841" rel="noopener noreferrer">Ex-OpenAI researcher finds Blackwell signatures in open-weight models</a></h3>
-<p class="meta">2026-11-14T14:50:21+08:00 · Hacker News · 重要性 29</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" rel="noopener noreferrer">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a></h3>
-<p class="meta">2026-11-14T04:45:10+08:00 · The Verge AI · 重要性 15</p>
-<p class="summary">After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and &quot;eligible US-issued American Express, Ch…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" rel="noopener noreferrer">Amazon has a plan to index the world’s online shopping data</a></h3>
-<p class="meta">2026-11-14T07:49:11+08:00 · The Verge AI · 重要性 15</p>
-<p class="summary">Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn&#x27;t sell, and make the information available through its own site, according to Reuters. The project, called the &quot;World Product Graph,&quot; is meant to make it less like…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" rel="noopener noreferrer">The OpenAI board member who fired Sam Altman says we still can&amp;#8217;t trust AI CEOs</a></h3>
-<p class="meta">2026-11-14T23:00:00+08:00 · The Verge AI · 重要性 15</p>
-<p class="summary">Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI safety and policy community, though she is pe…</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://news.ycombinator.com/item?id=50494696" rel="noopener noreferrer">Ask HN: What are the most useful, concrete AI skills to independently learn?</a></h3>
-<p class="meta">2026-11-14T14:56:42+08:00 · Hacker News · 重要性 14</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" rel="noopener noreferrer">[AINews] The No AI Slop Manifesto</a></h3>
-<p class="meta">2026-11-14T16:31:02+08:00 · Latent Space · 重要性 12</p>
-<p class="summary">November 13, 2026 — AIE speakers unite to lay out how to fight slop.</p>
-<p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://github.com/paul-nameless/agweb" rel="noopener noreferrer">Show HN: Agweb – a browser for agents that stays out of your way</a></h3>
-<p class="meta">2026-11-14T22:08:12+08:00 · Hacker News · 重要性 11</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://www.ft.com/content/7377e093-d58e-4303-853a-5aa82b6a747e" rel="noopener noreferrer">Russia loses almost half a million lives in war on Ukraine</a></h3>
-<p class="meta">2026-11-14T04:43:08+08:00 · Hacker News · 重要性 9</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-<li class='item'>
-<h3><a href="https://entropicdrift.com/blog/mkdocs-drift-automation/" rel="noopener noreferrer">Transforming Ripgrep&#x27;s Documentation with AI Automation and MkDocs</a></h3>
-<p class="meta">2026-11-14T13:19:51+08:00 · Hacker News · 重要性 9</p>
-<p class="note">摘要待例行任务补写。</p>
-</li>
-</ol></section>
+<div class="section-head"><h2>待跟踪</h2><span class="meta">18 条</span></div>
+<div class="items"><article class="item-card" id="item-it_a840b1604a3a5e19">
+  <h3><a href="https://simonwillison.net/2026/Nov/13/datasette-leaflet/" rel="noopener noreferrer">datasette-leaflet 0.3</a></h3>
+  <div class="badges"><span class="badge ">重要性 44</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T06:30:54+08:00 · Simon Willison&#x27;s Weblog <a class="meta" href="#item-it_a840b1604a3a5e19">条目链接</a></p>
+  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">Release: datasette-leaflet 0.3 OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violat…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://simonwillison.net/2026/Nov/13/datasette-leaflet/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_174788111ac45b66">
+  <h3><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" rel="noopener noreferrer">The OpenAI board member who fired Sam Altman says we still can&amp;#8217;t trust AI CEOs</a></h3>
+  <div class="badges"><span class="badge ">重要性 33</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 6</span></div>
+  <p class="meta">2026-11-14T23:00:00+08:00 · The Verge AI <a class="meta" href="#item-it_174788111ac45b66">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">X 讨论热度（6 个跟踪账号）</span></div>
+  <p class="summary">Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI safety and policy community, though she is pe…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_2053de078f05bd0a">
+  <h3><a href="https://simonwillison.net/2026/Nov/13/datasette-cluster-map/" rel="noopener noreferrer">datasette-cluster-map 0.19</a></h3>
+  <div class="badges"><span class="badge ">重要性 32</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T07:02:45+08:00 · Simon Willison&#x27;s Weblog <a class="meta" href="#item-it_2053de078f05bd0a">条目链接</a></p>
+  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span></div>
+  <p class="summary">Release: datasette-cluster-map 0.19 One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header. Here&#x27;s a map of power plants ow…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://simonwillison.net/2026/Nov/13/datasette-cluster-map/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_f954783e782225e6">
+  <h3><a href="https://twitter.com/willdepue/status/2120992457630326841" rel="noopener noreferrer">Ex-OpenAI researcher finds Blackwell signatures in open-weight models</a></h3>
+  <div class="badges"><span class="badge ">重要性 29</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T14:50:21+08:00 · Hacker News <a class="meta" href="#item-it_f954783e782225e6">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">HN 热度 16</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://twitter.com/willdepue/status/2120992457630326841" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c513920432741959">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvxziy/is_anyone_using_decision_models_as_a_permission/" rel="noopener noreferrer">Is anyone using decision models as a permission checker?</a></h3>
+  <div class="badges"><span class="badge ">重要性 28</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 8</span></div>
+  <p class="meta">2026-11-14T17:09:28+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_c513920432741959">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（8 个跟踪账号）</span></div>
+  <p class="summary">Don&#x27;t run with dangerous full permissions, unless you are prepared to let the agent fuck your shit up. So says conventional wisdom. But also, I am definitely running with full permissions. When I give my agent a goal to work at things overnight, I necessarily need to give it perm…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvxziy/is_anyone_using_decision_models_as_a_permission/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_8779e47ce6314a37">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw29ic/arc_10_a_decision_model_for_routing_ai_agents/" rel="noopener noreferrer">ARC 1.0: A decision model for routing AI agents across cloud and local models (0.6B, Apache 2.0)</a></h3>
+  <div class="badges"><span class="badge ">重要性 28</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 7</span></div>
+  <p class="meta">2026-11-14T21:20:55+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_8779e47ce6314a37">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（7 个跟踪账号）</span></div>
+  <p class="summary">ARC—the Adaptive Routing Controller—reads an agent’s conversation and produces signals for choosing a model and its reasoning effort. Applications combine those signals with their available models, prices, and policies to decide how to handle the next request. If this works well,…</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw29ic/arc_10_a_decision_model_for_routing_ai_agents/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_05808b99d7479e67">
+  <h3><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" rel="noopener noreferrer">Amazon has a plan to index the world’s online shopping data</a></h3>
+  <div class="badges"><span class="badge ">重要性 27</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 4</span></div>
+  <p class="meta">2026-11-14T07:49:11+08:00 · The Verge AI <a class="meta" href="#item-it_05808b99d7479e67">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">X 讨论热度（4 个跟踪账号）</span></div>
+  <p class="summary">Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn&#x27;t sell, and make the information available through its own site, according to Reuters. The project, called the &quot;World Product Graph,&quot; is meant to make it less like…</p>
+  
+  <p class="relevance">与你相关：与交易或行情系统基础设施相关</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_e626a6ba37c5cdca">
+  <h3><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" rel="noopener noreferrer">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a></h3>
+  <div class="badges"><span class="badge ">重要性 24</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T04:45:10+08:00 · The Verge AI <a class="meta" href="#item-it_e626a6ba37c5cdca">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and &quot;eligible US-issued American Express, Ch…</p>
+  
+  <p class="relevance">与你相关：可能影响模型选型或调用成本</p>
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_299cfd655b5df2e6">
+  <h3><a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" rel="noopener noreferrer">Asian governments react to Nvidia CEO Jensen Huang’s exit</a></h3>
+  <div class="badges"><span class="badge ">重要性 21</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-15T00:34:15+08:00 · TechCrunch AI <a class="meta" href="#item-it_299cfd655b5df2e6">条目链接</a></p>
+  <div class="reasons"><span class="chip">主流媒体</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">Some governments moved to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_b338b5a5af80e931">
+  <h3><a href="https://news.ycombinator.com/item?id=50494696" rel="noopener noreferrer">Ask HN: What are the most useful, concrete AI skills to independently learn?</a></h3>
+  <div class="badges"><span class="badge ">重要性 17</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T14:56:42+08:00 · Hacker News <a class="meta" href="#item-it_b338b5a5af80e931">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">HN 热度 65</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://news.ycombinator.com/item?id=50494696" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_c4c5c0fefe81936e">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw09tu/ibm_trains_two_small_open_models_to_ignore_orders/" rel="noopener noreferrer">IBM trains two small open models to ignore orders hidden in documents</a></h3>
+  <div class="badges"><span class="badge ">重要性 17</span><span class="badge badge-multi">多方证实</span><span class="badge badge-multi">X 热度 3</span></div>
+  <p class="meta">2026-11-14T19:33:26+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_c4c5c0fefe81936e">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（3 个跟踪账号）</span></div>
+  <p class="summary">I like this. Prompt injection is a bit issue with small models submitted by /u/mawcopolow [link] [comments]</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw09tu/ibm_trains_two_small_open_models_to_ignore_orders/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_af7f8d8cd3854a59">
+  <h3><a href="https://github.com/paul-nameless/agweb" rel="noopener noreferrer">Show HN: Agweb – a browser for agents that stays out of your way</a></h3>
+  <div class="badges"><span class="badge ">重要性 15</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T22:08:12+08:00 · Hacker News <a class="meta" href="#item-it_af7f8d8cd3854a59">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">HN 热度 40</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://github.com/paul-nameless/agweb" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_8cd601d27a192eb0">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw2ter/i_know_its_very_expensive_but_is_anyone_using_a/" rel="noopener noreferrer">I know it’s very expensive but is anyone using a dgx station b300 ? Is it that good for local llms ?</a></h3>
+  <div class="badges"><span class="badge ">重要性 14</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 2</span></div>
+  <p class="meta">2026-11-14T21:47:44+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_8cd601d27a192eb0">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（2 个跟踪账号）</span></div>
+  <p class="summary">I’d like to know what real users get out of them, speed wise and also concurrent users. I’m talking about the workstation not the data center dgx b300 of course :) Thanks ! submitted by /u/spaham [link] [comments]</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw2ter/i_know_its_very_expensive_but_is_anyone_using_a/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_6afdd40324dd1591">
+  <h3><a href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" rel="noopener noreferrer">[AINews] The No AI Slop Manifesto</a></h3>
+  <div class="badges"><span class="badge ">重要性 12</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T16:31:02+08:00 · Latent Space <a class="meta" href="#item-it_6afdd40324dd1591">条目链接</a></p>
+  <div class="reasons"><span class="chip">工程博客</span></div>
+  <p class="summary">November 13, 2026 — AIE speakers unite to lay out how to fight slop.</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_95957c7ace3b480f">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvuclv/ernie_55_flash_base_ernie/" rel="noopener noreferrer">ERNIE 5.5 Flash Base · ERNIE</a></h3>
+  <div class="badges"><span class="badge ">重要性 11</span><span class="badge badge-rumor">单一来源传闻</span><span class="badge badge-multi">X 热度 1</span></div>
+  <p class="meta">2026-11-14T13:31:24+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_95957c7ace3b480f">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">X 讨论热度（1 个跟踪账号）</span></div>
+  <p class="summary">I guess some may like to read this. submitted by /u/yahbluez [link] [comments]</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xvuclv/ernie_55_flash_base_ernie/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_180b0a6d9b77766f">
+  <h3><a href="https://www.ft.com/content/7377e093-d58e-4303-853a-5aa82b6a747e" rel="noopener noreferrer">Russia loses almost half a million lives in war on Ukraine</a></h3>
+  <div class="badges"><span class="badge ">重要性 9</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T04:43:08+08:00 · Hacker News <a class="meta" href="#item-it_180b0a6d9b77766f">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">HN 热度 12</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://www.ft.com/content/7377e093-d58e-4303-853a-5aa82b6a747e" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_8a1cf35e4c1e866a">
+  <h3><a href="https://entropicdrift.com/blog/mkdocs-drift-automation/" rel="noopener noreferrer">Transforming Ripgrep&#x27;s Documentation with AI Automation and MkDocs</a></h3>
+  <div class="badges"><span class="badge ">重要性 9</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T13:19:51+08:00 · Hacker News <a class="meta" href="#item-it_8a1cf35e4c1e866a">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">HN 热度 12</span></div>
+  
+  
+  
+  <p class="note">摘要待例行任务补写。</p>
+  <p class="orig"><a href="https://entropicdrift.com/blog/mkdocs-drift-automation/" rel="noopener noreferrer">阅读原文</a></p>
+</article><article class="item-card" id="item-it_0c158f5a84545094">
+  <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw2ogq/the_lawyer_who_posts_here_about_his_v100s_got_his/" rel="noopener noreferrer">The lawyer who posts here about his V100s got his story picked up by Tom’s Hardware</a></h3>
+  <div class="badges"><span class="badge ">重要性 8</span><span class="badge badge-rumor">单一来源传闻</span></div>
+  <p class="meta">2026-11-14T21:41:12+08:00 · Reddit r/LocalLLaMA <a class="meta" href="#item-it_0c158f5a84545094">条目链接</a></p>
+  <div class="reasons"><span class="chip">社区来源</span></div>
+  <p class="summary">submitted by /u/General-Spite1222 [link] [comments]</p>
+  
+  
+  <p class="note">以下为来源摘录，中文摘要与影响判断待例行任务补写。</p>
+  <p class="orig"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xw2ogq/the_lawyer_who_posts_here_about_his_v100s_got_his/" rel="noopener noreferrer">阅读原文</a></p>
+</article></div></section>
+
+<section class="section" id="x-feed">
+  <div class="section-head"><h2>X 动态</h2><span class="meta">38 条导入帖</span></div>
+  <div class="tabs" data-tabs='[data-x-panel]'>
+    <button type="button" data-tab="x-org" aria-selected="true">官方实验室（2）</button>
+    <button type="button" data-tab="x-person" aria-selected="false">研究者 / 建设者（13）</button>
+    <button type="button" data-tab="x-media" aria-selected="false">媒体与分析（23）</button>
+  </div>
+  <div id="x-org" data-x-panel><div class="items"><article class="item-card x-card"><p class="handle"><a href="https://x.com/nvidia/status/2121647261155570145" rel="noopener noreferrer">@nvidia</a> · 2026-11-15T00:51:40+08:00</p><p>AI is helping recyclers see more value in waste. ♻️
+
+Discover how vision AI and robotics sort used clothing, bottles and mixed recyclables, recovering reusable materials and diverting thousands of tons from landfills.
+
+Meet the startups giving everyday materials another life 🧵</p><p class='meta'>转帖 9 · 引用 1 · 赞 42</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/NVIDIAAI/status/2121382664720863533" rel="noopener noreferrer">@NVIDIAAI</a> · 2026-11-14T07:20:15+08:00</p><p>Congrats @thinkymachines team on Inkling 2 Small!
+
+A 594B model pretrained in just 68 hours with NVIDIA NVFP4 on GB300 NVL72 racks.
+
+Read how the team made low-precision training work at this scale. 👇 https://t.co/URTLhRaiRb</p><p class='meta'>转帖 93 · 引用 10 · 赞 1631</p></article></div></div>
+  <div id="x-person" data-x-panel hidden><div class="items"><article class="item-card x-card"><p class="handle"><a href="https://x.com/ylecun/status/2121388007626359219" rel="noopener noreferrer">@ylecun</a> · 2026-11-14T07:41:29+08:00</p><p>RT @Dragonhau66: 终于实锤了❗️❗️
+
+干掉黄仁勋的，不是婚外情，而是一场由美国政客、媒体、CIA和Anthropic 联合做局的“完美猎杀”。
+
+黄仁勋辞职后，《纽约时报》两名记者在播客里亲口承认：
+他们是收到了一位“科技界联系人”的爆料，才去查Megaspe…</p><p class='meta'>转帖 5472 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ylecun/status/2121345731193868384" rel="noopener noreferrer">@ylecun</a> · 2026-11-14T04:53:29+08:00</p><p>RT @NYU_Courant: Yesterday we announced the establishment of the new Center for Mathematics and AI at Courant (MAIC). Its mission is to mak…</p><p class='meta'>转帖 31 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ylecun/status/2121333747392123010" rel="noopener noreferrer">@ylecun</a> · 2026-11-14T04:05:52+08:00</p><p>RT @DrTechlash: The investigation into FLI&#x27;s crypto donation is now updated with new information from the Bitcoin Policy Institute&#x27;s report…</p><p class='meta'>转帖 9 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ylecun/status/2121332813374869878" rel="noopener noreferrer">@ylecun</a> · 2026-11-14T04:02:09+08:00</p><p>RT @randall_balestr: Swing by Northwestern University, Ruan Conference room (lower level), at 11am Central! Will be speaking about end-to-e…</p><p class='meta'>转帖 2 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ClementDelangue/status/2121585740211466338" rel="noopener noreferrer">@ClementDelangue</a> · 2026-11-14T20:47:12+08:00</p><p>RT @sudoingX: llama.cpp v1 is up now after 10,000+ builds and to me it&#x27;s the most important repo in local ai if you&#x27;re getting started
+
+thi…</p><p class='meta'>转帖 8 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ClementDelangue/status/2121567612064747696" rel="noopener noreferrer">@ClementDelangue</a> · 2026-11-14T19:35:10+08:00</p><p>RT @bingxu_: Open-source AI is like the Second Amendment. It protects everyone&#x27;s last line of defense in the AGI era.
+
+Don&#x27;t be fooled by c…</p><p class='meta'>转帖 51 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/swyx/status/2121472881708380478" rel="noopener noreferrer">@swyx</a> · 2026-11-14T13:18:44+08:00</p><p>RT @0xmaz_: Pretty cool in San Francisco you can watch @swyx perform musical theater for a cool 34 bucks !!! Link to tickets below https://…</p><p class='meta'>转帖 1 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/swyx/status/2121468902437974225" rel="noopener noreferrer">@swyx</a> · 2026-11-14T13:02:55+08:00</p><p>RT @vadiamit: what a week at @aiDotEngineer. thanks to @swyx, @Beccalytics and team for putting so many world class builders in one room an…</p><p class='meta'>转帖 2 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/swyx/status/2121412447827534079" rel="noopener noreferrer">@swyx</a> · 2026-11-14T09:18:36+08:00</p><p>RT @JuanPa: Yesterday, @esthor let an agent fully organize a meetup in our office and it out did itself with great food, people invitations…</p><p class='meta'>转帖 2 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/swyx/status/2121380239720980638" rel="noopener noreferrer">@swyx</a> · 2026-11-14T07:10:37+08:00</p><p>RT @nafisazizir: some from today https://t.co/d8EWd9Kaqf</p><p class='meta'>转帖 2 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/swyx/status/2121379878813766106" rel="noopener noreferrer">@swyx</a> · 2026-11-14T07:09:11+08:00</p><p>RT @grinich: WorkOS just hit $100M ARR 🚀 
+
+Thank you to our customers, investors, and our extraordinary team.
+
+We started WorkOS to make so…</p><p class='meta'>转帖 30 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/demishassabis/status/2121359939780194359" rel="noopener noreferrer">@demishassabis</a> · 2026-11-14T05:49:57+08:00</p><p>RT @sundarpichai: What we shipped this week @google 
+
+Monday: Two new 8th-gen TPUs
+Tuesday: Gemini 4 Carbon
+- AlphaProof Code verified Sign…</p><p class='meta'>转帖 641 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/bentossell/status/2121353042088141187" rel="noopener noreferrer">@bentossell</a> · 2026-11-14T05:22:32+08:00</p><p>what have you done today?
+
+mine was productive, i made this https://t.co/z5Jub0nxLH</p><p class='meta'>转帖 3 · 引用 0 · 赞 119</p></article></div></div>
+  <div id="x-media" data-x-panel hidden><div class="items"><article class="item-card x-card"><p class="handle"><a href="https://x.com/verge/status/2121619798102778172" rel="noopener noreferrer">@verge</a> · 2026-11-14T23:02:32+08:00</p><p>CSET’s Helen Toner says ‘we’re screwed’ if our AI safety plan rests on any one person being trusted to get this right. https://t.co/TzSmuff2JY</p><p class='meta'>转帖 1 · 引用 4 · 赞 24</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/verge/status/2121390592001491239" rel="noopener noreferrer">@verge</a> · 2026-11-14T07:51:45+08:00</p><p>Listing the details of everything for sale everywhere is meant to make Amazon more useful than Reddit for people and AI agents. https://t.co/Tp2d6vf49h</p><p class='meta'>转帖 0 · 引用 3 · 赞 33</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/TechCrunch/status/2121378348190372197" rel="noopener noreferrer">@TechCrunch</a> · 2026-11-14T07:03:06+08:00</p><p>The latest model is lighter and thinner than its predecessor and features an edge-to-edge display. But if you already own the first-generation Colorsoft, there’s little reason to upgrade.
+https://t.co/p04PJkHPpF</p><p class='meta'>转帖 1 · 引用 2 · 赞 16</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/TechCrunch/status/2121373320469782869" rel="noopener noreferrer">@TechCrunch</a> · 2026-11-14T06:43:07+08:00</p><p>Nvidia poured tens of billions into AI startups under Huang. Without him at the helm, founders and VCs are bracing for smaller checks and lower valuations.
+https://t.co/0UjkagvEsP</p><p class='meta'>转帖 45 · 引用 9 · 赞 212</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/tldrnewsletter/status/2121351372818063844" rel="noopener noreferrer">@tldrnewsletter</a> · 2026-11-14T05:15:54+08:00</p><p>Microsoft blamed a network capacity upgrade issue for its global Outlook, Teams and Copilot outage, saying it was unrelated to cybersecurity or AI.</p><p class='meta'>转帖 0 · 引用 0 · 赞 5</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/verge/status/2121344084795388219" rel="noopener noreferrer">@verge</a> · 2026-11-14T04:46:57+08:00</p><p>OpenAI says ChatGPT Wallet won’t share your actual credit card info with its AI agents. https://t.co/vzavBcG8kh</p><p class='meta'>转帖 3 · 引用 1 · 赞 36</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/SemiAnalysis_/status/2121636060715192685" rel="noopener noreferrer">@SemiAnalysis_</a> · 2026-11-15T00:07:09+08:00</p><p>https://t.co/FDfRFeDh9G https://t.co/rP4BwFTuqN</p><p class='meta'>转帖 10 · 引用 0 · 赞 135</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/jiqizhixin/status/2121610101446308210" rel="noopener noreferrer">@jiqizhixin</a> · 2026-11-14T22:24:00+08:00</p><p>Why does making a diffusion model follow rewards sometimes destabilize training?
+
+Researchers from the National University of Singapore, Kling AI and HKUST introduce DiffusionART, an arXiv preprint on more efficient reinforcement learning for image and video generators.
+
+The https://t.co/yo7uwWuDIT</p><p class='meta'>转帖 0 · 引用 0 · 赞 3</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121595922090230033" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T21:27:39+08:00</p><p>Decider v1.3 and Decider Flash v1.3 from Perplexity score 70 and 64, respectively, on the Artificial Analysis Decision Index v2.1
+
+@perplexity_ai has released Decider v1.3 and Decider Flash v1.3, updating their v1.2 flagship decision models. Compared to v1.2, Decider v1.3 https://t.co/bdS52TZdKg</p><p class='meta'>转帖 3 · 引用 6 · 赞 58</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/jiqizhixin/status/2121538262808605128" rel="noopener noreferrer">@jiqizhixin</a> · 2026-11-14T17:38:32+08:00</p><p>RT @tianyi: DeepSeek 产品背后的各项核心能力均已通过 API 开放。我们期待在产品功能的实现门槛进一步降低之后，能够从社区中生长出更多样、更极致、更具想象力的产品！</p><p class='meta'>转帖 47 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/jiqizhixin/status/2121528583751446575" rel="noopener noreferrer">@jiqizhixin</a> · 2026-11-14T17:00:05+08:00</p><p>A retrospective analysis of 55,984 clinical trials links drug-target cell-type specificity with clinical progression and adverse-event rates in the Virtual Biotech study.
+
+The Stanford-led work, published in Science, organizes specialized AI scientists around a virtual Chief https://t.co/LJE56rN3KY</p><p class='meta'>转帖 0 · 引用 0 · 赞 3</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/latentspacepod/status/2121512960959123623" rel="noopener noreferrer">@latentspacepod</a> · 2026-11-14T15:58:00+08:00</p><p>RT @brian1zhou: I&#x27;m excited to launch Benchmark Almanac! It tracks 3,322 benchmarks from 1,746 leaderboards, 522 launch posts, 346 system c…</p><p class='meta'>转帖 16 · 引用 0 · 赞 0</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/SemiAnalysis_/status/2121462524281282700" rel="noopener noreferrer">@SemiAnalysis_</a> · 2026-11-14T12:37:35+08:00</p><p>“Jensen has been incredibly good at retaining talent. There are very few high-profile departures from the NVIDIA executive team.”
+“This is probably when the sharks are in the water. The VCs are going to come in and offer people billions of dollars to start their own chip https://t.co/fYNj3kf4PN</p><p class='meta'>转帖 177 · 引用 10 · 赞 1385</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/jiqizhixin/status/2121447026663510062" rel="noopener noreferrer">@jiqizhixin</a> · 2026-11-14T11:36:00+08:00</p><p>A hybrid Codex–InternVLA-A1.5 system reaches a 48.5 task-level average and 15.4 open-scenario score in RobotAgentBench’s reported comparison.
+
+The preprint, from Aether AI, UC San Diego and UC Davis researchers, evaluates more than executing explicit manipulation instructions. https://t.co/kFwoxyDnr9</p><p class='meta'>转帖 0 · 引用 0 · 赞 9</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/lmsysorg/status/2121425685772443898" rel="noopener noreferrer">@lmsysorg</a> · 2026-11-14T10:11:12+08:00</p><p>It was so good to meet everybody and share these lovely memories with the entire community! See you next year! https://t.co/ALwSmmDkXJ</p><p class='meta'>转帖 1 · 引用 0 · 赞 12</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/SemiAnalysis_/status/2121401747734208740" rel="noopener noreferrer">@SemiAnalysis_</a> · 2026-11-14T08:36:05+08:00</p><p>Stargate Abilene is impressive. Colossus 2 is adding nearly two of them in under a year. SpaceX&#x27;s campus on the Memphis/Mississippi line goes from 0.4GW of IT in January to 2.4GW by YE2026, across Macrohard, MiniHard, Macroharder, Project SPAM and Gun Range. (1/5)🧵 https://t.co/yG7k6DQ5vH</p><p class='meta'>转帖 62 · 引用 14 · 赞 699</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121396191024071088" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T08:14:00+08:00</p><p>Subquadratic’s SubQ Snap 1.2 gains 5 points over SubQ Snap 1.1 on the Artificial Analysis Decision Index v2.1, and is tied with Drex Max v1.1 and GLiDE v1.2 as the leading decision model
+
+SubQ Snap 1.2 is the latest decision model from @subquadratic. Pricing is unchanged at $0.04 https://t.co/myomTBQBVl</p><p class='meta'>转帖 5 · 引用 2 · 赞 82</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121393821955334328" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T08:04:35+08:00</p><p>Announcing Artificial Analysis Coding Agent Index v2.1, upgrading FrontierCode and Terminal-Bench. Claude Fable 5.2 and Claude Opus 5.5 share the lead at 58
+
+The Coding Agent Index measures models in agent harnesses; v2.1 of the Index upgrades FrontierCode from 1.1 to 2.0 and https://t.co/AoZHKsyB6A</p><p class='meta'>转帖 41 · 引用 59 · 赞 862</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/jiqizhixin/status/2121365489402454139" rel="noopener noreferrer">@jiqizhixin</a> · 2026-11-14T06:12:00+08:00</p><p>A failed edit can carry useful evidence for the next attempt.
+
+Mara Chain, from Ant Group and collaborators, studies AI system optimization through mutable prompts, skills, harnesses and code. The underlying model weights remain fixed.
+
+1. Rather than discarding every candidate https://t.co/P44ieOuy7i</p><p class='meta'>转帖 1 · 引用 0 · 赞 3</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121356612011196739" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T05:36:43+08:00</p><p>Speechify&#x27;s Simba 3.5 takes #1 in the Artificial Analysis Controlled Voice Arena, statistically level with HeyGen Voice
+
+➤ Controlled Voice: #1, statistically level with HeyGen Voice, ahead of Qwen-Audio-3.1-TTS-Plus at 1176.
+
+➤ Provider Voice: #5, level with Cartesia&#x27;s Sonic https://t.co/dEqKOq7GVI</p><p class='meta'>转帖 7 · 引用 6 · 赞 65</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/SemiAnalysis_/status/2121352036239213021" rel="noopener noreferrer">@SemiAnalysis_</a> · 2026-11-14T05:18:32+08:00</p><p>Chips are under scrutiny. Data sales to China aren’t, yet.
+
+“A lot of the data companies sell tons of data to China. It’s a really funny way to distill. Their pipelines run on frontier models, so if you’re building environments with those models and selling them to China, in some https://t.co/35qEyZORzJ</p><p class='meta'>转帖 21 · 引用 2 · 赞 226</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121351856005984583" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T05:17:49+08:00</p><p>Announcing the Artificial Analysis Diarization Index, our new benchmark for who said what in speech to text
+
+The Diarization Index scores APIs on Word Diarization Error Rate (WDER): the share of words given to the wrong speaker or to no speaker, across 97 conversations of two to https://t.co/3odJNKaOUz</p><p class='meta'>转帖 12 · 引用 5 · 赞 364</p></article><article class="item-card x-card"><p class="handle"><a href="https://x.com/ArtificialAnlys/status/2121339732026445859" rel="noopener noreferrer">@ArtificialAnlys</a> · 2026-11-14T04:29:39+08:00</p><p>MiniMax H3-Image is the new #1 open weights image model on both AA-Image-Editing v2.1 and AA-Image-T2I v2.1
+
+Overall, H3-Image ranks #13 in Image Editing and #25 in Text to Image. H3-Image Highspeed, a faster version on MiniMax&#x27;s API only, ranks #14 and #24.
+
+Congratulations to https://t.co/VuxPgkQbIw</p><p class='meta'>转帖 12 · 引用 11 · 赞 360</p></article></div></div>
+</section>
+
 <h2>周报</h2>
 <ul class='index-list'>
 <li><a href="weekly/2026-W46/index.html">2026-W46</a> （1 天）</li>
 </ul>
-  </main>
-  <footer class="footer">
-    <p>按北京时间工作日窗口整理。原始抓取数据不在本站点发布。</p>
-  </footer>
+  </div></main>
+  <footer class="footer"><div class="footer-inner">
+    <p>按北京时间工作日窗口整理。原始抓取数据与个人项目细节不在本站点发布。</p>
+  </div></footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
