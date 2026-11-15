@@ -934,3 +934,28 @@ html:not(.js) .nav-group:focus-within .nav-menu { display: grid; gap: 2px; }
 @media (max-width: 640px) {
   .cr { grid-template-columns: 3rem 1.4rem minmax(0, 1fr) auto; } .cr-src { display: none; }
 }
+
+/* ===== indicator detail pages ===== */
+.ind-cmp { margin: .15rem 0 0; font-size: .76rem; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+.ind-cmp .tag { font-size: .66rem; }
+.ind-name a { color: inherit; } .ind-name a:hover { color: var(--accent); }
+.crumbs { font-size: .8rem; color: var(--muted); margin: 0 0 .4rem; }
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .6rem; margin: 0 0 1rem; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .7rem .9rem; }
+.kpi span { display: block; font-size: .76rem; color: var(--muted); }
+.kpi b { font: 600 1.4rem/1.25 var(--serif); }
+.kpi small { margin-left: .3rem; color: var(--muted); }
+.chart-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
+.chart-bar .tabs { margin: 0; }
+.chart-bar button { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: .25rem .7rem; font: inherit; font-size: .8rem; cursor: pointer; }
+.chart-bar button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+.ind-chart { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: .4rem; min-height: 300px; }
+.ind-chart svg { display: block; }
+.ind-chart .grid line { stroke: var(--line); stroke-width: 1; }
+.ind-chart .grid line.vx { stroke-dasharray: 2 4; opacity: .6; }
+.ind-chart .grid text, .ind-chart .ht { fill: var(--muted); font-size: 11px; font-family: var(--mono); }
+.ind-chart .ht { fill: var(--ink); font-size: 12px; }
+.ind-chart .line { fill: none; stroke: var(--accent); stroke-width: 1.8; vector-effect: non-scaling-stroke; }
+.ind-chart .zero { stroke: var(--line-2); stroke-width: 1.2; }
+.ind-chart .hx { stroke: var(--line-2); } .ind-chart circle { fill: var(--accent); }
+.ind-notes { font-size: .84rem; color: var(--ink-2); }

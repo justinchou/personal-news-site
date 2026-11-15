@@ -246,6 +246,62 @@
     apply();
   }
 
+  // indicator detail chart: range (1Y/5Y/10Y/全部) × series toggle, plain SVG
+  document.querySelectorAll("[data-ind-chart]").forEach((wrap) => {
+    const box = wrap.querySelector("[data-chart-canvas]");
+    let data;
+    try { data = JSON.parse(wrap.querySelector("[data-chart-data]").textContent); } catch (e) { return; }
+    const state = { range: "5", series: "headline" };
+    const toDate = (s) => { if (/^\d{4}$/.test(s)) return new Date(+s, 11, 31); const q = s.match(/^(\d{4})-Q(\d)$/); if (q) return new Date(+q[1], q[2] * 3 - 3, 1); return new Date(s.length === 7 ? s + "-01" : s); };
+    const fmt = (v) => Math.abs(v) >= 1000 ? v.toLocaleString("en-US", { maximumFractionDigits: 0 }) : Math.abs(v) >= 100 ? v.toFixed(1) : v.toFixed(2);
+    const draw = () => {
+      const all = (data.series[state.series] || []).map(([d, v]) => [toDate(d), v, d]);
+      if (!all.length) { box.innerHTML = "<p class='note'>暂无数据</p>"; return; }
+      const end = all[all.length - 1][0];
+      const pts = state.range === "max" ? all : all.filter((p) => p[0] >= new Date(end.getFullYear() - +state.range, end.getMonth(), end.getDate()));
+      const W = box.clientWidth || 800, H = 300, L = 54, R = 14, T = 14, B = 28;
+      let lo = Math.min(...pts.map((p) => p[1])), hi = Math.max(...pts.map((p) => p[1]));
+      if (lo === hi) { lo -= 1; hi += 1; }
+      const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
+      const t0 = pts[0][0].getTime(), t1 = Math.max(pts[pts.length - 1][0].getTime(), t0 + 1);
+      const x = (t) => L + (t - t0) / (t1 - t0) * (W - L - R);
+      const y = (v) => T + (hi - v) / (hi - lo) * (H - T - B);
+      const path = pts.map((p, i) => (i ? "L" : "M") + x(p[0].getTime()).toFixed(1) + "," + y(p[1]).toFixed(1)).join("");
+      let grid = "";
+      for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; grid += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
+      const y0 = pts[0][0].getFullYear(), y1 = pts[pts.length - 1][0].getFullYear();
+      const stepY = Math.max(1, Math.ceil((y1 - y0 + 1) / 8));
+      let xl = "";
+      if (y1 - y0 >= 1) { for (let yr = y0 + 1; yr <= y1; yr += stepY) { const t = new Date(yr, 0, 1).getTime(); if (t >= t0) xl += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${yr}</text><line class="vx" x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H - B}"/>`; } }
+      else { xl = `<text x="${L}" y="${H - 8}">${pts[0][2]}</text><text x="${W - R}" y="${H - 8}" text-anchor="end">${pts[pts.length - 1][2]}</text>`; }
+      const zero = lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
+      const unit = (data.units || {})[state.series] || "";
+      box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}"><g class="grid">${grid}${xl}</g>${zero}<path class="line" d="${path}"/><g class="hover" visibility="hidden"><line class="hx" y1="${T}" y2="${H - B}"/><circle r="4"/><text class="ht" y="${T + 12}"></text></g><rect class="hit" x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/></svg>`;
+      const svg = box.querySelector("svg"), hov = svg.querySelector(".hover"), hit = svg.querySelector(".hit");
+      const move = (ev) => {
+        const r = svg.getBoundingClientRect(); const px = (ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left;
+        const t = t0 + (px * W / r.width - L) / (W - L - R) * (t1 - t0);
+        let best = 0; pts.forEach((p, i) => { if (Math.abs(p[0] - t) < Math.abs(pts[best][0] - t)) best = i; });
+        const p = pts[best], cx = x(p[0].getTime()), cy = y(p[1]);
+        hov.setAttribute("visibility", "visible");
+        hov.querySelector("line").setAttribute("x1", cx); hov.querySelector("line").setAttribute("x2", cx);
+        hov.querySelector("circle").setAttribute("cx", cx); hov.querySelector("circle").setAttribute("cy", cy);
+        const tx = hov.querySelector("text"); tx.textContent = `${p[2]}  ${fmt(p[1])} ${unit}`;
+        tx.setAttribute("x", cx > W / 2 ? cx - 8 : cx + 8); tx.setAttribute("text-anchor", cx > W / 2 ? "end" : "start");
+      };
+      hit.addEventListener("mousemove", move); hit.addEventListener("touchmove", move, { passive: true });
+      hit.addEventListener("mouseleave", () => hov.setAttribute("visibility", "hidden"));
+    };
+    wrap.querySelectorAll("[data-range]").forEach((b) => b.addEventListener("click", () => {
+      state.range = b.dataset.range; wrap.querySelectorAll("[data-range]").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false")); draw();
+    }));
+    wrap.querySelectorAll("[data-series]").forEach((b) => b.addEventListener("click", () => {
+      state.series = b.dataset.series; wrap.querySelectorAll("[data-series]").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false")); draw();
+    }));
+    draw();
+    let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
+  });
+
   // daily TOC scroll-spy
   const toc = document.querySelector(".toc");
   if (toc && "IntersectionObserver" in window) {
