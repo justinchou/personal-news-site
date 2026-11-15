@@ -791,3 +791,4 @@ section h3 { margin-top: 1rem; }
   .ind-card.is-compact .ind-val b { font-size: 1.1rem; }
   .ind-card.is-compact .ind-name .tag { display: none; }
 }
+.tile-row.is-wide { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
