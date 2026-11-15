@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/ai", "destination": "/", "permanent": false },
+    { "source": "/ai/:path*", "destination": "/:path*", "permanent": false }
+  ]
 }
