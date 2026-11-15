@@ -10,6 +10,20 @@
     });
   });
 
+  // language toggle for scraped news (中文 / 原文)
+  const setLang = (mode) => {
+    root.setAttribute("data-lang-mode", mode);
+    document.querySelectorAll("[data-lang-set]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.langSet === mode ? "true" : "false"));
+  };
+  setLang(root.getAttribute("data-lang-mode") === "orig" ? "orig" : "zh");
+  document.querySelectorAll("[data-lang-set]").forEach((b) => b.addEventListener("click", () => {
+    setLang(b.dataset.langSet);
+    try { localStorage.setItem("pn-lang", b.dataset.langSet); } catch (e) {}
+  }));
+
+  // date picker navigation (change tracker history)
+  document.querySelectorAll("[data-nav-select]").forEach((sel) => sel.addEventListener("change", () => { if (sel.value) location.href = sel.value; }));
+
   // keep the active nav item visible on narrow screens
   document.querySelectorAll(".nav a.is-active, .subnav a.is-active").forEach((a) => {
     a.scrollIntoView({ block: "nearest", inline: "center" });
@@ -51,6 +65,7 @@
     const count = document.querySelector("[data-kw-count]");
     const empty = document.querySelector("[data-kw-empty]");
     const map = document.querySelector(".kw-map");
+    const heat = document.querySelector("#keyword-heat");
     let cat = "";
     const apply = () => {
       const q = kwQ.value.trim().toLowerCase();
@@ -63,6 +78,7 @@
       });
       secs.forEach((s) => { s.hidden = !s.querySelector("[data-kw]:not([hidden])"); });
       if (map) map.hidden = !!(q || cat);
+      if (heat) heat.hidden = !!(q || cat);
       if (empty) empty.hidden = n > 0;
       if (count) count.textContent = q || cat ? `匹配 ${n} 个` : `共 ${kws.length} 个术语`;
     };
