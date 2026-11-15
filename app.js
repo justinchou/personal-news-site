@@ -302,6 +302,65 @@
     let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
   });
 
+  // cross-economy comparison chart: one indicator, many economies
+  document.querySelectorAll("[data-cmp-chart]").forEach((wrap) => {
+    const box = wrap.querySelector("[data-chart-canvas]");
+    let data;
+    try { data = JSON.parse(wrap.querySelector("[data-chart-data]").textContent); } catch (e) { return; }
+    const COLORS = ["#5b9cff", "#ff6b6b", "#ffd166", "#06d6a0", "#c77dff", "#f78c40", "#4cc9f0", "#a3be8c", "#e5989b"];
+    wrap.querySelectorAll(".cmp-key i").forEach((i) => { i.style.background = COLORS[+i.dataset.color % COLORS.length]; });
+    const st = { ind: data.indicators[0].id, range: "20", off: new Set() };
+    const toDate = (s) => (/^\d{4}$/.test(s) ? new Date(+s, 6, 1) : new Date(s.length === 7 ? s + "-01" : s));
+    const fmt = (v) => Math.abs(v) >= 1000 ? v.toLocaleString("en-US", { maximumFractionDigits: 0 }) : v.toFixed(2);
+    const draw = () => {
+      const ind = data.indicators.find((x) => x.id === st.ind);
+      const lines = [];
+      data.economies.forEach((e, n) => {
+        if (st.off.has(e.id)) return;
+        const s = (ind.series[e.id] || []).map(([d, v]) => [toDate(d), v, d]);
+        if (s.length) lines.push({ e, n, s });
+      });
+      if (!lines.length) { box.innerHTML = "<p class='note'>所选经济体没有该指标的数据</p>"; return; }
+      const end = new Date(Math.max(...lines.map((l) => l.s[l.s.length - 1][0].getTime())));
+      const from = st.range === "max" ? null : new Date(end.getFullYear() - +st.range, end.getMonth(), 1);
+      lines.forEach((l) => { l.p = from ? l.s.filter((x) => x[0] >= from) : l.s; });
+      const all = lines.flatMap((l) => l.p);
+      if (!all.length) { box.innerHTML = "<p class='note'>该时间范围内没有数据</p>"; return; }
+      const W = box.clientWidth || 800, H = 340, L = 56, R = 14, T = 14, B = 28;
+      let lo = Math.min(...all.map((p) => p[1])), hi = Math.max(...all.map((p) => p[1]));
+      if (lo === hi) { lo -= 1; hi += 1; }
+      const pad = (hi - lo) * 0.05; lo -= pad; hi += pad;
+      const t0 = Math.min(...all.map((p) => p[0].getTime())), t1 = Math.max(t0 + 1, ...all.map((p) => p[0].getTime()));
+      const x = (t) => L + (t - t0) / (t1 - t0) * (W - L - R), y = (v) => T + (hi - v) / (hi - lo) * (H - T - B);
+      let g = "";
+      for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; g += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
+      const y0 = new Date(t0).getFullYear(), y1 = new Date(t1).getFullYear(), step = Math.max(1, Math.ceil((y1 - y0 + 1) / 8));
+      for (let yr = y0 + 1; yr <= y1; yr += step) { const t = new Date(yr, 0, 1).getTime(); g += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${yr}</text><line class="vx" x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H - B}"/>`; }
+      const zero = lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
+      const paths = lines.map((l) => `<path fill="none" stroke-width="1.8" stroke="${COLORS[l.n % COLORS.length]}" d="${l.p.map((p, i) => (i ? "L" : "M") + x(p[0].getTime()).toFixed(1) + "," + y(p[1]).toFixed(1)).join("")}"/>`).join("");
+      box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}"><g class="grid">${g}</g>${zero}${paths}<g class="hover" visibility="hidden"><line class="hx" y1="${T}" y2="${H - B}"/><text class="ht" y="${T + 12}"></text></g><rect class="hit" x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/></svg>`;
+      const svg = box.querySelector("svg"), hov = svg.querySelector(".hover"), hit = svg.querySelector(".hit");
+      hit.addEventListener("mousemove", (ev) => {
+        const r = svg.getBoundingClientRect(), t = t0 + ((ev.clientX - r.left) * W / r.width - L) / (W - L - R) * (t1 - t0);
+        const bits = lines.map((l) => { let b = l.p[0]; l.p.forEach((p) => { if (Math.abs(p[0] - t) < Math.abs(b[0] - t)) b = p; }); return [l.e.zh, b]; });
+        const cx = x(t); hov.setAttribute("visibility", "visible");
+        hov.querySelector("line").setAttribute("x1", cx); hov.querySelector("line").setAttribute("x2", cx);
+        const tx = hov.querySelector("text"); tx.textContent = bits.map(([n, b]) => `${n} ${fmt(b[1])} (${b[2]})`).join(" · ");
+        tx.setAttribute("x", L + 4); tx.setAttribute("text-anchor", "start");
+      });
+      hit.addEventListener("mouseleave", () => hov.setAttribute("visibility", "hidden"));
+    };
+    wrap.querySelectorAll("[data-cmp-ind]").forEach((b) => b.addEventListener("click", () => {
+      st.ind = b.dataset.cmpInd; wrap.querySelectorAll("[data-cmp-ind]").forEach((z) => z.setAttribute("aria-pressed", z === b ? "true" : "false")); draw();
+    }));
+    wrap.querySelectorAll("[data-range]").forEach((b) => b.addEventListener("click", () => {
+      st.range = b.dataset.range; wrap.querySelectorAll("[data-range]").forEach((z) => z.setAttribute("aria-pressed", z === b ? "true" : "false")); draw();
+    }));
+    wrap.querySelectorAll("[data-cmp-econ]").forEach((c) => c.addEventListener("change", () => { c.checked ? st.off.delete(c.dataset.cmpEcon) : st.off.add(c.dataset.cmpEcon); draw(); }));
+    draw();
+    let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
+  });
+
   // daily TOC scroll-spy
   const toc = document.querySelector(".toc");
   if (toc && "IntersectionObserver" in window) {

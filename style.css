@@ -964,3 +964,8 @@ html:not(.js) .nav-group:focus-within .nav-menu { display: grid; gap: 2px; }
 .cr-val a { color: var(--accent); }
 .cr-val b { color: var(--ink); }
 .cr-vals .tag { font-size: .66rem; opacity: .8; }
+
+.cmp-legend { display: flex; flex-wrap: wrap; gap: .3rem .8rem; margin: .2rem 0 .5rem; font-size: .8rem; color: var(--ink-2); }
+.cmp-key { display: inline-flex; align-items: center; gap: .3rem; cursor: pointer; }
+.cmp-key i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.cmp-inds { flex-wrap: wrap; }
