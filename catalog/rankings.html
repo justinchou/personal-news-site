@@ -5,62 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>排行榜 · 个人 AI 情报</title>
   <meta name="description" content="按工作日整理的 AI 行业简报与知识库">
+  <script>try{var t=localStorage.getItem("pn-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-section="catalog">
   <header class="header">
     <div class="header-inner">
-      <p class="brand"><a href="../index.html">个人 AI 情报</a><small>按工作日整理的行业简报</small></p>
-      <nav class="nav"><a href="../index.html">首页</a> <a href="../archive.html">归档</a> <a href="../monthly/index.html">月报</a> <a href="../changes/index.html">变化追踪</a> <a href="../sources.html">来源</a> <a href="products.html">产品地图</a> <a href="rankings.html">排行榜</a> <a href="keywords.html">关键词</a> <a href="gateways.html">聚合与网关</a> <a href="coding.html">编程与 Agent</a> <a href="knowledge.html">知识库分类</a></nav>
-      <button type="button" class="icon-btn" data-theme-toggle>浅色 / 深色</button>
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">AI</span><span><b>个人 AI 情报</b><small>按工作日整理的行业简报</small></span></a>
+      <nav class="nav" aria-label="主导航"><a href="../index.html">今日</a><a href="../archive.html">日报归档</a><a href="../monthly/index.html">月报</a><a href="../changes/index.html">变化追踪</a><a href="../sources.html">信息源</a><a href="products.html" class="is-active" aria-current="page">资料库</a></nav>
+      <button type="button" class="icon-btn" data-theme-toggle aria-label="切换浅色 / 深色">◐</button>
     </div>
+    <nav class="subnav" aria-label="资料库"><span class="subnav-label">资料库</span><a href="products.html">产品地图</a><a href="rankings.html" class="is-active" aria-current="page">排行榜</a><a href="keywords.html">关键词</a><a href="gateways.html">聚合与网关</a><a href="coding.html">编程与 Agent</a><a href="knowledge.html">知识库分类</a></nav>
   </header>
   <main class="main"><div class="wrap">
-<h1>模型评测与排行榜</h1>
-<p class="lede">官网链接在原对话表格中为空，记为未知。综合评分框架是对话中的建议版，并非官方统一标准；各维度权重未给出。</p>
-<h2>全球最值得关注的排行榜</h2>
-<div class="product-grid">
-<article class="product-card"><h3>Arena（原 Chatbot Arena / LMSYS）</h3><p class="meta">人工盲测参考</p><p>用户同时向两个匿名模型提问，比较两个模型的回答，再由用户投票决定哪个更好。</p><p class="note">优点：不完全依赖模型厂商自己公布的测试成绩。；缺点：用户群体、问题类型和语言都会影响结果；回答更受欢迎，不一定代表事实准确率更高。</p></article>
-<article class="product-card"><h3>Artificial Analysis</h3><p class="meta">综合能力与性价比</p><p>多项基准测试组合评分，同时测量模型实际推理服务的性能。</p><p class="note">优点：能同时比较能力、速度和价格，非常适合企业选型和商业分析。；缺点：综合指数的权重和测试集由平台定义，不等于所有业务场景的表现。</p></article>
-<article class="product-card"><h3>LiveBench</h3><p class="meta">客观任务测试</p><p>使用可验证答案的客观测试题，并定期更新测试数据，降低训练数据污染的风险。</p><p class="note">优点：更重视可验证的任务结果，而不是单纯让另一个 AI 判断答案好不好。；缺点：unknown</p></article>
-<article class="product-card"><h3>Hugging Face Open LLM Leaderboard</h3><p class="meta">开放模型评测</p><p>通过标准化学术测试集，对模型进行统一评估。</p><p class="note">优点：适合研究开源模型、模型权重、微调和部署。；缺点：Open LLM Leaderboard 是 Hugging Face 的特定项目，不应将其视为所有闭源和开源模型的统一总榜。</p></article>
-<article class="product-card"><h3>Stanford HELM</h3><p class="meta">unknown</p><p>unknown</p><p class="note">优点：学术研究和透明度较强，支持查看具体测试场景。；缺点：unknown</p></article>
-</div>
-<h2>主流 Benchmark</h2>
-<div class="change-row"><div><strong>MMLU-Pro</strong> · 多学科知识和推理 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>GPQA Diamond</strong> · 高难度科学推理 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>AIME</strong> · 数学竞赛能力 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>SWE-bench Verified</strong> · 软件工程任务 · 很高</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>LiveBench</strong> · 多领域客观测试 · 很高</div><div class="bar"><i style="width:100.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>HumanEval</strong> · Python 编程 · 中</div><div class="bar"><i style="width:45.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>GSM8K</strong> · 数学文字题 · 中</div><div class="bar"><i style="width:45.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>IFEval</strong> · 指令遵循能力 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>HLE</strong> · 高难度专家级知识问题 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<div class="change-row"><div><strong>MTEB</strong> · Embedding 和检索能力 · 高</div><div class="bar"><i style="width:70.0%"></i></div><div></div></div>
-<h2>分领域评测</h2><div class='table-wrap'><table class='table'><thead><tr><th>领域</th><th>平台</th><th>指标</th></tr></thead><tbody>
-<tr><td>编程能力</td><td>SWE-bench</td><td>真实 GitHub Issue 解决率</td></tr>
-<tr><td>代码编辑</td><td>Aider</td><td>代码修改正确率、成本</td></tr>
-<tr><td>数学推理</td><td><span class="unknown">未知</span></td><td>数学题正确率</td></tr>
-<tr><td>综合知识</td><td><span class="unknown">未知</span></td><td>多学科测试成绩</td></tr>
-<tr><td>科学推理</td><td><span class="unknown">未知</span></td><td>GPQA、科学问题正确率</td></tr>
-<tr><td>向量检索</td><td>MTEB</td><td>检索准确率、召回率</td></tr>
-<tr><td>AI 图像生成</td><td><span class="unknown">未知</span></td><td>人类偏好、图像质量</td></tr>
-<tr><td>AI 视频生成</td><td><span class="unknown">未知</span></td><td>视频生成质量、人类偏好</td></tr>
-<tr><td>AI 语音</td><td><span class="unknown">未知</span></td><td>识别错误率、语音质量</td></tr>
-</tbody></table></div>
-<p class='note'>原表「公开评测平台」列在分享正文中为空。SWE-bench、Aider、MTEB 根据紧随其后的说明对应填入，其余为未知。</p>
-<h2>全球 AI 模型综合评分框架（建议版）</h2><p>可自行采用的评分设计，并非任何官方机构发布的统一标准。总分建议为 100 分。各维度权重未在对话中给出。</p>
-<ul><li><strong>能力分（Capability Score）</strong>：模型能做什么。</li><li><strong>商业分（Business Score）</strong>：使用它要花多少钱，速度如何。</li><li><strong>实用分（Practical Score）</strong>：真实任务中是否稳定、可靠。</li></ul>
-<h2>推荐关注组合</h2><ul>
-<li>优先级 1 · Arena：用户实际偏好排名</li>
-<li>优先级 2 · Artificial Analysis：综合能力、速度、成本</li>
-<li>优先级 3 · LiveBench：客观能力测试</li>
-<li>优先级 4 · SWE-bench：编程与 Agent 能力</li>
-<li>优先级 5 · Hugging Face：开源模型排名</li>
-</ul>
+<header class="page-hero"><div><p class="kicker">资料库 · 评测</p><h1>模型评测与排行榜</h1><p class="lede">综合评分框架是对话中的建议版，并非官方统一标准；各维度权重未给出。</p></div></header>
+<section class="section"><div class="section-head"><h2>最值得关注的排行榜</h2></div><div class="plat-grid"><article class="plat-card is-lead"><div class="p-head"><h3>Arena（原 Chatbot Arena / LMSYS）</h3></div><p class="meta">人工盲测参考</p><p>用户同时向两个匿名模型提问，比较两个模型的回答，再由用户投票决定哪个更好。</p><div class="pc"><p class="pro"><b>优</b>不完全依赖模型厂商自己公布的测试成绩。</p><p class="con"><b>缺</b>用户群体、问题类型和语言都会影响结果；回答更受欢迎，不一定代表事实准确率更高。</p></div></article><article class="plat-card"><div class="p-head"><h3>Artificial Analysis</h3></div><p class="meta">综合能力与性价比</p><p>多项基准测试组合评分，同时测量模型实际推理服务的性能。</p><div class="pc"><p class="pro"><b>优</b>能同时比较能力、速度和价格，非常适合企业选型和商业分析。</p><p class="con"><b>缺</b>综合指数的权重和测试集由平台定义，不等于所有业务场景的表现。</p></div></article><article class="plat-card"><div class="p-head"><h3>LiveBench</h3></div><p class="meta">客观任务测试</p><p>使用可验证答案的客观测试题，并定期更新测试数据，降低训练数据污染的风险。</p><div class="pc"><p class="pro"><b>优</b>更重视可验证的任务结果，而不是单纯让另一个 AI 判断答案好不好。</p></div></article><article class="plat-card"><div class="p-head"><h3>Hugging Face Open LLM Leaderboard</h3></div><p class="meta">开放模型评测</p><p>通过标准化学术测试集，对模型进行统一评估。</p><div class="pc"><p class="pro"><b>优</b>适合研究开源模型、模型权重、微调和部署。</p><p class="con"><b>缺</b>Open LLM Leaderboard 是 Hugging Face 的特定项目，不应将其视为所有闭源和开源模型的统一总榜。</p></div></article><article class="plat-card"><div class="p-head"><h3>Stanford HELM</h3></div><div class="pc"><p class="pro"><b>优</b>学术研究和透明度较强，支持查看具体测试场景。</p></div></article></div></section>
+<section class="section"><div class="section-head"><h2>主流 Benchmark</h2><span class="meta">条长 = 关注重要性</span></div><ol class="rank-list plain"><li><div class="rk-main"><div class="rk-name"><b>MMLU-Pro</b> <span class="meta">多学科知识和推理</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li><li><div class="rk-main"><div class="rk-name"><b>GPQA Diamond</b> <span class="meta">高难度科学推理</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li><li><div class="rk-main"><div class="rk-name"><b>AIME</b> <span class="meta">数学竞赛能力</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li><li><div class="rk-main"><div class="rk-name"><b>SWE-bench Verified</b> <span class="meta">软件工程任务</span></div><div class="bar"><i style="width:100%"></i></div></div><span class="tag">很高</span></li><li><div class="rk-main"><div class="rk-name"><b>LiveBench</b> <span class="meta">多领域客观测试</span></div><div class="bar"><i style="width:100%"></i></div></div><span class="tag">很高</span></li><li><div class="rk-main"><div class="rk-name"><b>HumanEval</b> <span class="meta">Python 编程</span></div><div class="bar"><i style="width:45%"></i></div></div><span class="tag">中</span></li><li><div class="rk-main"><div class="rk-name"><b>GSM8K</b> <span class="meta">数学文字题</span></div><div class="bar"><i style="width:45%"></i></div></div><span class="tag">中</span></li><li><div class="rk-main"><div class="rk-name"><b>IFEval</b> <span class="meta">指令遵循能力</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li><li><div class="rk-main"><div class="rk-name"><b>HLE</b> <span class="meta">高难度专家级知识问题</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li><li><div class="rk-main"><div class="rk-name"><b>MTEB</b> <span class="meta">Embedding 和检索能力</span></div><div class="bar"><i style="width:70%"></i></div></div><span class="tag">高</span></li></ol><p class="note">MMLU、HumanEval 等传统测试集可能受到训练数据污染或测试集饱和的影响，不能单独作为模型排名依据。</p></section>
+<section class="section"><div class="section-head"><h2>分领域评测</h2></div><div class="mini-grid"><div class="mini-tile"><span class="meta">编程能力</span><b>SWE-bench</b><small>真实 GitHub Issue 解决率</small></div><div class="mini-tile"><span class="meta">代码编辑</span><b>Aider</b><small>代码修改正确率、成本</small></div><div class="mini-tile"><span class="meta">数学推理</span><small>数学题正确率</small></div><div class="mini-tile"><span class="meta">综合知识</span><small>多学科测试成绩</small></div><div class="mini-tile"><span class="meta">科学推理</span><small>GPQA、科学问题正确率</small></div><div class="mini-tile"><span class="meta">向量检索</span><b>MTEB</b><small>检索准确率、召回率</small></div><div class="mini-tile"><span class="meta">AI 图像生成</span><small>人类偏好、图像质量</small></div><div class="mini-tile"><span class="meta">AI 视频生成</span><small>视频生成质量、人类偏好</small></div><div class="mini-tile"><span class="meta">AI 语音</span><small>识别错误率、语音质量</small></div></div><p class='note'>原表「公开评测平台」列在分享正文中为空。</p></section>
+<section class="section"><div class="section-head"><h2>全球 AI 模型综合评分框架（建议版）</h2></div><p class="lede">可自行采用的评分设计，并非任何官方机构发布的统一标准。总分建议为 100 分。各维度权重未在对话中给出。</p><dl class="def-grid"><div><dt>能力分（Capability Score）</dt><dd>模型能做什么。</dd></div><div><dt>商业分（Business Score）</dt><dd>使用它要花多少钱，速度如何。</dd></div><div><dt>实用分（Practical Score）</dt><dd>真实任务中是否稳定、可靠。</dd></div></dl></section>
+<section class="section"><div class="section-head"><h2>推荐关注组合</h2></div><ol class="step-list"><li><span class="step-n">1</span><div><b>Arena</b><p class="meta">用户实际偏好排名</p></div></li><li><span class="step-n">2</span><div><b>Artificial Analysis</b><p class="meta">综合能力、速度、成本</p></div></li><li><span class="step-n">3</span><div><b>LiveBench</b><p class="meta">客观能力测试</p></div></li><li><span class="step-n">4</span><div><b>SWE-bench</b><p class="meta">编程与 Agent 能力</p></div></li><li><span class="step-n">5</span><div><b>Hugging Face</b><p class="meta">开源模型排名</p></div></li></ol></section>
   </div></main>
   <footer class="footer"><div class="footer-inner">
-    <p>按北京时间工作日窗口整理。原始抓取数据与个人项目细节不在本站点发布。</p>
+    <p>按北京时间工作日窗口（当日 04:00 至次日 04:00）整理。原始抓取数据与个人项目细节不在本站点发布。</p>
   </div></footer>
   <script src="../app.js" defer></script>
 </body>
