@@ -959,3 +959,8 @@ html:not(.js) .nav-group:focus-within .nav-menu { display: grid; gap: 2px; }
 .ind-chart .zero { stroke: var(--line-2); stroke-width: 1.2; }
 .ind-chart .hx { stroke: var(--line-2); } .ind-chart circle { fill: var(--accent); }
 .ind-notes { font-size: .84rem; color: var(--ink-2); }
+
+.cr-vals { display: flex; flex-wrap: wrap; gap: .2rem .7rem; align-items: center; margin-top: .2rem; font-size: .78rem; color: var(--ink-2); }
+.cr-val a { color: var(--accent); }
+.cr-val b { color: var(--ink); }
+.cr-vals .tag { font-size: .66rem; opacity: .8; }
