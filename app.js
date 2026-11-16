@@ -519,3 +519,81 @@
   const q0 = new URLSearchParams(location.search).get("q");
   if (q0) { input.value = q0; open(); }
 })();
+
+// ===== round 16: intraday prices from justinchou/personal-news-data (same-origin /live/prices.json) =====
+(() => {
+  const els = document.querySelectorAll("[data-live-key]");
+  const panel = document.querySelector("[data-live-panel]");
+  if (!els.length && !panel) return;
+  const root = document.documentElement;
+  const en = () => root.getAttribute("data-lang-mode") === "orig";
+  const L = (zh, e) => (en() ? e : zh);
+  const GROUPS = { us_equity: ["美股", "US stocks"], hk_equity: ["港股", "Hong Kong"], cn_equity: ["A 股", "China A-shares"], futures_fx: ["期货 / 汇率", "Futures / FX"], crypto: ["加密货币", "Crypto"] };
+  const CB = { btc: "BTC-USD", eth: "ETH-USD" };
+  let doc = null;
+  const browserCrypto = {};
+  const hm = (iso) => { if (!iso) return "—"; const d = new Date(iso); if (isNaN(d)) return "—";
+    const p = new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(d);
+    const g = (t) => (p.find((x) => x.type === t) || {}).value;
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date()).slice(5);
+    const md = `${g("month")}-${g("day")}`;
+    return (md === today ? "" : md + " ") + `${g("hour")}:${g("minute")}`; };
+  const bjLabel = () => L("北京时间", "Beijing time");
+  const fmtNum = (v) => (v == null ? "—" : Number(v).toLocaleString("en-US", { minimumFractionDigits: v >= 1000 ? 2 : (v < 10 ? 4 : 2), maximumFractionDigits: v < 10 ? 4 : 2 }));
+  const quote = (k) => browserCrypto[k] || (doc && doc.quotes && doc.quotes[k]);
+  const srcInfo = (q) => { const s = ((doc && doc.sources) || {})[q.source] || {}; return { name: L(s.name || q.source, s.name_en || q.source), delay: L(s.delay || "", s.delay_en || ""), url: s.url }; };
+  const render = () => {
+    els.forEach((el) => {
+      const q = quote(el.dataset.liveKey); if (!q) return;
+      const f = el.dataset.liveField;
+      if (f === "price") {
+        el.textContent = fmtNum(q.price);
+        let tag = el.nextElementSibling && el.nextElementSibling.classList.contains("live-tag") ? el.nextElementSibling : null;
+        if (!tag) { tag = document.createElement("small"); tag.className = "live-tag"; el.after(tag); }
+        tag.textContent = hm(q.quote_time);
+        tag.title = `${L("行情时间", "Quote time")} ${hm(q.quote_time)} ${bjLabel()} · ${srcInfo(q).name} · ${L("延迟", "delay")}: ${srcInfo(q).delay}`;
+      } else if (f === "pct" && q.change_pct != null) {
+        el.innerHTML = ""; const s = document.createElement("span");
+        s.className = q.change_pct > 0 ? "is-up" : (q.change_pct < 0 ? "is-down" : "");
+        s.textContent = (q.change_pct > 0 ? "+" : "") + q.change_pct.toFixed(1) + "%" + (q.change_basis === "24h" ? L("（24 小时）", " (24h)") : "");
+        el.appendChild(s);
+      } else if (f === "asof") {
+        const si = srcInfo(q);
+        el.textContent = `${hm(q.quote_time)} ${bjLabel()}`;
+        const sm = document.createElement("small"); sm.className = "meta live-src";
+        sm.textContent = `${L("来源", "source")}: ${si.name} · ${L("延迟", "delay")}: ${si.delay}`;
+        el.appendChild(sm);
+      }
+    });
+    if (panel && doc) {
+      const box = panel.querySelector("[data-live-groups]"); box.innerHTML = "";
+      Object.entries(doc.groups || {}).sort((x, y) => Object.keys(GROUPS).indexOf(x[0]) - Object.keys(GROUPS).indexOf(y[0])).forEach(([gid, g]) => {
+        const s = ((doc.sources || {})[g.source]) || {};
+        const live = gid === "crypto" && Object.keys(browserCrypto).length;
+        const row = document.createElement("div"); row.className = "live-group";
+        const state = g.open ? L("交易中", "Open") : (g.next_open_bj ? L(`休市 · 下次开盘 ${g.next_open_bj.slice(5)}`, `Closed · opens ${g.next_open_bj.slice(5)}`) : L("休市", "Closed"));
+        const asof = live ? hm(new Date().toISOString()) : hm(g.fetched_at);
+        row.innerHTML = `<b></b><span class="tag ${g.open ? "tag-ok" : ""}"></span><span class="meta"></span>`;
+        row.children[0].textContent = L(...(GROUPS[gid] || [gid, gid]));
+        row.children[1].textContent = state;
+        row.children[2].textContent = `${L("截至", "as of")} ${asof} ${bjLabel()} · ${L("来源", "source")}: ${live ? "Coinbase Exchange（" + L("浏览器直连", "in browser") + "）" : L(s.name || g.source, s.name_en || g.source)} · ${L("延迟", "delay")}: ${L(s.delay || "", s.delay_en || "")}` + (g.error ? ` · ${L("上次抓取失败，沿用此前数据", "last fetch failed, showing previous data")}` : "");
+        box.appendChild(row);
+      });
+      panel.querySelector("[data-live-head]").textContent = `${L("更新于", "updated")} ${hm(doc.generated_at)} ${bjLabel()}`;
+      panel.hidden = false;
+    }
+  };
+  const load = () => fetch("/live/prices.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && d.quotes) { doc = d; render(); } }).catch(() => {});
+  const crypto = () => {
+    const keys = [...new Set([...els].map((e) => e.dataset.liveKey).filter((k) => CB[k]))];
+    if (!keys.length && !panel) return;
+    (keys.length ? keys : Object.keys(CB)).reduce((p, k) => p.then(() => fetch(`https://api.exchange.coinbase.com/products/${CB[k]}/stats`).then((r) => (r.ok ? r.json() : null)).then((d) => {
+      const last = d && parseFloat(d.last), op = d && parseFloat(d.open);
+      if (last > 0) browserCrypto[k] = { price: last, prev_close: op, change_pct: op > 0 ? (last / op - 1) * 100 : null, change_basis: "24h", quote_time: new Date().toISOString(), source: "coinbase" };
+    }).catch(() => {})), Promise.resolve()).then(render);
+  };
+  load(); crypto();
+  setInterval(() => { if (!document.hidden) crypto(); }, 60000);
+  setInterval(() => { if (!document.hidden) load(); }, 300000);
+  document.querySelectorAll("[data-lang-toggle],[data-lang-set]").forEach((b) => b.addEventListener("click", () => setTimeout(render, 0)));
+})();

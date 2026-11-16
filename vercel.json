@@ -5,5 +5,8 @@
     { "source": "/ai", "destination": "/", "permanent": false },
     { "source": "/ai/:path*", "destination": "/:path*", "permanent": false },
     { "source": "/catalog", "destination": "/catalog/products", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/live/:path*", "destination": "https://raw.githubusercontent.com/justinchou/personal-news-data/main/data/live/:path*" }
   ]
 }

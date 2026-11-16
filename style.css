@@ -1079,3 +1079,11 @@ html[data-lang-mode="orig"] .lang-btn .li-orig { display: block; }
 .llm-theme { background: var(--card, rgba(127,127,127,.06)); border-radius: 10px; padding: 10px 12px; }
 .llm-theme h3 { margin: 0 0 6px; font-size: 15px; }
 .ai-draft { border-left: 3px solid var(--accent, #5b8cff); }
+
+/* round 16: intraday prices */
+.live-tag { margin-left: .35em; font-size: .72em; color: var(--muted, #888); font-variant-numeric: tabular-nums; }
+.live-tag::before { content: "●"; color: #2a9d8f; margin-right: .2em; font-size: .8em; }
+.live-groups { display: grid; gap: .35rem; }
+.live-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; font-size: .92rem; }
+.live-group b { min-width: 6.5em; }
+.live-src { display: block; font-weight: 400; font-size: .72rem; margin-top: .2rem; line-height: 1.35; }
