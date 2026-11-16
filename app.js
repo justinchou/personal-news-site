@@ -251,7 +251,9 @@
     const box = wrap.querySelector("[data-chart-canvas]");
     let data;
     try { data = JSON.parse(wrap.querySelector("[data-chart-data]").textContent); } catch (e) { return; }
-    const state = { range: "5", series: "headline" };
+    // initial state follows the buttons marked aria-pressed (fallback: 5Y / headline / first series)
+    const pr = wrap.querySelector("[data-range][aria-pressed='true']"), ps = wrap.querySelector("[data-series][aria-pressed='true']");
+    const state = { range: pr ? pr.dataset.range : "5", series: ps ? ps.dataset.series : (data.series.headline ? "headline" : Object.keys(data.series)[0]) };
     const toDate = (s) => { if (/^\d{4}$/.test(s)) return new Date(+s, 11, 31); const q = s.match(/^(\d{4})-Q(\d)$/); if (q) return new Date(+q[1], q[2] * 3 - 3, 1); return new Date(s.length === 7 ? s + "-01" : s); };
     const fmt = (v) => Math.abs(v) >= 1000 ? v.toLocaleString("en-US", { maximumFractionDigits: 0 }) : Math.abs(v) >= 100 ? v.toFixed(1) : v.toFixed(2);
     const draw = () => {
@@ -260,21 +262,26 @@
       const end = all[all.length - 1][0];
       const pts = state.range === "max" ? all : all.filter((p) => p[0] >= new Date(end.getFullYear() - +state.range, end.getMonth(), end.getDate()));
       const W = box.clientWidth || 800, H = 300, L = 54, R = 14, T = 14, B = 28;
-      let lo = Math.min(...pts.map((p) => p[1])), hi = Math.max(...pts.map((p) => p[1]));
+      const isLog = !!((data.log || {})[state.series]) && pts.every((p) => p[1] > 0);
+      const tf = (v) => isLog ? Math.log10(v) : v, inv = (v) => isLog ? Math.pow(10, v) : v;
+      let lo = Math.min(...pts.map((p) => tf(p[1]))), hi = Math.max(...pts.map((p) => tf(p[1])));
+      const bands = (data.bands || {})[state.series] || [];
+      bands.forEach(([bv]) => { if (bv > 0 || !isLog) { lo = Math.min(lo, tf(bv)); hi = Math.max(hi, tf(bv)); } });
       if (lo === hi) { lo -= 1; hi += 1; }
       const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
       const t0 = pts[0][0].getTime(), t1 = Math.max(pts[pts.length - 1][0].getTime(), t0 + 1);
       const x = (t) => L + (t - t0) / (t1 - t0) * (W - L - R);
-      const y = (v) => T + (hi - v) / (hi - lo) * (H - T - B);
+      const y = (v) => T + (hi - tf(v)) / (hi - lo) * (H - T - B);
       const path = pts.map((p, i) => (i ? "L" : "M") + x(p[0].getTime()).toFixed(1) + "," + y(p[1]).toFixed(1)).join("");
       let grid = "";
-      for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; grid += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
+      for (let k = 0; k <= 4; k++) { const v = inv(lo + (hi - lo) * k / 4); grid += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
+      bands.forEach(([bv, bl]) => { grid += `<line class="band" x1="${L}" x2="${W - R}" y1="${y(bv)}" y2="${y(bv)}"/><text class="band-t" x="${W - R - 4}" y="${y(bv) - 4}" text-anchor="end">${bl}</text>`; });
       const y0 = pts[0][0].getFullYear(), y1 = pts[pts.length - 1][0].getFullYear();
       const stepY = Math.max(1, Math.ceil((y1 - y0 + 1) / 8));
       let xl = "";
       if (y1 - y0 >= 1) { for (let yr = y0 + 1; yr <= y1; yr += stepY) { const t = new Date(yr, 0, 1).getTime(); if (t >= t0) xl += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${yr}</text><line class="vx" x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H - B}"/>`; } }
       else { xl = `<text x="${L}" y="${H - 8}">${pts[0][2]}</text><text x="${W - R}" y="${H - 8}" text-anchor="end">${pts[pts.length - 1][2]}</text>`; }
-      const zero = lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
+      const zero = !isLog && lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
       const unit = (data.units || {})[state.series] || "";
       box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}"><g class="grid">${grid}${xl}</g>${zero}<path class="line" d="${path}"/><g class="hover" visibility="hidden"><line class="hx" y1="${T}" y2="${H - B}"/><circle r="4"/><text class="ht" y="${T + 12}"></text></g><rect class="hit" x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/></svg>`;
       const svg = box.querySelector("svg"), hov = svg.querySelector(".hover"), hit = svg.querySelector(".hit");
@@ -336,7 +343,7 @@
       for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; g += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
       const y0 = new Date(t0).getFullYear(), y1 = new Date(t1).getFullYear(), step = Math.max(1, Math.ceil((y1 - y0 + 1) / 8));
       for (let yr = y0 + 1; yr <= y1; yr += step) { const t = new Date(yr, 0, 1).getTime(); g += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${yr}</text><line class="vx" x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H - B}"/>`; }
-      const zero = lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
+      const zero = !isLog && lo < 0 && hi > 0 ? `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/>` : "";
       const paths = lines.map((l) => `<path fill="none" stroke-width="1.8" stroke="${COLORS[l.n % COLORS.length]}" d="${l.p.map((p, i) => (i ? "L" : "M") + x(p[0].getTime()).toFixed(1) + "," + y(p[1]).toFixed(1)).join("")}"/>`).join("");
       box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}"><g class="grid">${g}</g>${zero}${paths}<g class="hover" visibility="hidden"><line class="hx" y1="${T}" y2="${H - B}"/><text class="ht" y="${T + 12}"></text></g><rect class="hit" x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/></svg>`;
       const svg = box.querySelector("svg"), hov = svg.querySelector(".hover"), hit = svg.querySelector(".hit");
