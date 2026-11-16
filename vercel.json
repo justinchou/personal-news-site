@@ -6,6 +6,13 @@
     { "source": "/ai/:path*", "destination": "/:path*", "permanent": false },
     { "source": "/catalog", "destination": "/catalog/products", "permanent": false }
   ],
+  "headers": [
+    { "source": "/macro/ics/(.*)", "headers": [
+      { "key": "Content-Type", "value": "text/calendar; charset=utf-8" },
+      { "key": "Cache-Control", "value": "public, max-age=1800" },
+      { "key": "Access-Control-Allow-Origin", "value": "*" }
+    ] }
+  ],
   "rewrites": [
     { "source": "/live/:path*", "destination": "https://raw.githubusercontent.com/justinchou/personal-news-data/main/data/live/:path*" }
   ]

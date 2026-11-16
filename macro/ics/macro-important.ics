@@ -1,0 +1,2403 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//personal-news-site//macro calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:信息情报站 · 宏观日历（高重要性）
+X-WR-CALDESC:只含高重要性数据发布、央行议息会议与大型
+ 公司财报
+X-WR-TIMEZONE:Asia/Shanghai
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:13e38bf4b6caef506a2e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261019T020000Z
+DTEND:20261019T021500Z
+SUMMARY:🇨🇳 国民经济运行（GDP 季度 / 工业 / 社零 / 固投
+  / 房地产）
+DESCRIPTION:中国 · 增长 · 重要性 高\n北京时间 2026-10-19 10:0
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:26ff74482505e69335dc@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:318f9b4f259c1815216d@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261029T123000Z
+DTEND:20261029T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（3rd Quarter 2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2026-10-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:251decb014855a9d7d0a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261029T123000Z
+DTEND:20261029T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（September 2026
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2026-10-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:6aef45ac17c62653ec13@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
+ 报告
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:894486dd2fcdf1e2fe46@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261031T013000Z
+DTEND:20261031T014500Z
+SUMMARY:🇨🇳 官方制造业 / 非制造业 PMI
+DESCRIPTION:中国 · 景气调查 · 重要性 高\n北京时间 2026-10-3
+ 1 09:30\n官方日程（时间取该行常用时间）\n来源：国家统
+ 计局 · 主要统计信息发布日程表\n日历：https://personal-new
+ s-site.vercel.app/macro/calendar
+CATEGORIES:景气调查
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:7a484e4e22cfb8dd9f9a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:eb59bc05a0973e3ee3a8@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261106T133000Z
+DTEND:20261106T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2026-11-06 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2025/09/pfei_schedule_rel
+ ease_dates_cy2026.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:3c02bb198b2f55279464@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261109T013000Z
+DTEND:20261109T014500Z
+SUMMARY:🇨🇳 CPI 居民消费价格指数
+DESCRIPTION:中国 · 通胀 · 重要性 高\n北京时间 2026-11-09 09:3
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:4b14a85842f9dcf1cec9@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261109T013000Z
+DTEND:20261109T014500Z
+SUMMARY:🇨🇳 PPI 工业生产者价格指数
+DESCRIPTION:中国 · 通胀 · 重要性 高\n北京时间 2026-11-09 09:3
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:cb6cc6c8f1e9e410dc23@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261110T133000Z
+DTEND:20261110T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2026-11-10 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2025/09/pfei_schedule_rel
+ ease_dates_cy2026.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:9eff43707641257bbd3c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261115T235000Z
+DTEND:20261116T000500Z
+SUMMARY:🇯🇵 季度 GDP 速报
+DESCRIPTION:日本 · 增长 · 重要性 高\n北京时间 2026-11-16 07:5
+ 0；当地 08:50（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00100409/202611160850
+END:VEVENT
+BEGIN:VEVENT
+UID:7ae27d47d779a9f5f990@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261116T020000Z
+DTEND:20261116T021500Z
+SUMMARY:🇨🇳 国民经济运行（GDP 季度 / 工业 / 社零 / 固投
+  / 房地产）
+DESCRIPTION:中国 · 增长 · 重要性 高\n北京时间 2026-11-16 10:0
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:3866b75368aa8edd6a65@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261117T133000Z
+DTEND:20261117T134500Z
+SUMMARY:🇺🇸 零售销售（October 2026）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2026-11-17 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview-2026.html
+END:VEVENT
+BEGIN:VEVENT
+UID:4c71f3ce8d0ca400d946@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:🇺🇸 英伟达（NVDA）财报（Oct/2026）
+DESCRIPTION:美国 · 财报 · 重要性 高\n已排期：盘后 Nasdaq 
+ 财报日历\n来源：Nasdaq 财报日历\n日历：https://personal-news
+ -site.vercel.app/macro/calendar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://personal-news-site.vercel.app/macro/watchlist/nvda
+END:VEVENT
+BEGIN:VEVENT
+UID:ec2df369eb7be2c0651b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261118T070000Z
+DTEND:20261118T071500Z
+SUMMARY:🇬🇧 CPI 消费者物价
+DESCRIPTION:英国 · 通胀 · 重要性 高\n北京时间 2026-11-18 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/consumerpriceinflationukoctober2026
+END:VEVENT
+BEGIN:VEVENT
+UID:02ab8ba7ac9123b5558e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261118T190000Z
+DTEND:20261118T191500Z
+SUMMARY:🇺🇸 FOMC 会议纪要（Meeting of October 27-28）
+DESCRIPTION:美国 · 货币政策 · 重要性 高\n北京时间 2026-11-1
+ 9 03:00；当地 14:00（美东）\n来源：美联储日历（calendar.js
+ on）\n日历：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/newsevents/calendar.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:567ae1af027aeef0db56@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:🇭🇰 阿里巴巴（9988.HK）财报（Sep/2026）
+DESCRIPTION:香港 · 财报 · 重要性 高\n已排期：盘前 Nasdaq 
+ 财报日历（美股 ADR BABA）\n来源：Nasdaq 财报日历（美股 A
+ DR BABA）\n日历：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://personal-news-site.vercel.app/macro/watchlist/9988-hk
+END:VEVENT
+BEGIN:VEVENT
+UID:85101633c147d74c39d6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261119T233000Z
+DTEND:20261119T234500Z
+SUMMARY:🇯🇵 全国 CPI
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2026-11-20 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202611200830
+END:VEVENT
+BEGIN:VEVENT
+UID:fe36f17b421479e508ee@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:🇨🇳 贷款市场报价利率 LPR
+DESCRIPTION:中国 · 货币政策 · 重要性 高\n规则推算：每月 
+ 20 日公布（遇节假日顺延，以人民银行 / 全国银行间同
+ 业拆借中心公告为准）\n来源：人民银行 LPR 形成机制公
+ 告（规则）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/3876551/inde
+ x.html
+END:VEVENT
+BEGIN:VEVENT
+UID:6c728332facf82e565fc@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261125T133000Z
+DTEND:20261125T134500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（October 2026
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2026-11-25 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:32183757894dc4ead8cb@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261126T233000Z
+DTEND:20261126T234500Z
+SUMMARY:🇯🇵 东京 CPI（东京都区部）
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2026-11-27 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202611270830
+END:VEVENT
+BEGIN:VEVENT
+UID:69dab2507628f918b997@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261130T013000Z
+DTEND:20261130T014500Z
+SUMMARY:🇨🇳 官方制造业 / 非制造业 PMI
+DESCRIPTION:中国 · 景气调查 · 重要性 高\n北京时间 2026-11-3
+ 0 09:30\n官方日程（时间取该行常用时间）\n来源：国家统
+ 计局 · 主要统计信息发布日程表\n日历：https://personal-new
+ s-site.vercel.app/macro/calendar
+CATEGORIES:景气调查
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:688fc4d102653d5f4700@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261201T100000Z
+DTEND:20261201T101500Z
+SUMMARY:🇪🇺 HICP 通胀快报（November 2026）
+DESCRIPTION:欧元区 · 通胀 · 重要性 高\n北京时间 2026-12-01 1
+ 8:00；当地 11:00（卢森堡）\n官方时间（卢森堡当地 11:00
+ ）\n来源：Eurostat 发布日历（euro indicators）\n日历：https:/
+ /personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://ec.europa.eu/eurostat/web/main/news/release-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:df2668ce19145e8325c4@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261202T133000Z
+DTEND:20261202T134500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（2025）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2026-12-02 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:a371c615c7018fca0ad5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261204T133000Z
+DTEND:20261204T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2026-12-04 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2025/09/pfei_schedule_rel
+ ease_dates_cy2026.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:2ce56c8aefe658772e98@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261207T235000Z
+DTEND:20261208T000500Z
+SUMMARY:🇯🇵 季度 GDP 速报
+DESCRIPTION:日本 · 增长 · 重要性 高\n北京时间 2026-12-08 07:5
+ 0；当地 08:50（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00100409/202612080850
+END:VEVENT
+BEGIN:VEVENT
+UID:4f7777347334553647d5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261209T013000Z
+DTEND:20261209T014500Z
+SUMMARY:🇨🇳 CPI 居民消费价格指数
+DESCRIPTION:中国 · 通胀 · 重要性 高\n北京时间 2026-12-09 09:3
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:7bb957a34b13153cbb0f@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261209T013000Z
+DTEND:20261209T014500Z
+SUMMARY:🇨🇳 PPI 工业生产者价格指数
+DESCRIPTION:中国 · 通胀 · 重要性 高\n北京时间 2026-12-09 09:3
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:d41aea0c620c149144fc@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议（含经济预测 SEP）
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:04e7fe172a6c6d2d3058@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:🇺🇸 博通（AVGO）财报（Oct/2026）
+DESCRIPTION:美国 · 财报 · 重要性 高\n已排期：盘后 Nasdaq 
+ 财报日历\n来源：Nasdaq 财报日历\n日历：https://personal-news
+ -site.vercel.app/macro/calendar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://personal-news-site.vercel.app/macro/watchlist/avgo
+END:VEVENT
+BEGIN:VEVENT
+UID:bc23b4f999035ec9c4cb@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261210T133000Z
+DTEND:20261210T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2026-12-10 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2025/09/pfei_schedule_rel
+ ease_dates_cy2026.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:9de86c99aac9520eed5b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261211T070000Z
+DTEND:20261211T071500Z
+SUMMARY:🇬🇧 月度 GDP
+DESCRIPTION:英国 · 增长 · 重要性 高\n北京时间 2026-12-11 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/gdpmonthlyestimateukoctober2026
+END:VEVENT
+BEGIN:VEVENT
+UID:867565eebb0ef4c66d44@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261213T235000Z
+DTEND:20261214T000500Z
+SUMMARY:🇯🇵 日银短观（Tankan）（Dec. Survey）
+DESCRIPTION:日本 · 景气调查 · 重要性 高\n北京时间 2026-12-1
+ 4 07:50；当地 08:50（东京）\n来源：日本银行 统计发布日
+ 程（xlsx）\n日历：https://personal-news-site.vercel.app/macro/calend
+ ar
+CATEGORIES:景气调查
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/statistics/outline/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:ceb9f9a349f2fd1f1000@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261215T020000Z
+DTEND:20261215T021500Z
+SUMMARY:🇨🇳 国民经济运行（GDP 季度 / 工业 / 社零 / 固投
+  / 房地产）
+DESCRIPTION:中国 · 增长 · 重要性 高\n北京时间 2026-12-15 10:0
+ 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:cf31ffd90136ac8fb8b1@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261216T070000Z
+DTEND:20261216T071500Z
+SUMMARY:🇬🇧 CPI 消费者物价
+DESCRIPTION:英国 · 通胀 · 重要性 高\n北京时间 2026-12-16 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/consumerpriceinflationuknovember2026
+END:VEVENT
+BEGIN:VEVENT
+UID:01a8d5f34a61636e7372@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261216T133000Z
+DTEND:20261216T134500Z
+SUMMARY:🇺🇸 零售销售（November 2026）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2026-12-16 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview-2026.html
+END:VEVENT
+BEGIN:VEVENT
+UID:32999254b19461db07ef@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:63c39a3b4d14e61f5f19@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:a87c4c906b99b5d4c352@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261217T233000Z
+DTEND:20261217T234500Z
+SUMMARY:🇯🇵 全国 CPI
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2026-12-18 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202612180830
+END:VEVENT
+BEGIN:VEVENT
+UID:1a958f117f38df7a638b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:5c39d8cf491fbe4e2c42@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:🇨🇳 贷款市场报价利率 LPR
+DESCRIPTION:中国 · 货币政策 · 重要性 高\n规则推算：每月 
+ 20 日公布（遇节假日顺延，以人民银行 / 全国银行间同
+ 业拆借中心公告为准）；该日为周末，实际将顺延\n来源
+ ：人民银行 LPR 形成机制公告（规则）\n日历：https://perso
+ nal-news-site.vercel.app/macro/calendar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/3876551/inde
+ x.html
+END:VEVENT
+BEGIN:VEVENT
+UID:cf649e36dc42431ca603@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261223T133000Z
+DTEND:20261223T134500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（Industries\, Corporate Profits\, 
+ State GDP\, and State Personal Income\, 3rd Quarter 2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2026-12-23 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:c42ed54a26e1bb2fd15d@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261223T133000Z
+DTEND:20261223T134500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（November 2026
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2026-12-23 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:be972920c9cb4473d6b0@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261224T233000Z
+DTEND:20261224T234500Z
+SUMMARY:🇯🇵 东京 CPI（东京都区部）
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2026-12-25 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202612250830
+END:VEVENT
+BEGIN:VEVENT
+UID:fda081a10b6c3c5718ef@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261230T190000Z
+DTEND:20261230T191500Z
+SUMMARY:🇺🇸 FOMC 会议纪要（Meeting of December 8-9）
+DESCRIPTION:美国 · 货币政策 · 重要性 高\n北京时间 2026-12-3
+ 1 03:00；当地 14:00（美东）\n来源：美联储日历（calendar.js
+ on）\n日历：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/newsevents/calendar.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:1087fd8a1f8d822c6d72@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20261231T013000Z
+DTEND:20261231T014500Z
+SUMMARY:🇨🇳 官方制造业 / 非制造业 PMI
+DESCRIPTION:中国 · 景气调查 · 重要性 高\n北京时间 2026-12-3
+ 1 09:30\n官方日程（时间取该行常用时间）\n来源：国家统
+ 计局 · 主要统计信息发布日程表\n日历：https://personal-new
+ s-site.vercel.app/macro/calendar
+CATEGORIES:景气调查
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
+END:VEVENT
+BEGIN:VEVENT
+UID:4b80ee8daea2909e426c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270106T100000Z
+DTEND:20270106T101500Z
+SUMMARY:🇪🇺 HICP 通胀快报（December 2026）
+DESCRIPTION:欧元区 · 通胀 · 重要性 高\n北京时间 2027-01-06 1
+ 8:00；当地 11:00（卢森堡）\n官方时间（卢森堡当地 11:00
+ ）\n来源：Eurostat 发布日历（euro indicators）\n日历：https:/
+ /personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://ec.europa.eu/eurostat/web/main/news/release-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:5cd90fbb9ccfa14abcfc@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270108T133000Z
+DTEND:20270108T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-01-08 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:709aa5ba980ca1251713@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270113T133000Z
+DTEND:20270113T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-01-13 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:d8e22e7ae30ec2791887@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270115T070000Z
+DTEND:20270115T071500Z
+SUMMARY:🇬🇧 月度 GDP
+DESCRIPTION:英国 · 增长 · 重要性 高\n北京时间 2027-01-15 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/gdpmonthlyestimateuknovember2026
+END:VEVENT
+BEGIN:VEVENT
+UID:01b0621fc35a92828626@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270115T133000Z
+DTEND:20270115T134500Z
+SUMMARY:🇺🇸 零售销售（December 2026）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-01-15 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2d010f5f6209ff6cad03@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270120T070000Z
+DTEND:20270120T071500Z
+SUMMARY:🇬🇧 CPI 消费者物价
+DESCRIPTION:英国 · 通胀 · 重要性 高\n北京时间 2027-01-20 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/consumerpriceinflationukdecember2026
+END:VEVENT
+BEGIN:VEVENT
+UID:b5870be226bab1e6c196@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:🇨🇳 贷款市场报价利率 LPR
+DESCRIPTION:中国 · 货币政策 · 重要性 高\n规则推算：每月 
+ 20 日公布（遇节假日顺延，以人民银行 / 全国银行间同
+ 业拆借中心公告为准）\n来源：人民银行 LPR 形成机制公
+ 告（规则）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/3876551/inde
+ x.html
+END:VEVENT
+BEGIN:VEVENT
+UID:cd4998dd78b5a45bb20e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+SUMMARY:🇺🇸 Meta（META）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/meta
+END:VEVENT
+BEGIN:VEVENT
+UID:ea39f73941911e90cc0b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+SUMMARY:🇺🇸 特斯拉（TSLA）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/tsla
+END:VEVENT
+BEGIN:VEVENT
+UID:a79f66c9d7034ad51b53@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270121T233000Z
+DTEND:20270121T234500Z
+SUMMARY:🇯🇵 全国 CPI
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2027-01-22 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202701220830
+END:VEVENT
+BEGIN:VEVENT
+UID:45789fe917b73ce41078@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
+ 报告
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:e3d6098a2bb03650294c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:e386010866ce9d9eadc6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:🇺🇸 微软（MSFT）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/msft
+END:VEVENT
+BEGIN:VEVENT
+UID:18ae81d68f486db2e943@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270128T133000Z
+DTEND:20270128T134500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（4th Quarter and Year 2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-01-28 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:42cdf3bdb3c8093db99b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270128T133000Z
+DTEND:20270128T134500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（December 2026
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-01-28 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:a0ce79d13992b2ddb5e5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:🇺🇸 谷歌（GOOGL）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/googl
+END:VEVENT
+BEGIN:VEVENT
+UID:2652f95821ecfb652ac5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270128T233000Z
+DTEND:20270128T234500Z
+SUMMARY:🇯🇵 东京 CPI（东京都区部）
+DESCRIPTION:日本 · 通胀 · 重要性 高\n北京时间 2027-01-29 07:3
+ 0；当地 08:30（东京）\n来源：e-Stat 公表予定（政府统计
+ 综合窗口）\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.e-stat.go.jp/release-calendar/detail/00200573/202701290830
+END:VEVENT
+BEGIN:VEVENT
+UID:dfb07d9cb533d06e093e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270129T100000Z
+DTEND:20270129T101500Z
+SUMMARY:🇪🇺 GDP 快报（Q4/2026）
+DESCRIPTION:欧元区 · 增长 · 重要性 高\n北京时间 2027-01-29 1
+ 8:00；当地 11:00（卢森堡）\n官方时间（卢森堡当地 11:00
+ ）\n来源：Eurostat 发布日历（euro indicators）\n日历：https:/
+ /personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://ec.europa.eu/eurostat/web/main/news/release-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:e302d41ab9377d3b3321@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270130
+SUMMARY:🇺🇸 亚马逊（AMZN）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/amzn
+END:VEVENT
+BEGIN:VEVENT
+UID:303b6d62299fac8c3f63@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270202T100000Z
+DTEND:20270202T101500Z
+SUMMARY:🇪🇺 HICP 通胀快报（January 2027）
+DESCRIPTION:欧元区 · 通胀 · 重要性 高\n北京时间 2027-02-02 1
+ 8:00；当地 11:00（卢森堡）\n官方时间（卢森堡当地 11:00
+ ）\n来源：Eurostat 发布日历（euro indicators）\n日历：https:/
+ /personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://ec.europa.eu/eurostat/web/main/news/release-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:ae093dd578ada706c500@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270202
+DTEND;VALUE=DATE:20270203
+SUMMARY:🇺🇸 苹果（AAPL）财报（估计）
+DESCRIPTION:美国 · 财报 · 重要性 高\n估计： 按上次 SEC 季
+ 报申报日 + 约 91 天估计\n来源：按上次 SEC 季报申报日 + 
+ 约 91 天估计\n日历：https://personal-news-site.vercel.app/macro/cal
+ endar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/aapl
+END:VEVENT
+BEGIN:VEVENT
+UID:0939c0dcb028f40267ca@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:e2f7eb9a9e73f23b562d@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:9c5617221411e4a2b342@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270205T133000Z
+DTEND:20270205T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-02-05 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:d745a9db2b9711cef7aa@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270211T133000Z
+DTEND:20270211T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-02-11 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:7158d1b2f156757e3640@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270212T070000Z
+DTEND:20270212T071500Z
+SUMMARY:🇬🇧 季度 GDP 初值
+DESCRIPTION:英国 · 增长 · 重要性 高\n北京时间 2027-02-12 15:0
+ 0；当地 07:00（伦敦）\n来源：ONS 发布日历 API\n日历：http
+ s://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ons.gov.uk/releases/gdpfirstquarterlyestimateukoctobertodec
+ ember2026
+END:VEVENT
+BEGIN:VEVENT
+UID:5596b614101f559909d6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270217T133000Z
+DTEND:20270217T134500Z
+SUMMARY:🇺🇸 零售销售（January 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-02-17 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:84d46ada0f30695e844d@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:🇨🇳 贷款市场报价利率 LPR
+DESCRIPTION:中国 · 货币政策 · 重要性 高\n规则推算：每月 
+ 20 日公布（遇节假日顺延，以人民银行 / 全国银行间同
+ 业拆借中心公告为准）；该日为周末，实际将顺延\n来源
+ ：人民银行 LPR 形成机制公告（规则）\n日历：https://perso
+ nal-news-site.vercel.app/macro/calendar
+CATEGORIES:货币政策
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/3876551/inde
+ x.html
+END:VEVENT
+BEGIN:VEVENT
+UID:8e84cb036ba1a2d7dc2b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270225T133000Z
+DTEND:20270225T134500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（January 2027
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-02-25 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:35e66e67617969e3ec53@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270305T133000Z
+DTEND:20270305T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-03-05 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:00f858cccf33804b791e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270310T133000Z
+DTEND:20270310T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-03-10 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:84ca53cadd8cd9865fac@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270316T123000Z
+DTEND:20270316T124500Z
+SUMMARY:🇺🇸 零售销售（February 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-03-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:6aba67651bf96f8ee7ab@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270317
+DTEND;VALUE=DATE:20270318
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:0e7e8413b4203d2170cc@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270319
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:61f5ada9a7ea6efe39d0@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270319
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:12bc9fd0e8650215a43f@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270319
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:a48cbd7542e571edb844@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270331T123000Z
+DTEND:20270331T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（Industries\, Corporate Profits\, 
+ State GDP\, and State Personal Income\, 4th Quarter and Year 2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-03-31 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:3d113e0d19f18232839c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270331T123000Z
+DTEND:20270331T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（February 2027
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-03-31 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:0ee254dd50155f1ccb77@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🇭🇰 腾讯控股（0700.HK）财报（估计）（年度业绩
+  上市规则截止）
+DESCRIPTION:香港 · 财报 · 重要性 高\n估计： 法定 / 上市规
+ 则截止日（估计，公司通常更早披露）\n来源：法定 / 上
+ 市规则截止日（估计，公司通常更早披露）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:财报
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+URL:https://personal-news-site.vercel.app/macro/watchlist/0700-hk
+END:VEVENT
+BEGIN:VEVENT
+UID:d2c468bb24f969ce6fc8@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270331T235000Z
+DTEND:20270401T000500Z
+SUMMARY:🇯🇵 日银短观（Tankan）（Mar. Survey）
+DESCRIPTION:日本 · 景气调查 · 重要性 高\n北京时间 2027-04-0
+ 1 07:50；当地 08:50（东京）\n来源：日本银行 统计发布日
+ 程（xlsx）\n日历：https://personal-news-site.vercel.app/macro/calend
+ ar
+CATEGORIES:景气调查
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/statistics/outline/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:e0efab523772c137c7a3@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270402T123000Z
+DTEND:20270402T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-04-02 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:bdfe69d6d4d2b1130606@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270413T123000Z
+DTEND:20270413T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-04-13 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:eb80fde8bf51f0f71c15@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270416T123000Z
+DTEND:20270416T124500Z
+SUMMARY:🇺🇸 零售销售（March 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-04-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:abc1e8f04c23c2b72502@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270428
+DTEND;VALUE=DATE:20270429
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
+ 报告
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:47623b5f006e0f654187@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270428
+DTEND;VALUE=DATE:20270429
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:5b2222b013f696918a5a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270429T123000Z
+DTEND:20270429T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（1st Quarter 2027）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-04-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:49d34380a04e4db52435@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270429T123000Z
+DTEND:20270429T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（March 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-04-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:393b688340301e48ea2a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:e36a9644a8abcd216cd6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:842ae2a15c024d8282b4@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270507T123000Z
+DTEND:20270507T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-05-07 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:3b22d46c4c62b9809f2c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270512T123000Z
+DTEND:20270512T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-05-12 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:2f93df75b278f153e3b8@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270514T123000Z
+DTEND:20270514T124500Z
+SUMMARY:🇺🇸 零售销售（April 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-05-14 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:9254c909903721a01abd@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270527T123000Z
+DTEND:20270527T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（April 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-05-27 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:60f24ab7f6b1a72857ef@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270604T123000Z
+DTEND:20270604T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-06-04 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:67d01d19c07198686890@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270609
+DTEND;VALUE=DATE:20270610
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:fde5ba03a1454ac00ec9@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270610T123000Z
+DTEND:20270610T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-06-10 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:9ab956ee76cede2b9e63@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270610
+DTEND;VALUE=DATE:20270611
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2b1f523d68643c184948@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270611
+DTEND;VALUE=DATE:20270612
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:fe78ddee174406d6e9c3@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270616T123000Z
+DTEND:20270616T124500Z
+SUMMARY:🇺🇸 零售销售（May 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-06-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:169c83d678baea9988aa@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270617
+DTEND;VALUE=DATE:20270618
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:cc4b8e06f16b135ab1f1@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270625T123000Z
+DTEND:20270625T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（Industries\, Corporate Profits\, 
+ State GDP\, and State Personal Income\, 1st Quarter 2027）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-06-25 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:9badfb62ea76d567ac80@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270625T123000Z
+DTEND:20270625T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（May 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-06-25 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:7ac90db7c1881ff43354@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270702T123000Z
+DTEND:20270702T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-07-02 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:a6c670b2d976ccb9799f@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270714T123000Z
+DTEND:20270714T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-07-14 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:cdb1848281b56b38779f@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270716T123000Z
+DTEND:20270716T124500Z
+SUMMARY:🇺🇸 零售销售（June 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-07-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:c16cf5231cf246014b62@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:20f0ecc1fa6970b61631@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
+ 报告
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:4a8bd6923e70b6c5e020@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270728
+DTEND;VALUE=DATE:20270729
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:50a9643f4a976da31293@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270729T123000Z
+DTEND:20270729T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（2nd Quarter 2027）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-07-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:1dd07185ca0cee3fa3b0@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270729T123000Z
+DTEND:20270729T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（June 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-07-29 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:105f0434f4ee1ab35237@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270730
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:4686ab2aeb0769692bae@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270806T123000Z
+DTEND:20270806T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-08-06 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:7f3f46c979d12159d035@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270811T123000Z
+DTEND:20270811T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-08-11 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:f5304e3edb71fc0a07db@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270816T123000Z
+DTEND:20270816T124500Z
+SUMMARY:🇺🇸 零售销售（July 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-08-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:9070fc4750a2c52c7174@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270825T123000Z
+DTEND:20270825T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（July 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-08-25 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:66feb62ff354513c10f5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270903T123000Z
+DTEND:20270903T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-09-03 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:5d4d4c99a80b8aff32e6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270909
+DTEND;VALUE=DATE:20270910
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:7ac485e9dd37cd5a5324@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270914T123000Z
+DTEND:20270914T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-09-14 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:c683ed5420bb0065e11e@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270915
+DTEND;VALUE=DATE:20270916
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:0899a540f08a7f554baf@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270916T123000Z
+DTEND:20270916T124500Z
+SUMMARY:🇺🇸 零售销售（August 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-09-16 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:d7bd97423204bf6601ba@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:9313fe63f901641b4c2b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:baaf11880d9d665cee54@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270930T123000Z
+DTEND:20270930T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（Industries\, Corporate Profits\, 
+ State GDP\, and State Personal Income\, 2nd Quarter 2027\; State Consumer 
+ Spending\, 2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-09-30 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:8fe1583d110c6d9d4d0b@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20270930T123000Z
+DTEND:20270930T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（August 2027）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-09-30 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:456d4b3c236893f86413@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271008T123000Z
+DTEND:20271008T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-10-08 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:96fa9b51dc153c555360@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271014T123000Z
+DTEND:20271014T124500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-10-14 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:4a974964cf35c710b6cf@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271015T123000Z
+DTEND:20271015T124500Z
+SUMMARY:🇺🇸 零售销售（September 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-10-15 20:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:a5f29dddbf1febb15243@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271027
+DTEND;VALUE=DATE:20271028
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:6cadb440093d7f9c1d5a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271028T123000Z
+DTEND:20271028T124500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（3rd Quarter 2027）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-10-28 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:877b1135665b34c8d776@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271028T123000Z
+DTEND:20271028T124500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（September 2027
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-10-28 20:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:ab1752d2d938bcf22e75@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271028
+DTEND;VALUE=DATE:20271029
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:3679c5a5943f41633273@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271030
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
+ 报告
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:b7da9dd50fba7ea93146@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271104
+DTEND;VALUE=DATE:20271105
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:cd5e2aa0e75aa4b614e1@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271105T123000Z
+DTEND:20271105T124500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-11-05 20:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:bf9aed7bd454e09d987c@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271110T133000Z
+DTEND:20271110T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-11-10 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:3c49e47aee8113afebac@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271116T133000Z
+DTEND:20271116T134500Z
+SUMMARY:🇺🇸 零售销售（October 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-11-16 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:1c6a8011632eed57999f@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:🇺🇸 美联储 · FOMC 议息会议
+DESCRIPTION:美国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:6b356a3ffdf2f339d60a@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271124T133000Z
+DTEND:20271124T134500Z
+SUMMARY:🇺🇸 个人收入与支出（含 PCE 物价）（October 2027
+ ）
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-11-24 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:d2461bf1c17a12e0d2ae@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271201T133000Z
+DTEND:20271201T134500Z
+SUMMARY:🇺🇸 GDP 国内生产总值（2026）
+DESCRIPTION:美国 · 增长 · 重要性 高\n北京时间 2027-12-01 21:3
+ 0；当地 08:30（美东）\n来源：BEA 发布日程（ICS）\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:增长
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bea.gov/news/schedule
+END:VEVENT
+BEGIN:VEVENT
+UID:9448d191dc4af81fa7b4@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271203T133000Z
+DTEND:20271203T134500Z
+SUMMARY:🇺🇸 非农就业报告（Employment Situation）
+DESCRIPTION:美国 · 就业 · 重要性 高\n北京时间 2027-12-03 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:就业
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:a03e80c408eaead1ded8@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271210T133000Z
+DTEND:20271210T134500Z
+SUMMARY:🇺🇸 CPI 消费者物价指数
+DESCRIPTION:美国 · 通胀 · 重要性 高\n北京时间 2027-12-10 21:3
+ 0；当地 08:30（美东）\n惯例时间 08:30 ET（OMB 日程表不含
+ 时间；BLS 官网拒绝脚本访问，未能逐条核对）\n来源：OM
+ B · 主要联邦经济指标发布日程（BLS 部分）\n日历：https:
+ //personal-news-site.vercel.app/macro/calendar
+CATEGORIES:通胀
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.whitehouse.gov/wp-content/uploads/2026/10/FY2027-PFEI.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:34617b635cfbeed38768@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART:20271215T133000Z
+DTEND:20271215T134500Z
+SUMMARY:🇺🇸 零售销售（November 2027）
+DESCRIPTION:美国 · 消费 · 重要性 高\n北京时间 2027-12-15 21:3
+ 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
+ ：https://personal-news-site.vercel.app/macro/calendar
+CATEGORIES:消费
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.census.gov/economic-indicators/calendar-listview.html
+END:VEVENT
+BEGIN:VEVENT
+UID:6957ae44293bd5e9b1fb@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271216
+DTEND;VALUE=DATE:20271217
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:6348caeed049b2cc6888@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271216
+DTEND;VALUE=DATE:20271217
+SUMMARY:🇬🇧 英国央行 · MPC 利率决议
+DESCRIPTION:英国 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
+END:VEVENT
+BEGIN:VEVENT
+UID:4b63cd5d04912c311aba@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20271217
+DTEND;VALUE=DATE:20271218
+SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
+DESCRIPTION:日本 · 央行会议 · 重要性 高\n决议公布日（官
+ 方日程，当地日期；时间以央行公告为准）\n来源：央行
+ 官网日程\n日历：https://personal-news-site.vercel.app/macro/calenda
+ r
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
+END:VEVENT
+BEGIN:VEVENT
+UID:961f62eaa6a5cd015067@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280203
+DTEND;VALUE=DATE:20280204
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ab990cb5b184342b9dc5@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280323
+DTEND;VALUE=DATE:20280324
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:0c7ab41b40e6c43d197d@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280504
+DTEND;VALUE=DATE:20280505
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:8fdc79343cd861895af0@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280608
+DTEND;VALUE=DATE:20280609
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:69aa2b5cca188dccaed6@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280720
+DTEND;VALUE=DATE:20280721
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:eccad62acc2e89506ed4@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20280907
+DTEND;VALUE=DATE:20280908
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+BEGIN:VEVENT
+UID:c7f44b66c37390618ff4@personal-news-site
+DTSTAMP:20261116T013910Z
+DTSTART;VALUE=DATE:20281012
+DTEND;VALUE=DATE:20281013
+SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
+DESCRIPTION:欧元区 · 央行会议 · 重要性 高\n决议公布日（
+ 官方日程，当地日期；时间以央行公告为准）\n来源：央
+ 行官网日程\n日历：https://personal-news-site.vercel.app/macro/cale
+ ndar
+CATEGORIES:央行会议
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
+END:VEVENT
+END:VCALENDAR

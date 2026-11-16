@@ -253,6 +253,13 @@
     try { v0 = v0 || localStorage.getItem("pn-cal-view"); } catch (e) {}
     if (v0 && views.some((b) => b.dataset.calView === v0)) setView(v0);
     apply();
+    // #day-YYYY-MM-DD (from the home mini calendar): open the list view at that day
+    const dm = location.hash.match(/^#day-(\d{4}-\d{2}-\d{2})$/);
+    if (dm) {
+      let el = document.querySelector(`[data-view="list"] .cal-day[data-day="${dm[1]}"]`);
+      if (el) setView("list"); else { setView("month"); el = document.querySelector(`[data-view="month"] [data-day="${dm[1]}"]`); }
+      if (el) { el.classList.add("is-target"); setTimeout(() => el.scrollIntoView({ block: "start" }), 50); }
+    }
   }
 
   // indicator detail chart: range (1Y/5Y/10Y/全部) × series toggle, plain SVG
@@ -565,6 +572,11 @@
         el.appendChild(sm);
       }
     });
+    if (doc) document.querySelectorAll("[data-live-market]").forEach((b) => {
+      const g = (doc.groups || {})[b.dataset.liveMarket]; if (!g) return;
+      b.textContent = g.open ? L("交易中", "Open") : L("休市", "Closed");
+      b.classList.toggle("tag-ok", !!g.open); b.hidden = false;
+    });
     if (panel && doc) {
       const box = panel.querySelector("[data-live-groups]"); box.innerHTML = "";
       Object.entries(doc.groups || {}).sort((x, y) => Object.keys(GROUPS).indexOf(x[0]) - Object.keys(GROUPS).indexOf(y[0])).forEach(([gid, g]) => {
@@ -597,3 +609,11 @@
   setInterval(() => { if (!document.hidden) load(); }, 300000);
   document.querySelectorAll("[data-lang-toggle],[data-lang-set]").forEach((b) => b.addEventListener("click", () => setTimeout(render, 0)));
 })();
+
+// ===== round 17: copy-to-clipboard buttons ([data-copy]) =====
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => {
+  const v = b.dataset.copy, old = b.textContent;
+  const done = () => { b.textContent = "已复制"; setTimeout(() => { b.textContent = old; }, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(done, () => window.prompt("复制链接", v));
+  else window.prompt("复制链接", v);
+}));
