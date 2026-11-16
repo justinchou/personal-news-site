@@ -1249,3 +1249,11 @@ button.mc-d.is-sel { background: var(--accent); color: #fff; opacity: 1; } butto
 /* round 21: macro 今日 uses the shared daily header; small meta line under the date */
 .daily-hero .daily-lede { font-size: .82rem; color: var(--muted); max-width: none; margin: .45rem 0 0; }
 @media (max-width: 640px) { .daily-hero .daily-lede { font-size: .76rem; } }
+/* round 21: wire / mainstream-media headline monitor — outlet badges */
+.badge-wire { background: color-mix(in srgb, var(--k-data, #4ea3ff) 16%, transparent); color: var(--k-data, #4ea3ff); border-color: transparent; }
+.obs { display: inline-flex; flex-wrap: wrap; gap: .2rem; vertical-align: middle; }
+.ob { display: inline-block; padding: 0 .38rem; border-radius: 4px; font-size: .68rem; line-height: 1.5; font-weight: 600; letter-spacing: .01em;
+  background: var(--card-2); border: 1px solid var(--line-2); color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+a.ob:hover { border-color: var(--accent); color: var(--accent); }
+.wire-outlets { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; margin: .4rem 0 0; }
+.wire-outlets .meta { margin-right: .2rem; font-size: .74rem; }
