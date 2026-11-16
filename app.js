@@ -384,3 +384,129 @@
     links.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   }
 })();
+
+// ===== round 13: global search, up/down color convention, back-to-top, sticky tables =====
+(() => {
+  const root = document.documentElement;
+  const curDomain = document.body.getAttribute("data-domain") || "ai";
+  const DOM = { ai: "AI 情报", macro: "全球宏观" };
+
+  // --- 涨跌颜色：默认红涨绿跌（中国习惯），可切换为绿涨红跌 ---
+  const setUD = (m) => {
+    root.setAttribute("data-updown", m);
+    document.querySelectorAll("[data-updown-toggle]").forEach((b) => { b.textContent = m === "us" ? "绿涨" : "红涨"; b.setAttribute("aria-label", m === "us" ? "当前绿涨红跌，点击切换为红涨绿跌" : "当前红涨绿跌，点击切换为绿涨红跌"); });
+  };
+  setUD(root.getAttribute("data-updown") === "us" ? "us" : "cn");
+  document.querySelectorAll("[data-updown-toggle]").forEach((b) => b.addEventListener("click", () => {
+    const n = root.getAttribute("data-updown") === "us" ? "cn" : "us";
+    setUD(n);
+    try { localStorage.setItem("pn-updown", n); } catch (e) {}
+  }));
+
+  // --- back to top ---
+  const top = document.querySelector("[data-back-top]");
+  if (top) {
+    const onScroll = () => top.classList.toggle("is-on", window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  }
+
+  // --- tall tables get a bounded scroll box so the sticky header works ---
+  document.querySelectorAll(".table-wrap").forEach((w) => { if (w.querySelectorAll("tbody tr").length > 14) w.classList.add("is-tall"); });
+
+  // --- global search ---
+  const dlg = document.querySelector("[data-search-dialog]");
+  if (!dlg) return;
+  const input = dlg.querySelector("input[type=search]");
+  const out = dlg.querySelector("[data-search-results]");
+  const scopeBtns = [...dlg.querySelectorAll("[data-scope]")];
+  let index = null, loading = null, scope = "all", active = -1, flat = [];
+  const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const load = () => loading || (loading = fetch(dlg.getAttribute("data-index"), { cache: "no-cache" }).then((r) => r.json()).then((j) => {
+    index = j; index.items.forEach((e) => { e._t = (e.t || "").toLowerCase(); e._s = (e.s || "").toLowerCase(); }); return j;
+  }).catch(() => { out.innerHTML = '<p class="sr-empty">搜索索引加载失败，请刷新重试。</p>'; }));
+  const hl = (s, terms) => {
+    let h = esc(s);
+    terms.forEach((t) => { if (t) h = h.replace(new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "ig"), (m) => `<mark>${m}</mark>`); });
+    return h;
+  };
+  const search = (q) => {
+    const terms = q.toLowerCase().split(/\s+/).filter(Boolean).map((t) => esc(t));
+    const raw = q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!raw.length || !index) return [[], []];
+    const res = [];
+    for (const e of index.items) {
+      if (scope !== "all" && e.d !== scope) continue;
+      let sc = 0, ok = true;
+      for (const t of raw) {
+        const ti = e._t.indexOf(t);
+        if (ti === 0) sc += e._t === t ? 120 : 60;
+        else if (ti > 0) sc += 35;
+        else if (e._s.indexOf(t) >= 0) sc += 8;
+        else { ok = false; break; }
+      }
+      if (!ok) continue;
+      if (e.d === curDomain) sc += 4;
+      sc -= Math.min(e.t.length, 60) / 30;
+      res.push([sc, e]);
+    }
+    res.sort((a, b) => b[0] - a[0]);
+    return [res.slice(0, 80).map((r) => r[1]), terms];
+  };
+  const render = () => {
+    const q = input.value.trim();
+    if (!q) { out.innerHTML = '<p class="sr-empty">输入关键词：页面、指标（如 CPI、10年期）、标的（如 NVDA、腾讯）、国家、议题、关键词、事件、日报条目。<br>快捷键 <kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>K</kbd> 打开，<kbd>↑</kbd><kbd>↓</kbd> 选择，<kbd>Enter</kbd> 打开。</p>'; flat = []; return; }
+    if (!index) { out.innerHTML = '<p class="sr-empty">正在加载索引…</p>'; load().then(render); return; }
+    const [items, terms] = search(q);
+    if (!items.length) { out.innerHTML = `<p class="sr-empty">没有找到「${esc(q)}」。试试更短的词或切换范围。</p>`; flat = []; return; }
+    const groups = new Map();
+    items.forEach((e) => { if (!groups.has(e.k)) groups.set(e.k, []); groups.get(e.k).push(e); });
+    const order = index.types || [];
+    const keys = [...groups.keys()].sort((a, b) => {
+      const ba = groups.get(a)[0], bb = groups.get(b)[0];
+      return items.indexOf(ba) - items.indexOf(bb) || order.indexOf(a) - order.indexOf(b);
+    });
+    flat = []; let html = "";
+    keys.forEach((k) => {
+      const list = groups.get(k).slice(0, 8);
+      html += `<div class="sr-group"><p class="sr-type">${esc(k)} <span>${groups.get(k).length}</span></p><ul>`;
+      list.forEach((e) => {
+        const i = flat.push(e) - 1;
+        html += `<li><a class="sr-item" href="${esc(e.u)}" data-i="${i}"><span class="sr-dom d-${esc(e.d)}">${esc(DOM[e.d] || e.d)}</span><b>${hl(e.t, terms)}</b>${e.s ? `<small>${hl(e.s, terms)}</small>` : ""}</a></li>`;
+      });
+      html += "</ul></div>";
+    });
+    out.innerHTML = html; active = -1; move(0);
+  };
+  const move = (d) => {
+    const els = out.querySelectorAll(".sr-item");
+    if (!els.length) return;
+    active = Math.max(0, Math.min(els.length - 1, active + d));
+    els.forEach((el, i) => el.classList.toggle("is-active", i === active));
+    els[active].scrollIntoView({ block: "nearest" });
+  };
+  const open = () => {
+    if (typeof dlg.showModal === "function") { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
+    load(); setTimeout(() => { input.focus(); input.select(); }, 0); render();
+  };
+  const close = () => { if (dlg.open && dlg.close) dlg.close(); else dlg.removeAttribute("open"); };
+  document.querySelectorAll("[data-search-open]").forEach((b) => b.addEventListener("click", open));
+  dlg.querySelectorAll("[data-search-close]").forEach((b) => b.addEventListener("click", close));
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) close(); });
+  let t; input.addEventListener("input", () => { clearTimeout(t); t = setTimeout(render, 80); });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") { e.preventDefault(); move(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); move(-1); }
+    else if (e.key === "Enter") { const el = out.querySelectorAll(".sr-item")[active]; if (el) { e.preventDefault(); location.href = el.getAttribute("href"); close(); } }
+  });
+  scopeBtns.forEach((b) => b.addEventListener("click", () => {
+    scope = b.dataset.scope; scopeBtns.forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false")); render(); input.focus();
+  }));
+  out.addEventListener("click", (e) => { const a = e.target.closest(".sr-item"); if (a) close(); });
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) { e.preventDefault(); dlg.open ? close() : open(); }
+    else if (e.key === "/" && !dlg.open && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || "")) { e.preventDefault(); open(); }
+  });
+  const q0 = new URLSearchParams(location.search).get("q");
+  if (q0) { input.value = q0; open(); }
+})();

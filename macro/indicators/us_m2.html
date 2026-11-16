@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>美国 M2 货币供应 · 全球宏观 · 信息情报站</title>
   <meta name="description" content="美国 M2 货币供应：历史走势、同比与环比">
-  <script>try{var d=document.documentElement,t=localStorage.getItem("pn-theme"),l=localStorage.getItem("pn-lang"),c=localStorage.getItem("pn-cloud");if(t)d.setAttribute("data-theme",t);d.setAttribute("data-lang-mode",l==="orig"?"orig":"zh");d.setAttribute("data-cloud-mode",c==="sorted"?"sorted":"organic")}catch(e){}</script>
+  <script>try{var d=document.documentElement,t=localStorage.getItem("pn-theme"),l=localStorage.getItem("pn-lang"),c=localStorage.getItem("pn-cloud"),u=localStorage.getItem("pn-updown");if(t)d.setAttribute("data-theme",t);d.setAttribute("data-updown",u==="us"?"us":"cn");d.setAttribute("data-lang-mode",l==="orig"?"orig":"zh");d.setAttribute("data-cloud-mode",c==="sorted"?"sorted":"organic")}catch(e){}</script>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body data-section="dashboard" data-domain="macro">
@@ -14,7 +14,8 @@
       <a class="brand" href="/macro"><span class="brand-mark" aria-hidden="true">宏观</span><span><b>信息情报站</b><small>全球宏观 · 按工作日整理</small></span></a>
       <nav class="domain-switch" aria-label="切换情报领域"><a href="/" data-domain="ai">AI 情报</a><a href="/macro" class="is-active" aria-current="true" data-domain="macro">全球宏观</a></nav>
       <nav class="nav" aria-label="主导航"><a href="/macro">今日</a><a href="/macro/dashboard" class="is-active" aria-current="page">指标看板</a><a href="/macro/calendar">日历</a><a href="/macro/watchlist">标的</a><div class="nav-group" data-nav-group><button type="button" class="nav-group-btn" aria-expanded="false" aria-haspopup="true" aria-controls="navm-global">全球<span class="nav-caret" aria-hidden="true">▾</span></button><div class="nav-menu" id="navm-global"><a href="/macro/countries" class="nav-menu-item">国家</a><a href="/macro/compare" class="nav-menu-item">跨国对比</a><a href="/macro/central-banks" class="nav-menu-item">央行与传导</a><a href="/macro/fiscal" class="nav-menu-item">美国财政</a><a href="/macro/geo" class="nav-menu-item">地缘与事件</a><a href="/macro/pizza" class="nav-menu-item">披萨指数</a><a href="/macro/topics" class="nav-menu-item">议题追踪</a><a href="/macro/people" class="nav-menu-item">关键人物</a><a href="/macro/polymarket" class="nav-menu-item">预测市场</a><a href="/macro/crypto" class="nav-menu-item">加密情绪</a><a href="/macro/alerts" class="nav-menu-item">风险预警</a><a href="/macro/quarterly" class="nav-menu-item">季度策略</a></div></div><a href="/macro/archive">归档</a><a href="/macro/sources">信息源</a><a href="/macro/catalog">资料库</a></nav>
-      <button type="button" class="icon-btn" data-theme-toggle aria-label="切换浅色 / 深色">◐</button>
+      <div class="hdr-tools"><button type="button" class="search-btn" data-search-open aria-label="搜索全站（⌘K / Ctrl+K）"><span aria-hidden="true">⌕</span><span class="sb-label">搜索</span><kbd>⌘K</kbd></button>
+      <button type="button" class="icon-btn ud-btn" data-updown-toggle title="涨跌颜色：红涨绿跌 / 绿涨红跌">红涨</button><button type="button" class="icon-btn" data-theme-toggle aria-label="切换浅色 / 深色">◐</button></div>
     </div>
     
   </header>
@@ -29,6 +30,12 @@
   <footer class="footer"><div class="footer-inner">
     <p>按北京时间工作日窗口（当日 04:00 至次日 04:00）整理。原始抓取数据与个人项目细节不在本站点发布。</p>
   </div></footer>
+  <button type="button" class="back-top" data-back-top aria-label="回到顶部">↑</button>
+  <dialog class="search-dlg" data-search-dialog data-index="/search-index.json" aria-label="全站搜索">
+    <div class="sd-head"><input type="search" placeholder="搜索页面、指标、标的、国家、议题、关键词、事件…" aria-label="搜索关键词" autocomplete="off" enterkeyhint="go"><button type="button" class="icon-btn" data-search-close aria-label="关闭">✕</button></div>
+    <div class="sd-scope" role="group" aria-label="搜索范围"><button type="button" data-scope="all" aria-pressed="true">全部</button><button type="button" data-scope="ai" aria-pressed="false">AI 情报</button><button type="button" data-scope="macro" aria-pressed="false">全球宏观</button></div>
+    <div class="sd-results" data-search-results></div>
+  </dialog>
   <script src="/app.js" defer></script>
 </body>
 </html>
