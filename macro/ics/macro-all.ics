@@ -4,8 +4,8 @@ PRODID:-//personal-news-site//macro calendar//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:信息情报站 · 宏观日历（全部）
-X-WR-CALDESC:数据发布、央行议息会议与关注标的财报（北
- 京时间）
+X-WR-CALDESC:数据发布、央行议息会议与资产行情页股票财
+ 报（北京时间）
 X-WR-TIMEZONE:Asia/Shanghai
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H

@@ -1158,3 +1158,49 @@ a.mc-d:hover { background: var(--card-hover); outline: 1px solid var(--line-2); 
 .mc-next .meta { white-space: nowrap; flex: none; }
 @media (max-width: 720px) { .hp-note { display: none; } .home-card { padding: .6rem .65rem; } .mc-d { height: 27px; } }
 .mc-next a { min-width: 0; flex: 1; } .mc-next li { min-width: 0; }
+
+/* ===== round 18: dividend topic ===== */
+.dv-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem;margin:.6rem 0 1rem}
+.dv-stat{display:flex;flex-direction:column;gap:.15rem;padding:.6rem .8rem;border:1px solid var(--line,#ddd);border-radius:10px;background:var(--card,#fff)}
+.dv-stat b{font-size:1.05rem}
+.dv-sel{display:inline-flex;gap:.4rem;align-items:center;margin:.4rem 0 .6rem;font-size:.92rem}
+.dv-sel select,.dv-bt-ctl select{font:inherit;padding:.25rem .4rem;border-radius:6px;border:1px solid var(--line,#ccc);background:var(--card,#fff);color:inherit;max-width:100%}
+.dv-bench{font-size:.9rem;line-height:1.6;margin:.2rem 0 .5rem}
+.dv-table td,.dv-table th{white-space:nowrap}
+.dv-table td:nth-child(2){white-space:normal;min-width:8em}
+.dv-flag{display:inline-block;font-size:.75rem;padding:.05rem .35rem;margin:0 .2rem .15rem 0;border-radius:4px;background:#fff3cd;color:#7a5b00;border:1px solid #f0d78c;cursor:help}
+.dv-flag.dv-cut,.dv-flag.dv-cut_next,.dv-flag.dv-payout{background:#fde2e1;color:#8a1f17;border-color:#f3b4ae}
+.dv-flag.dv-crash{background:#e7eefc;color:#1d3f8a;border-color:#b9cbf3}
+.dv-yes{color:var(--up,#c0392b);font-weight:600}
+.dv-no{color:var(--muted,#888)}
+.dv-ov{margin-top:.8rem}
+.dv-ov summary{cursor:pointer;font-weight:600}
+.dv-bt-ctl{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin-bottom:.6rem}
+.dv-bt-ctl label{display:inline-flex;gap:.35rem;align-items:center;font-size:.92rem;min-width:0}
+.dv-bt-ctl select[data-bt="code"]{max-width:16em}
+.dv-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.7rem;margin:.5rem 0}
+.dv-card{border:1px solid var(--line,#ddd);border-radius:10px;padding:.6rem .8rem;background:var(--card,#fff);min-width:0}
+.dv-card h3{margin:.1rem 0 .4rem;font-size:1rem}
+.dv-card dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem .6rem;margin:0;font-size:.9rem}
+.dv-card dt{color:var(--muted,#666)}
+.dv-card dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.dv-card dd.up{color:var(--up)}.dv-card dd.down{color:var(--down)}
+.dv-chart{width:100%;height:auto;max-height:260px;margin-top:.4rem}
+.dv-chart path{fill:none;stroke-width:2}
+.dv-chart .dv-l-stock,.dv-key.dv-l-stock{stroke:#c0392b;background:#c0392b}
+.dv-chart .dv-l-dep,.dv-key.dv-l-dep{stroke:#7f8c8d;stroke-dasharray:5 4;background:#7f8c8d}
+.dv-ax{font-size:11px;fill:var(--muted,#888)}
+.dv-key{display:inline-block;width:14px;height:3px;vertical-align:middle;margin:0 .3rem 0 .6rem}
+button.mc-d { font: inherit; border: 0; background: none; cursor: pointer; padding: 0; width: 100%; }
+button.mc-d:hover, button.mc-d:focus-visible { background: var(--card-hover); outline: 1px solid var(--line-2); }
+button.mc-d.is-sel { background: var(--accent); color: #fff; opacity: 1; } button.mc-d.is-sel > span:first-child { color: #fff; }
+.mc-panel { margin-top: .4rem; padding: .45rem .55rem; border: 1px solid var(--line-2); border-radius: 8px; background: var(--card); font-size: .8rem; }
+.mc-ph { display: flex; align-items: baseline; gap: .5rem; } .mc-ph .meta { flex: 1; }
+.mc-x { font: inherit; font-size: 1rem; line-height: 1; border: 0; background: none; color: var(--muted); cursor: pointer; padding: 0 .2rem; }
+.mc-evs { list-style: none; margin: .3rem 0; padding: 0; display: grid; gap: .2rem; }
+.mc-evs li { display: flex; gap: .4rem; min-width: 0; } .mc-evs .mc-t { flex: 1; min-width: 0; } .mc-evs .meta { white-space: nowrap; }
+.mc-evs li.imp-high .mc-t { font-weight: 600; }
+.mc-full { font-size: .78rem; }
+.mc-nb { font: inherit; text-align: left; border: 0; background: none; color: inherit; padding: 0; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
+.mc-nb:hover, .mc-nb:focus-visible { color: var(--accent); }
+.dv-flag.dv-extra{background:#eef6ea;color:#2f6b1f;border-color:#c5e0b8}

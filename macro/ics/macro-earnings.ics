@@ -3,8 +3,8 @@ VERSION:2.0
 PRODID:-//personal-news-site//macro calendar//ZH
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:信息情报站 · 关注标的财报
-X-WR-CALDESC:关注标的财报日期（已排期 / 估计）
+X-WR-CALNAME:信息情报站 · 个股财报
+X-WR-CALDESC:资产行情页股票的财报日期（已排期 / 估计）
 X-WR-TIMEZONE:Asia/Shanghai
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H

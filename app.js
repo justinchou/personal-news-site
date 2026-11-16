@@ -617,3 +617,166 @@ document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("clic
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(done, () => window.prompt("复制链接", v));
   else window.prompt("复制链接", v);
 }));
+
+// ===== round 18: dividend topic — year selector + backtest =====
+(() => {
+  const showYear = (mkt, y) => {
+    document.querySelectorAll(`[data-div-yearpanel="${mkt}"]`).forEach((p) => { p.hidden = p.dataset.year !== String(y); });
+    const s = document.querySelector(`[data-div-year="${mkt}"]`);
+    if (s) s.value = String(y);
+  };
+  document.querySelectorAll("[data-div-year]").forEach((s) => s.addEventListener("change", () => showYear(s.dataset.divYear, s.value)));
+  document.querySelectorAll("[data-div-jump]").forEach((a) => a.addEventListener("click", (e) => {
+    const [mkt, y] = a.dataset.divJump.split(":");
+    e.preventDefault();
+    showYear(mkt, y);
+    const sel = document.querySelector(`[data-div-year="${mkt}"]`);
+    if (sel) sel.scrollIntoView({ block: "start", behavior: "smooth" });
+  }));
+  const m = /^#dv-(cn|hk|us)-(\d{4})$/.exec(location.hash);
+  if (m) {
+    const tab = document.querySelector(`button[data-tab="dv-p-${m[1]}"]`);
+    if (tab) tab.click();
+    showYear(m[1], m[2]);
+  }
+
+  const box = document.querySelector("[data-div-bt]");
+  if (!box) return;
+  const idx = JSON.parse(box.querySelector("[data-bt-index]").textContent);
+  const q = (k) => box.querySelector(`[data-bt="${k}"]`);
+  const selM = q("mkt"), selC = q("code"), selS = q("start"), chk = q("tax"), out = q("out");
+  const CUR = { cn: "元", hk: "港元", us: "美元" };
+  const BEN = { cn: "一年期定存基准", hk: "12 个月 HIBOR", us: "1 年期美债" };
+  const pct = (x, d = 1, s = true) => (x == null ? "—" : `${s && x > 0 ? "+" : ""}${(x * 100).toFixed(d)}%`);
+  const num = (x) => (x == null ? "—" : Math.round(x).toLocaleString("zh-CN"));
+  const cls = (x) => (x == null ? "" : x > 0 ? "up" : x < 0 ? "down" : "");
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const cache = {};
+  let cur = null;
+  const fillCodes = () => {
+    const list = idx[selM.value] || [];
+    selC.innerHTML = list.map(([c, n]) => `<option value="${esc(c)}">${esc(n)}（${esc(c)}）</option>`).join("");
+  };
+  const chart = (d, start, key) => {
+    const tri = (d.tri[key] || []).filter((p) => p[0] >= start - 1);
+    const dep = (d.dep || []).filter((p) => p[0] >= start - 1);
+    if (tri.length < 2) return "";
+    const b0 = tri[0][1], d0 = dep.length ? dep[0][1] : 1;
+    const a = tri.map(([y, v]) => [y, (v / b0) * 100000]);
+    const b = dep.map(([y, v]) => [y, (v / d0) * 100000]);
+    const all = a.concat(b).map((p) => p[1]);
+    const lo = Math.min(...all) * 0.9, hi = Math.max(...all) * 1.05;
+    const logv = hi / Math.max(lo, 1) > 20;
+    const f = (v) => (logv ? Math.log(Math.max(v, 1)) : v);
+    const W = 640, H = 220, x0 = a[0][0], x1 = a[a.length - 1][0];
+    const X = (y) => 44 + ((y - x0) / Math.max(1, x1 - x0)) * (W - 54);
+    const Y = (v) => H - 20 - ((f(v) - f(lo)) / (f(hi) - f(lo))) * (H - 40);
+    const line = (pts) => pts.map(([y, v], i) => `${i ? "L" : "M"}${X(y).toFixed(1)},${Y(v).toFixed(1)}`).join("");
+    return `<svg class="dv-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="10 万元一次性投入的年末市值（分红再投）与存款基准">`
+      + `<path d="${line(a)}" class="dv-l-stock"/><path d="${line(b)}" class="dv-l-dep"/>`
+      + `<text x="40" y="14" class="dv-ax">年末市值${logv ? "（对数刻度）" : ""} · 起点 ${x0} 年末 = 100,000</text>`
+      + `<text x="36" y="${(Y(hi / 1.05) + 4).toFixed(0)}" text-anchor="end" class="dv-ax">${num(hi / 1.05)}</text><text x="36" y="${(Y(100000) + 4).toFixed(0)}" text-anchor="end" class="dv-ax">100,000</text>`
+      + `<text x="40" y="${H - 4}" class="dv-ax">${x0}</text><text x="${W - 10}" y="${H - 4}" text-anchor="end" class="dv-ax">${x1}</text></svg>`
+      + `<p class="meta"><span class="dv-key dv-l-stock"></span>股票（分红再投） <span class="dv-key dv-l-dep"></span>${BEN[d.mkt]}</p>`;
+  };
+  const render = () => {
+    if (!cur) return;
+    const key = chk.checked ? "post" : "pre";
+    const r = cur[key][selS.value];
+    if (!r) { out.innerHTML = '<p class="meta">该起始年份没有数据。</p>'; return; }
+    const L = r.lump, D = r.dca, B = r.bench, c = CUR[cur.mkt];
+    const dcaRet = D.invested ? D.final / D.invested - 1 : null;
+    const benLump = B.lump_final / 100000 - 1, benDca = D.invested ? B.dca_final / D.invested - 1 : null;
+    const y = cur.yields[selS.value];
+    out.innerHTML = `<p class="meta">${esc(cur.name)}（${esc(cur.code)}）· ${r.start} 年初 → ${esc(r.end)}（约 ${r.years} 年）· ${chk.checked ? "税后分红" : "税前分红"} · 金额单位：${c}${y != null ? ` · ${r.start} 年股息率 ${pct(y, 2, false)}` : ""}</p>`
+      + `<div class="dv-cards"><div class="dv-card"><h3>一次性投入 100,000</h3><dl>`
+      + `<dt>分红再投 总回报</dt><dd class="${cls(L.tr_reinv)}"><b>${pct(L.tr_reinv)}</b> → ${num(L.final)}</dd>`
+      + `<dt>分红取现 总回报</dt><dd class="${cls(L.tr_cash)}">${pct(L.tr_cash)}（累计分红 ${num(L.cash_divs)}）</dd>`
+      + `<dt>只看股价</dt><dd class="${cls(L.price_ret)}">${pct(L.price_ret)}</dd>`
+      + `<dt>年化（再投）</dt><dd class="${cls(L.cagr)}">${pct(L.cagr, 2)}</dd>`
+      + `<dt>最大回撤（月末）</dt><dd class="down">${pct(L.mdd)}<span class="meta"> ${esc(L.mdd_peak || "")} → ${esc(L.mdd_trough || "")}</span></dd>`
+      + `<dt>最差自然年</dt><dd class="${cls(L.worst_ret)}">${L.worst_year ?? "—"} ${pct(L.worst_ret)}</dd></dl></div>`
+      + `<div class="dv-card"><h3>每月定投 ${num(D.monthly)}</h3><dl>`
+      + `<dt>累计投入</dt><dd>${num(D.invested)}</dd><dt>期末市值</dt><dd class="${cls(dcaRet)}"><b>${num(D.final)}</b>（${pct(dcaRet)}）</dd>`
+      + `<dt>内部收益率 XIRR</dt><dd class="${cls(D.xirr)}">${pct(D.xirr, 2)}</dd>`
+      + `<dt>组合最大回撤</dt><dd class="down">${pct(D.mdd)}</dd><dt>最大浮亏（相对投入）</dt><dd class="${cls(D.worst_vs_invested)}">${pct(D.worst_vs_invested)}</dd></dl></div>`
+      + `<div class="dv-card"><h3>同期${BEN[cur.mkt]}</h3><dl>`
+      + `<dt>一次性 100,000</dt><dd>${num(B.lump_final)}（${pct(benLump)}，年化 ${pct(B.lump_cagr, 2)}）</dd>`
+      + `<dt>每月 ${num(D.monthly)}</dt><dd>${num(B.dca_final)}（${pct(benDca)}）</dd>`
+      + `<dt>一次性 股票 − 基准</dt><dd class="${cls(L.final - B.lump_final)}">${num(L.final - B.lump_final)}</dd>`
+      + `<dt>定投 股票 − 基准</dt><dd class="${cls(D.final - B.dca_final)}">${num(D.final - B.dca_final)}</dd></dl>`
+      + `${B.ok ? "" : '<p class="meta">部分年份缺少基准利率，缺失年份按 0% 计。</p>'}</div></div>`
+      + chart(cur, +selS.value, key)
+      + (cur.splits && cur.splits.length ? `<p class="meta">已处理的拆股 / 送转：${cur.splits.map(([mm, rr]) => `${esc(mm)} ×${rr}`).join("、")}</p>` : "");
+  };
+  const load = () => {
+    const mkt = selM.value, code = selC.value;
+    if (!code) return;
+    const k = `${mkt}-${code.replace(/\./g, "_")}`;
+    const go = (d) => {
+      cur = d;
+      const years = Object.keys(d.pre).sort();
+      const keep = selS.value;
+      selS.innerHTML = years.map((y) => `<option value="${y}">${y}</option>`).join("");
+      selS.value = years.includes(keep) ? keep : years[Math.max(0, years.length - 11)] || years[0];
+      render();
+    };
+    if (cache[k]) { go(cache[k]); return; }
+    out.innerHTML = '<p class="meta">加载中…</p>';
+    fetch(`${box.dataset.base}${k}.json`).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((d) => { cache[k] = d; go(d); })
+      .catch(() => { out.innerHTML = '<p class="meta">回测数据加载失败。</p>'; });
+  };
+  selM.addEventListener("change", () => { fillCodes(); load(); });
+  selC.addEventListener("change", load);
+  selS.addEventListener("change", render);
+  chk.addEventListener("change", render);
+  fillCodes();
+  load();
+})();
+
+// ===== round 18: home mini calendar — show a day's events inline (no navigation) =====
+document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
+  const card = cal.closest(".home-cal") || cal;
+  const panel = cal.querySelector(".mc-panel");
+  if (!panel) return;
+  let open = null;
+  const btns = () => [...card.querySelectorAll("[data-mc-day]")];
+  const close = (focusBack) => {
+    panel.hidden = true; panel.innerHTML = "";
+    btns().forEach((b) => { b.setAttribute("aria-expanded", "false"); b.classList.remove("is-sel"); });
+    const prev = open; open = null;
+    if (focusBack && prev) { const b = card.querySelector(`.mc-grid [data-mc-day="${prev}"]`) || card.querySelector(`[data-mc-day="${prev}"]`); if (b) b.focus(); }
+  };
+  const show = (ds, src) => {
+    if (open === ds) { close(false); return; }
+    const t = cal.querySelector(`template[data-mc-tpl="${ds}"]`);
+    if (!t) return;
+    panel.innerHTML = ""; panel.appendChild(t.content.cloneNode(true)); panel.hidden = false; open = ds;
+    btns().forEach((b) => { const on = b.dataset.mcDay === ds; b.setAttribute("aria-expanded", on ? "true" : "false"); b.classList.toggle("is-sel", on && b.classList.contains("mc-d")); });
+    const x = panel.querySelector("[data-mc-close]");
+    if (x) x.addEventListener("click", () => close(true));
+    if (src && src.classList.contains("mc-nb")) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  };
+  card.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-mc-day]");
+    if (b && card.contains(b)) { e.preventDefault(); show(b.dataset.mcDay, b); }
+  });
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && open) { e.preventDefault(); close(true); return; }
+    const b = e.target.closest(".mc-grid [data-mc-day]");
+    if (!b || !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) return;
+    const days = [...card.querySelectorAll(".mc-grid [data-mc-day]")];
+    const i = days.indexOf(b);
+    const cur = new Date(b.dataset.mcDay + "T00:00:00");
+    const step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
+    // move to the nearest event day in that direction
+    let best = null;
+    days.forEach((d) => {
+      const dt = (new Date(d.dataset.mcDay + "T00:00:00") - cur) / 864e5;
+      if (Math.sign(dt) !== Math.sign(step)) return;
+      if (Math.abs(step) === 7 && dt % 7 !== 0 && best) return;
+      if (!best || Math.abs(dt - step) < Math.abs(best.dt - step)) best = { d, dt };
+    });
+    if (best) { e.preventDefault(); best.d.focus(); } else if (i < 0) e.preventDefault();
+  });
+});
