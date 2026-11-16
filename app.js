@@ -14,8 +14,17 @@
   const setLang = (mode) => {
     root.setAttribute("data-lang-mode", mode);
     document.querySelectorAll("[data-lang-set]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.langSet === mode ? "true" : "false"));
+    document.querySelectorAll("[data-lang-toggle]").forEach((b) => {
+      const t = mode === "orig" ? "当前：原文，点击切换为中文" : "当前：中文，点击切换为原文";
+      b.setAttribute("aria-label", t); b.setAttribute("title", t);
+    });
   };
   setLang(root.getAttribute("data-lang-mode") === "orig" ? "orig" : "zh");
+  document.querySelectorAll("[data-lang-toggle]").forEach((b) => b.addEventListener("click", () => {
+    const next = root.getAttribute("data-lang-mode") === "orig" ? "zh" : "orig";
+    setLang(next);
+    try { localStorage.setItem("pn-lang", next); } catch (e) {}
+  }));
   document.querySelectorAll("[data-lang-set]").forEach((b) => b.addEventListener("click", () => {
     setLang(b.dataset.langSet);
     try { localStorage.setItem("pn-lang", b.dataset.langSet); } catch (e) {}
