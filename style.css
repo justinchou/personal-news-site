@@ -1226,3 +1226,12 @@ button.mc-d.is-sel { background: var(--accent); color: #fff; opacity: 1; } butto
 .cal-klegend { display: inline-flex; align-items: center; gap: .2rem; } .cal-klegend .mc-dot { margin-left: .4rem; }
 .cw-cell.is-past, .cm-cell.is-past:not(.is-other) { opacity: 1; background: var(--card-2); }
 .cm-cell.is-past .cm-d, .cw-cell.is-past .cw-h { opacity: .4; }
+
+/* ===== round 20: panel order + muted dots for past dates ===== */
+.mc-panel .mc-legend { margin: 0 0 .35rem; padding: 0 0 .3rem; border-top: 0; border-bottom: 1px dashed var(--line-2); }
+.mc-d.is-past .mc-dot.k-central_bank, .mc-pbody.is-past .mc-dot.k-central_bank,
+.cal-day.is-past .mc-dot.k-central_bank, .cm-cell.is-past .mc-dot.k-central_bank, .cw-cell.is-past .mc-dot.k-central_bank { background: color-mix(in srgb, var(--k-cb) 45%, var(--muted)); }
+.mc-d.is-past .mc-dot.k-data, .mc-pbody.is-past .mc-dot.k-data,
+.cal-day.is-past .mc-dot.k-data, .cm-cell.is-past .mc-dot.k-data, .cw-cell.is-past .mc-dot.k-data { background: color-mix(in srgb, var(--k-data) 45%, var(--muted)); }
+.mc-d.is-past .mc-dot.k-earnings, .mc-pbody.is-past .mc-dot.k-earnings,
+.cal-day.is-past .mc-dot.k-earnings, .cm-cell.is-past .mc-dot.k-earnings, .cw-cell.is-past .mc-dot.k-earnings { background: color-mix(in srgb, var(--k-earn) 45%, var(--muted)); }
