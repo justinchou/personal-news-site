@@ -734,49 +734,42 @@ document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("clic
   load();
 })();
 
-// ===== round 18: home mini calendar — show a day's events inline (no navigation) =====
+// ===== round 18/19: home mini calendar — a day's events inline (no navigation); today open by default =====
 document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
-  const card = cal.closest(".home-cal") || cal;
   const panel = cal.querySelector(".mc-panel");
   if (!panel) return;
-  let open = null;
-  const btns = () => [...card.querySelectorAll("[data-mc-day]")];
+  let open = cal.dataset.mcOpen || null;
+  const gridBtns = () => [...cal.querySelectorAll(".mc-grid [data-mc-day]")];
+  const mark = () => gridBtns().forEach((b) => { const on = b.dataset.mcDay === open; b.setAttribute("aria-expanded", on ? "true" : "false"); b.classList.toggle("is-sel", on); });
   const close = (focusBack) => {
-    panel.hidden = true; panel.innerHTML = "";
-    btns().forEach((b) => { b.setAttribute("aria-expanded", "false"); b.classList.remove("is-sel"); });
-    const prev = open; open = null;
-    if (focusBack && prev) { const b = card.querySelector(`.mc-grid [data-mc-day="${prev}"]`) || card.querySelector(`[data-mc-day="${prev}"]`); if (b) b.focus(); }
+    const prev = open;
+    panel.hidden = true; panel.innerHTML = ""; open = null; mark();
+    if (focusBack && prev) { const b = cal.querySelector(`.mc-grid [data-mc-day="${prev}"]`); if (b) b.focus(); }
   };
-  const show = (ds, src) => {
-    if (open === ds) { close(false); return; }
+  const show = (ds, toggle) => {
+    if (toggle && open === ds) { close(false); return; }
     const t = cal.querySelector(`template[data-mc-tpl="${ds}"]`);
     if (!t) return;
-    panel.innerHTML = ""; panel.appendChild(t.content.cloneNode(true)); panel.hidden = false; open = ds;
-    btns().forEach((b) => { const on = b.dataset.mcDay === ds; b.setAttribute("aria-expanded", on ? "true" : "false"); b.classList.toggle("is-sel", on && b.classList.contains("mc-d")); });
-    const x = panel.querySelector("[data-mc-close]");
-    if (x) x.addEventListener("click", () => close(true));
-    if (src && src.classList.contains("mc-nb")) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    panel.innerHTML = ""; panel.appendChild(t.content.cloneNode(true)); panel.hidden = false; open = ds; mark();
   };
-  card.addEventListener("click", (e) => {
+  cal.addEventListener("click", (e) => {
+    if (e.target.closest("[data-mc-close]")) { e.preventDefault(); close(true); return; }
     const b = e.target.closest("[data-mc-day]");
-    if (b && card.contains(b)) { e.preventDefault(); show(b.dataset.mcDay, b); }
+    if (b && cal.contains(b)) { e.preventDefault(); show(b.dataset.mcDay, !!b.closest(".mc-grid")); }
   });
-  card.addEventListener("keydown", (e) => {
+  cal.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && open) { e.preventDefault(); close(true); return; }
     const b = e.target.closest(".mc-grid [data-mc-day]");
     if (!b || !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) return;
-    const days = [...card.querySelectorAll(".mc-grid [data-mc-day]")];
-    const i = days.indexOf(b);
     const cur = new Date(b.dataset.mcDay + "T00:00:00");
     const step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
-    // move to the nearest event day in that direction
     let best = null;
-    days.forEach((d) => {
+    gridBtns().forEach((d) => {
       const dt = (new Date(d.dataset.mcDay + "T00:00:00") - cur) / 864e5;
-      if (Math.sign(dt) !== Math.sign(step)) return;
-      if (Math.abs(step) === 7 && dt % 7 !== 0 && best) return;
+      if (!dt || Math.sign(dt) !== Math.sign(step)) return;
       if (!best || Math.abs(dt - step) < Math.abs(best.dt - step)) best = { d, dt };
     });
-    if (best) { e.preventDefault(); best.d.focus(); } else if (i < 0) e.preventDefault();
+    e.preventDefault();
+    if (best) best.d.focus();
   });
 });

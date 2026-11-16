@@ -1204,3 +1204,25 @@ button.mc-d.is-sel { background: var(--accent); color: #fff; opacity: 1; } butto
 .mc-nb { font: inherit; text-align: left; border: 0; background: none; color: inherit; padding: 0; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
 .mc-nb:hover, .mc-nb:focus-visible { color: var(--accent); }
 .dv-flag.dv-extra{background:#eef6ea;color:#2f6b1f;border-color:#c5e0b8}
+
+/* ===== round 19: event-kind colours (home mini calendar + full calendar) =====
+   purple = central banks, blue = data releases, amber = earnings; no red/green (reserved for up/down) */
+:root { --k-cb: #b18cff; --k-data: #4ea3ff; --k-earn: #f2b134; }
+[data-theme="light"] { --k-cb: #7c3aed; --k-data: #1769d1; --k-earn: #b97800; }
+.mc-dot.k-central_bank { background: var(--k-cb); } .mc-dot.k-data { background: var(--k-data); } .mc-dot.k-earnings { background: var(--k-earn); }
+.mc-dot { width: 6px; height: 6px; }
+.mc-dots { height: 6px; }
+/* past days: dim only the date number, keep dots fully saturated */
+.mc-d.is-past { opacity: 1; }
+.mc-d.is-past > span:first-child { opacity: .4; }
+.mc-d.is-past.is-hi > span:first-child { color: var(--ink-2); }
+.mc-d.is-other { opacity: .22; }
+.mc-evs li { align-items: baseline; } .mc-evs .mc-dot { flex: none; position: relative; top: -1px; }
+.mc-panel .mc-legend { margin: .35rem 0 .2rem; padding-top: .3rem; border-top: 1px dashed var(--line-2); font-size: .7rem; }
+.mc-empty { margin: .35rem 0; color: var(--ink-2); }
+.mc-link { font: inherit; border: 0; background: none; padding: 0; color: var(--accent-3); text-decoration: underline; cursor: pointer; }
+.cr-time .mc-dot { margin-right: .3rem; vertical-align: middle; position: relative; top: -2px; }
+.cc .mc-dot { flex: none; align-self: center; }
+.cal-klegend { display: inline-flex; align-items: center; gap: .2rem; } .cal-klegend .mc-dot { margin-left: .4rem; }
+.cw-cell.is-past, .cm-cell.is-past:not(.is-other) { opacity: 1; background: var(--card-2); }
+.cm-cell.is-past .cm-d, .cw-cell.is-past .cw-h { opacity: .4; }
