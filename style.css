@@ -1235,3 +1235,17 @@ button.mc-d.is-sel { background: var(--accent); color: #fff; opacity: 1; } butto
 .cal-day.is-past .mc-dot.k-data, .cm-cell.is-past .mc-dot.k-data, .cw-cell.is-past .mc-dot.k-data { background: color-mix(in srgb, var(--k-data) 45%, var(--muted)); }
 .mc-d.is-past .mc-dot.k-earnings, .mc-pbody.is-past .mc-dot.k-earnings,
 .cal-day.is-past .mc-dot.k-earnings, .cm-cell.is-past .mc-dot.k-earnings, .cw-cell.is-past .mc-dot.k-earnings { background: color-mix(in srgb, var(--k-earn) 45%, var(--muted)); }
+
+/* ===== round 21: 必须知道 — lead full width, rest in two greedy-balanced columns sized to content ===== */
+.hero.hero-stack { display: block; }
+.hero.hero-stack > .item-card.is-lead { margin-bottom: .9rem; }
+.hero-rest { display: flex; gap: .9rem; align-items: flex-start; }
+.hero-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: .9rem; }
+.hero-rest.is-single .hero-col { flex-basis: 100%; }
+@media (max-width: 900px) {
+  .hero-rest { flex-direction: column; align-items: stretch; }
+  .hero-col { display: contents; }
+}
+/* round 21: macro 今日 uses the shared daily header; small meta line under the date */
+.daily-hero .daily-lede { font-size: .82rem; color: var(--muted); max-width: none; margin: .45rem 0 0; }
+@media (max-width: 640px) { .daily-hero .daily-lede { font-size: .76rem; } }

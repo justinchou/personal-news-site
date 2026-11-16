@@ -773,3 +773,25 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     if (best) best.d.focus();
   });
 });
+
+/* 必须知道: rebalance the two side columns by measured card heights (server split is an estimate). */
+(function () {
+  function balance() {
+    document.querySelectorAll(".hero-rest:not(.is-single)").forEach(function (rest) {
+      var cols = rest.querySelectorAll(":scope > .hero-col");
+      if (cols.length !== 2 || getComputedStyle(cols[0]).display === "contents") return;
+      var cards = Array.prototype.slice.call(rest.querySelectorAll(".item-card"));
+      cards.sort(function (a, b) { return (parseInt(a.style.order, 10) || 0) - (parseInt(b.style.order, 10) || 0); });
+      var hs = cards.map(function (c) { return c.getBoundingClientRect().height; });
+      var w = [0, 0];
+      cards.forEach(function (c, i) {
+        var k = i < 2 ? i : (w[0] <= w[1] ? 0 : 1);
+        cols[k].appendChild(c); w[k] += hs[i];
+      });
+    });
+  }
+  var t;
+  window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(balance, 150); });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", balance); else balance();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(balance);
+})();
