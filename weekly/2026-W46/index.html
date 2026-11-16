@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>周报 2026-W46 · AI 情报 · 信息情报站</title>
   <meta name="description" content="AI 情报 · 模型、产品、编程 Agent 与产业动态">
-  <script>try{var d=document.documentElement,t=localStorage.getItem("pn-theme"),l=localStorage.getItem("pn-lang"),c=localStorage.getItem("pn-cloud"),u=localStorage.getItem("pn-updown");if(t)d.setAttribute("data-theme",t);d.setAttribute("data-updown",u==="us"?"us":"cn");d.setAttribute("data-lang-mode",l==="orig"?"orig":"zh");d.setAttribute("data-cloud-mode",c==="sorted"?"sorted":"organic")}catch(e){}</script>
+  <script>try{var d=document.documentElement,t=localStorage.getItem("pn-theme")||"dark",l=localStorage.getItem("pn-lang"),c=localStorage.getItem("pn-cloud"),u=localStorage.getItem("pn-updown");if(t==="auto"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";d.setAttribute("data-theme-pref","auto")}d.setAttribute("data-theme",t==="light"?"light":"dark");d.setAttribute("data-updown",u==="us"?"us":"cn");d.setAttribute("data-lang-mode",l==="orig"?"orig":"zh");d.setAttribute("data-cloud-mode",c==="sorted"?"sorted":"organic")}catch(e){}</script>
+  <meta name="color-scheme" content="dark light">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body data-section="archive" data-domain="ai">
@@ -15,7 +16,7 @@
       <nav class="domain-switch" aria-label="切换情报领域"><a href="/" class="is-active" aria-current="true" data-domain="ai">AI 情报</a><a href="/macro" data-domain="macro">全球宏观</a></nav>
       <nav class="nav" aria-label="主导航"><a href="/">今日</a><a href="/archive" class="is-active" aria-current="page">归档</a><a href="/changes">变化追踪</a><a href="/sources">信息源</a><a href="/catalog/products">资料库</a></nav>
       <div class="hdr-tools"><button type="button" class="search-btn" data-search-open aria-label="搜索全站（⌘K / Ctrl+K）"><span aria-hidden="true">⌕</span><span class="sb-label">搜索</span><kbd>⌘K</kbd></button>
-      <button type="button" class="icon-btn ud-btn" data-updown-toggle title="涨跌颜色：红涨绿跌 / 绿涨红跌">红涨</button><button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="当前：中文，点击切换为原文" title="当前：中文（点击切换为原文）"><span class="li-zh"><svg viewBox="0 0 30 30" aria-hidden="true"><defs><clipPath id="fc"><circle cx="15" cy="15" r="15"/></clipPath></defs><g clip-path="url(#fc)"><rect width="45" height="30" x="-4" fill="#de2910"/><polygon fill="#ffde00" points="8,4.2 9.4,8.6 14,8.6 10.3,11.3 11.7,15.7 8,13 4.3,15.7 5.7,11.3 2,8.6 6.6,8.6"/><g fill="#ffde00"><circle cx="16" cy="4.5" r="1.1"/><circle cx="18.6" cy="7.6" r="1.1"/><circle cx="18.6" cy="11.6" r="1.1"/><circle cx="16" cy="14.6" r="1.1"/></g></g></svg></span><span class="li-orig"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span></button><button type="button" class="icon-btn" data-theme-toggle aria-label="切换浅色 / 深色">◐</button></div>
+      <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="当前：中文，点击切换为原文" title="当前：中文（点击切换为原文）"><span class="li-zh"><svg viewBox="0 0 30 30" aria-hidden="true"><defs><clipPath id="fc"><circle cx="15" cy="15" r="15"/></clipPath></defs><g clip-path="url(#fc)"><rect width="45" height="30" x="-4" fill="#de2910"/><polygon fill="#ffde00" points="8,4.2 9.4,8.6 14,8.6 10.3,11.3 11.7,15.7 8,13 4.3,15.7 5.7,11.3 2,8.6 6.6,8.6"/><g fill="#ffde00"><circle cx="16" cy="4.5" r="1.1"/><circle cx="18.6" cy="7.6" r="1.1"/><circle cx="18.6" cy="11.6" r="1.1"/><circle cx="16" cy="14.6" r="1.1"/></g></g></svg></span><span class="li-orig"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span></button><button type="button" class="icon-btn gear-btn" data-settings-open aria-label="设置：主题、涨跌颜色、默认语言" title="设置"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></div>
     </div>
     
   </header>
@@ -50,7 +51,7 @@
   <p class="summary l-zh" data-l="zh">开发者称代码全部由 Claude 编写，按 B 键可把周围世界逐块变成乐高风格积木，后续更新已扩展为带关卡编辑器的完整乐高式游戏；模组支持 Fabric、Minecraft 26.3 单机版，可免费下载。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">**EDIT: big update is out!** It&#x27;s a whole LEGO game now: fixed cameras, villager quests, walls only TNT can break and a full level editor to build your own levels. New post with the video: https://www.reddit.com/r/ClaudeAI/s/UDqwYdAkAr Full video on YouTube: https://youtu.be/OTvTccfxH2I --- Press B and everything aroun…</p>
   
   <p class="relevance">与你相关 · 可能影响模型选型或调用成本</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw2fu8/i_turned_karpathys_80_of_the_way_to_asdste100_tip/">2026-11-14 I turned Karpathy&#x27;s &quot;80% of the way to ASD-STE100&quot; tip into a Claude skill that makes AI text readable</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw9yh6/turbo_visionstyle_ui_for_claude_code_sessions/">2026-11-14 Turbo Vision-style UI for Claude code sessions</a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/QwenLM/qwen-code">2026-11-14 QwenLM/qwen-code</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xvyy70/i_built_an_explorable_drop_of_pond_water_with/">2026-11-14 I built an explorable drop of pond water with Claude Fable 5.2 in two days (browser + VR, all procedural)</a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/tradermonty/claude-trading-skills">2026-11-14 tradermonty/claude-trading-skills</a> <span class="meta">（Claude）</span></li></ul></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw2fu8/i_turned_karpathys_80_of_the_way_to_asdste100_tip/">2026-11-14 <span class="l-zh" data-l="zh">我把 Karpathy 的“写到 ASD-STE100 的 80%”技巧做成了 Claude Skill，让 AI 文字更易读</span><span class="l-orig" data-l="orig" lang="en">I turned Karpathy's "80% of the way to ASD-STE100" tip into a Claude skill that makes AI text readable</span></a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw9yh6/turbo_visionstyle_ui_for_claude_code_sessions/">2026-11-14 <span class="l-zh" data-l="zh">为 Claude Code 会话做的 Turbo Vision 风格界面</span><span class="l-orig" data-l="orig" lang="en">Turbo Vision-style UI for Claude code sessions</span></a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/QwenLM/qwen-code">2026-11-14 QwenLM/qwen-code</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xvyy70/i_built_an_explorable_drop_of_pond_water_with/">2026-11-14 <span class="l-zh" data-l="zh">两天内用 Claude Fable 5.2 做出可探索的一滴池塘水（浏览器 + VR，全程序化）</span><span class="l-orig" data-l="orig" lang="en">I built an explorable drop of pond water with Claude Fable 5.2 in two days (browser + VR, all procedural)</span></a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/tradermonty/claude-trading-skills">2026-11-14 tradermonty/claude-trading-skills</a> <span class="meta">（Claude）</span></li></ul></div>
 </article><article class="item-card " id="item-it_756ac6b73c7a6695">
   <div class="item-top"><span class="score s-mid" title="重要性评分">54</span><span class="meta">11月15日 12:02 · Simon Willison&#x27;s Weblog</span></div>
   <h3><a href="https://simonwillison.net/2026/Nov/15/datasette-apps/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">datasette-apps 0.4a0 发布</span><span class="l-orig" data-l="orig" lang="en">datasette-apps 0.4a0</span></a></h3>
@@ -58,7 +59,7 @@
   <p class="summary l-zh" data-l="zh">Datasette Apps 是运行在 Datasette 内的沙箱化 HTML/JS 应用，类似 Claude Artifacts 但可对数据执行 SQL 查询；0.4a0 新增链接支持，可通过 URL 片段向应用传参，并把支持的 URL 方案回报给 Datasette Agent。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Release: datasette-apps 0.4a0 Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data. 0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus…</p>
   
   <p class="relevance">与你相关 · 可能影响模型选型或调用成本</p>
-  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw2fu8/i_turned_karpathys_80_of_the_way_to_asdste100_tip/">2026-11-14 I turned Karpathy&#x27;s &quot;80% of the way to ASD-STE100&quot; tip into a Claude skill that makes AI text readable</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw9yh6/turbo_visionstyle_ui_for_claude_code_sessions/">2026-11-14 Turbo Vision-style UI for Claude code sessions</a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/QwenLM/qwen-code">2026-11-14 QwenLM/qwen-code</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xvyy70/i_built_an_explorable_drop_of_pond_water_with/">2026-11-14 I built an explorable drop of pond water with Claude Fable 5.2 in two days (browser + VR, all procedural)</a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/tradermonty/claude-trading-skills">2026-11-14 tradermonty/claude-trading-skills</a> <span class="meta">（Claude）</span></li></ul></div>
+  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw2fu8/i_turned_karpathys_80_of_the_way_to_asdste100_tip/">2026-11-14 <span class="l-zh" data-l="zh">我把 Karpathy 的“写到 ASD-STE100 的 80%”技巧做成了 Claude Skill，让 AI 文字更易读</span><span class="l-orig" data-l="orig" lang="en">I turned Karpathy's "80% of the way to ASD-STE100" tip into a Claude skill that makes AI text readable</span></a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xw9yh6/turbo_visionstyle_ui_for_claude_code_sessions/">2026-11-14 <span class="l-zh" data-l="zh">为 Claude Code 会话做的 Turbo Vision 风格界面</span><span class="l-orig" data-l="orig" lang="en">Turbo Vision-style UI for Claude code sessions</span></a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/QwenLM/qwen-code">2026-11-14 QwenLM/qwen-code</a> <span class="meta">（Claude）</span></li><li><a href="https://www.reddit.com/r/ClaudeAI/comments/1xvyy70/i_built_an_explorable_drop_of_pond_water_with/">2026-11-14 <span class="l-zh" data-l="zh">两天内用 Claude Fable 5.2 做出可探索的一滴池塘水（浏览器 + VR，全程序化）</span><span class="l-orig" data-l="orig" lang="en">I built an explorable drop of pond water with Claude Fable 5.2 in two days (browser + VR, all procedural)</span></a> <span class="meta">（Claude）</span></li><li><a href="https://github.com/tradermonty/claude-trading-skills">2026-11-14 tradermonty/claude-trading-skills</a> <span class="meta">（Claude）</span></li></ul></div>
 </article><article class="item-card " id="item-it_3b4a2469bfa2aa7d">
   <div class="item-top"><span class="score s-lo" title="重要性评分">47</span><span class="meta">11月15日 23:46 · Reddit r/LocalLLaMA</span></div>
   <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xwyp7w/x3guard_a_150m_parameter_prompt_guard/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">X3Guard：1.5 亿参数的提示词防护模型</span><span class="l-orig" data-l="orig" lang="en">X3Guard: A 150M parameter prompt guard</span></a></h3>
@@ -106,7 +107,7 @@
   <p class="summary l-zh" data-l="zh">在阿里规模下验证过的混合架构代码评审：确定性流水线 + LLM Agent，精确到行的评论，内置多语言规则集（空指针等）。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Secure, fast, efficient, battle-tested at Alibaba&#x27;s scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 51447</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 51447</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 51447</span></span></div>
 </article><article class="item-card " id="item-it_afe19bd014a42e97">
   <div class="item-top"><span class="score s-lo" title="重要性评分">41</span><span class="meta">11月14日 22:09 · Hacker News</span></div>
   <h3><a href="https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">用 vLLM 在两台 NVIDIA DGX 工作站上以 607.8 tok/s 运行 GLM-5.3</span><span class="l-orig" data-l="orig" lang="en">Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM</span></a></h3>
@@ -202,7 +203,7 @@
   <p class="summary l-zh" data-l="zh">一个跨 Metal、CUDA、Vulkan 后端的大模型推理引擎。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">LLM Inference Engine for Metal, CUDA and Vulkan.</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 2165</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 2165</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 2165</span></span></div>
 </article><article class="item-card " id="item-it_31e523cff0507b69">
   <div class="item-top"><span class="score s-lo" title="重要性评分">27</span><span class="meta">11月15日 18:24 · Reddit r/ClaudeAI</span></div>
   <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xws6tg/have_mercy_on_a_blind_person/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">视障用户求助：让 Claude 桌面端自动朗读每条消息</span><span class="l-orig" data-l="orig" lang="en">Have mercy on a blind person</span></a></h3>
@@ -319,7 +320,7 @@
   <div class="item-top"><span class="score s-lo" title="重要性评分">18</span><span class="meta">11月15日 06:59 · Reddit r/ClaudeAI</span></div>
   <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwftge/outside_of_coding_and_such_is_claude_always_a/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">除了编程之外，Claude 总是爱告状、很扫兴吗？</span><span class="l-orig" data-l="orig" lang="en">Outside of coding and such, is Claude always a narc / loser?</span></a></h3>
   <div class="badges"><span class="badge badge-rumor">单一来源传闻</span></div>
-  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录">submitted by /u/jhb5 [link] [comments]</p>
+  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录"><span class="l-zh" data-l="zh">由 /u/jhb5 提交 [链接] [评论]</span><span class="l-orig" data-l="orig" lang="en">submitted by /u/jhb5 [link] [comments]</span></p>
   
   <p class="relevance">与你相关 · 可能影响模型选型或调用成本</p>
   <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span></div>
@@ -327,7 +328,7 @@
   <div class="item-top"><span class="score s-lo" title="重要性评分">18</span><span class="meta">11月16日 00:09 · Reddit r/ClaudeAI</span></div>
   <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwz9yf/this_new_benchmark_is_crazy/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">这个新基准太离谱了</span><span class="l-orig" data-l="orig" lang="en">This new benchmark is crazy</span></a></h3>
   <div class="badges"><span class="badge badge-rumor">单一来源传闻</span></div>
-  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录">submitted by /u/Horror-You8701 [link] [comments]</p>
+  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录"><span class="l-zh" data-l="zh">由 /u/Horror-You8701 提交 [链接] [评论]</span><span class="l-orig" data-l="orig" lang="en">submitted by /u/Horror-You8701 [link] [comments]</span></p>
   
   <p class="relevance">与你相关 · 与 AI 行业跟踪方法相关</p>
   <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span></div>
@@ -372,7 +373,7 @@
   <p class="summary l-zh" data-l="zh">提供市场分析、技术图表、经济日历、选股器和交易策略开发等 Claude Code 技能包。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.</p>
   
   <p class="relevance">与你相关 · 可能影响本地/终端编程 Agent 工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 4824</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 4824</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 4824</span></span></div>
 </article><article class="item-card " id="item-it_c87cd13d69aef691">
   <div class="item-top"><span class="score s-lo" title="重要性评分">43</span><span class="meta">11月15日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/google-labs-code/stitch-skills" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">google-labs-code/stitch-skills：面向 Stitch MCP 的 Agent 技能库</span><span class="l-orig" data-l="orig" lang="en">google-labs-code/stitch-skills</span></a></h3>
@@ -380,7 +381,7 @@
   <p class="summary l-zh" data-l="zh">谷歌实验室发布配合 Stitch MCP 服务器使用的 Agent Skills 库，遵循 Agent Skills 开放标准，兼容 Antigravity、Gemini CLI、Claude Code、Cursor 等编码 Agent。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.</p>
   
   <p class="relevance">与你相关 · 可能影响 AI 编辑器工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 9316</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 9316</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 9316</span></span></div>
 </article><article class="item-card " id="item-it_438083b2e386d259">
   <div class="item-top"><span class="score s-lo" title="重要性评分">42</span><span class="meta">11月14日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/Tencent/LoopForge" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">Tencent/LoopForge：腾讯开源的编程 Agent 自托管工作流</span><span class="l-orig" data-l="orig" lang="en">Tencent/LoopForge</span></a></h3>
@@ -420,7 +421,7 @@
   <p class="summary l-zh" data-l="zh">包含 82 个技能、15 个斜杠命令、覆盖 24 类核心漏洞的 681 个已披露报告模式，以及企业身份与基础设施攻击矩阵，用于漏洞赏金和外部红队工作。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.</p>
   
   <p class="relevance">与你相关 · 可能影响本地/终端编程 Agent 工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 6477</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">模型或评测</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 6477</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 6477</span></span></div>
 </article><article class="item-card " id="item-it_301f2d14985e5303">
   <div class="item-top"><span class="score s-lo" title="重要性评分">38</span><span class="meta">11月14日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">GoogleChrome/modern-web-guidance-src：让编程 Agent 掌握最新 Web 最佳实践</span><span class="l-orig" data-l="orig" lang="en">GoogleChrome/modern-web-guidance-src</span></a></h3>
@@ -428,7 +429,7 @@
   <p class="summary l-zh" data-l="zh">Chrome 团队提供的资料源，帮助编程 Agent 保持对最新 Web 开发最佳实践的了解。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Keep your coding agent up to date with the latest web best practices</p>
   
   <p class="relevance">与你相关 · 可能影响本地/终端编程 Agent 工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 6065</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">编程 / Agent</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 6065</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 6065</span></span></div>
 </article><article class="item-card " id="item-it_e42ddc7a6c0b3a26">
   <div class="item-top"><span class="score s-lo" title="重要性评分">37</span><span class="meta">11月16日 03:21 · Reddit r/ClaudeAI</span></div>
   <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xx46i9/built_with_claude_code_an_evidence_database_for/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">用 Claude Code 搭建补充剂与益智药证据数据库（504 个条目、47 张交互机理图）</span><span class="l-orig" data-l="orig" lang="en">Built with Claude Code: an evidence database for supplements and nootropics (504 profiles, 47 interactive mechanism figures, every claim rated against the studies)</span></a></h3>
@@ -454,7 +455,7 @@
   <p class="summary l-zh" data-l="zh">Univer Office SDK 可把文档编辑、表格计算、协作和文件处理能力嵌入自己的产品，供用户和 AI Agent 使用，核心可扩展且开源。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.</p>
   <p class="impact"><b>影响</b>面向 AI Agent 的可嵌入办公 SDK 走热，说明“Agent 直接编辑表格/文档”正在成为产品集成的基础能力。</p>
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 24503</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">发布或上线</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 24503</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 24503</span></span></div>
 </article><article class="item-card " id="item-it_ec65f04b74006cfd">
   <div class="item-top"><span class="score s-mid" title="重要性评分">52</span><span class="meta">11月14日 14:37 · InfoQ</span></div>
   <h3><a href="https://www.infoq.com/news/2026/11/mongodb-compatible-documentdb/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">开源 DocumentDB 1.0 正式发布（GA）</span><span class="l-orig" data-l="orig" lang="en">Open Source DocumentDB 1.0 Reaches General Availability</span></a></h3>
@@ -494,7 +495,7 @@
   <p class="summary l-zh" data-l="zh">在一个工作区里规划、决策、批注、审查代码并与团队共享，一键把所有反馈发回给 Agent。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 11138</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 11138</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 11138</span></span></div>
 </article><article class="item-card " id="item-it_379642deb53f3714">
   <div class="item-top"><span class="score s-lo" title="重要性评分">26</span><span class="meta">11月14日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">ChromeDevTools/chrome-devtools-mcp：给编程 Agent 用的 Chrome 开发者工具</span><span class="l-orig" data-l="orig" lang="en">ChromeDevTools/chrome-devtools-mcp</span></a></h3>
@@ -502,7 +503,7 @@
   <p class="summary l-zh" data-l="zh">Chrome 官方 MCP 服务器，让编程 Agent 能调用 DevTools 调试网页。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Chrome DevTools for coding agents</p>
   
   <p class="relevance">与你相关 · 可能影响本地/终端编程 Agent 工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 56311</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 56311</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 56311</span></span></div>
 </article><article class="item-card " id="item-it_bac657e60ae022eb">
   <div class="item-top"><span class="score s-lo" title="重要性评分">26</span><span class="meta">11月14日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/JuliusBrussee/caveman" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">JuliusBrussee/caveman：用“原始人说话”给编程 Agent 省 65% Token</span><span class="l-orig" data-l="orig" lang="en">JuliusBrussee/caveman</span></a></h3>
@@ -510,7 +511,7 @@
   <p class="summary l-zh" data-l="zh">走红的 Skill + 代理：让编程 Agent 用极简“原始人”式语言交流，号称减少 65% 的 Token 消耗。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.</p>
   
   <p class="relevance">与你相关 · 可能影响本地/终端编程 Agent 工作流</p>
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 120080</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 120080</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 120080</span></span></div>
 </article><article class="item-card " id="item-it_79a5275f168e3497">
   <div class="item-top"><span class="score s-lo" title="重要性评分">26</span><span class="meta">11月14日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/Likely7/Veyra-NRVideo" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">Likely7/Veyra-NRVideo：AI 超分与补帧的 Windows 视频增强工具</span><span class="l-orig" data-l="orig" lang="en">Likely7/Veyra-NRVideo</span></a></h3>
@@ -518,7 +519,7 @@
   <p class="summary l-zh" data-l="zh">宣称借助 DLSS 5 让 PS5 版 GTA6 达到 120FPS：支持视频、图片和采集卡实时预览，结合 AI 超分辨率与插帧。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 2274</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 2274</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 2274</span></span></div>
 </article><article class="item-card " id="item-it_11e01068673fca0d">
   <div class="item-top"><span class="score s-lo" title="重要性评分">25</span><span class="meta">11月14日 12:00 · Hugging Face Papers</span></div>
   <h3><a href="https://huggingface.co/papers/2611.16321" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">通过自适应计算从大语言模型走向高效“系统一”模型</span><span class="l-orig" data-l="orig" lang="en">From Large Language Models to Efficient System One Models via Adaptive Computation</span></a></h3>
@@ -550,7 +551,7 @@
   <p class="summary l-zh" data-l="zh">AG-UI 协议用于把 Agent 接入前端应用，规范 Agent 与界面之间的交互。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 17371</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 17371</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 17371</span></span></div>
 </article><article class="item-card " id="item-it_354a6f3839a01324">
   <div class="item-top"><span class="score s-lo" title="重要性评分">23</span><span class="meta">11月15日 04:00 · GitHub Trending</span></div>
   <h3><a href="https://github.com/ggml-org/ggml" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">ggml-org/ggml：机器学习张量库</span><span class="l-orig" data-l="orig" lang="en">ggml-org/ggml</span></a></h3>
@@ -558,7 +559,7 @@
   <p class="summary l-zh" data-l="zh">llama.cpp 背后的张量计算库，登上 GitHub 趋势榜。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Tensor library for machine learning</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 15918</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub 星标 15918</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 15918</span></span></div>
 </article><article class="item-card " id="item-it_c4e64ec122b346fd">
   <div class="item-top"><span class="score s-lo" title="重要性评分">22</span><span class="meta">11月14日 12:00 · Hugging Face Papers</span></div>
   <h3><a href="https://huggingface.co/papers/2611.14815" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">BirdDreams：联合透视与鸟瞰视频生成的可信、可交互驾驶世界模型</span><span class="l-orig" data-l="orig" lang="en">BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model</span></a></h3>
@@ -646,7 +647,7 @@
   <p class="summary l-zh" data-l="zh">一款 WiFi 安全审计软件。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">A WiFi security auditing software</p>
   
   
-  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip">GitHub stars 5872</span></div>
+  <div class="reasons"><span class="chip">社区来源</span><span class="chip">开源或基础设施</span><span class="chip"><span class="l-zh" data-l="zh">GitHub星标 5872</span><span class="l-orig" data-l="orig" lang="en">GitHub stars 5872</span></span></div>
 </article><article class="item-card " id="item-it_81666f11802af49e">
   <div class="item-top"><span class="score s-lo" title="重要性评分">16</span><span class="meta">11月14日 12:00 · Hugging Face Papers</span></div>
   <h3><a href="https://huggingface.co/papers/2611.14256" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">自进化多模态 Agent 的跨场景综述与分析</span><span class="l-orig" data-l="orig" lang="en">A Cross-Scenario Survey and Analysis of Self-Evolving Multimodal Agents</span></a></h3>
@@ -898,7 +899,7 @@
   <p class="summary l-zh" data-l="zh">该版本新增 OpenAI 兼容端点支持，可让 Datasette 使用任何遵循 OpenAI 协议的 LLM，包括 LM Studio、Ollama、llama.cpp 等本地模型。</p><p class="summary is-excerpt l-orig" data-l="orig" lang="en">Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web prot…</p>
   <p class="impact"><b>影响</b>使用 Datasette 的团队可接入遵循 OpenAI 协议的本地模型，可能降低切换模型的集成成本。</p>
   <p class="relevance">与你相关 · 可能影响模型选型或调用成本</p>
-  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xwan2j/update_tandemcpp_deepseekv41_on_a_64_gb_pc_with_a/">2026-11-14 Update: tandem.cpp — DeepSeek-V4.1 on a 64 GB PC with a 16 GB card, and AMD (ROCm) support</a> <span class="meta">（Llama、LLaMA、llama.cpp）</span></li><li><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1">2026-11-14 Llama.cpp hits v1.0 with a native app for macOS</a> <span class="meta">（Llama、LLaMA、llama.cpp）</span></li><li><a href="https://www.theinformation.com/briefings/openai-launches-chatgpt-wallet">2026-11-14 OpenAI Launches ChatGPT Wallet</a> <span class="meta">（OpenAI）</span></li><li><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview">2026-11-14 The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs</a> <span class="meta">（OpenAI）</span></li><li><a href="https://twitter.com/willdepue/status/2120992457630326841">2026-11-14 Ex-OpenAI researcher finds Blackwell signatures in open-weight models</a> <span class="meta">（OpenAI）</span></li></ul></div>
+  <div class="reasons"><span class="chip">工程博客</span><span class="chip">发布或上线</span><span class="chip">模型或评测</span></div><div class="related"><h4>近 30 天相关</h4><ul><li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xwan2j/update_tandemcpp_deepseekv41_on_a_64_gb_pc_with_a/">2026-11-14 <span class="l-zh" data-l="zh">tandem.cpp 更新：在 64 GB 内存 + 16 GB 显卡的 PC 上运行 DeepSeek-V4.1，并支持 AMD（ROCm）</span><span class="l-orig" data-l="orig" lang="en">Update: tandem.cpp — DeepSeek-V4.1 on a 64 GB PC with a 16 GB card, and AMD (ROCm) support</span></a> <span class="meta">（Llama、LLaMA、llama.cpp）</span></li><li><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1">2026-11-14 <span class="l-zh" data-l="zh">llama.cpp 发布 v1.0，并推出 macOS 原生应用</span><span class="l-orig" data-l="orig" lang="en">Llama.cpp hits v1.0 with a native app for macOS</span></a> <span class="meta">（Llama、LLaMA、llama.cpp）</span></li><li><a href="https://www.theinformation.com/briefings/openai-launches-chatgpt-wallet">2026-11-14 OpenAI Launches ChatGPT Wallet</a> <span class="meta">（OpenAI）</span></li><li><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview">2026-11-14 <span class="l-zh" data-l="zh">曾解雇 Sam Altman 的 OpenAI 前董事称：我们仍不能信任 AI 公司 CEO</span><span class="l-orig" data-l="orig" lang="en">The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs</span></a> <span class="meta">（OpenAI）</span></li><li><a href="https://twitter.com/willdepue/status/2120992457630326841">2026-11-14 <span class="l-zh" data-l="zh">前 OpenAI 研究员在开放权重模型中发现 Blackwell 训练痕迹</span><span class="l-orig" data-l="orig" lang="en">Ex-OpenAI researcher finds Blackwell signatures in open-weight models</span></a> <span class="meta">（OpenAI）</span></li></ul></div>
 </article><article class="item-card " id="item-it_b269f2cf38cf3150">
   <div class="item-top"><span class="score s-lo" title="重要性评分">46</span><span class="meta">11月15日 03:12 · Reddit r/LocalLLaMA</span></div>
   <h3><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xwan2j/update_tandemcpp_deepseekv41_on_a_64_gb_pc_with_a/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">tandem.cpp 更新：在 64 GB 内存 + 16 GB 显卡的 PC 上运行 DeepSeek-V4.1，并支持 AMD（ROCm）</span><span class="l-orig" data-l="orig" lang="en">Update: tandem.cpp — DeepSeek-V4.1 on a 64 GB PC with a 16 GB card, and AMD (ROCm) support</span></a></h3>
@@ -1645,7 +1646,7 @@
   <div class="item-top"><span class="score s-lo" title="重要性评分">8</span><span class="meta">11月15日 04:36 · Reddit r/ClaudeAI</span></div>
   <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwcmj3/ppl_keep_asking_for_local_opus_55_this_is_local/" rel="noopener noreferrer" target="_blank"><span class="l-zh" data-l="zh">总有人想要本地版 Opus 5.5，这就是本地版 Opus 5.5</span><span class="l-orig" data-l="orig" lang="en">Ppl keep asking for local Opus 5.5. This is local Opus 5.5</span></a></h3>
   <div class="badges"><span class="badge badge-rumor">单一来源传闻</span></div>
-  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录">submitted by /u/OneKey3719 [link] [comments]</p>
+  <p class="summary is-excerpt" title="中文摘要待补写，显示原文摘录"><span class="l-zh" data-l="zh">Reddit 帖子仅含链接，无正文摘录。</span><span class="l-orig" data-l="orig" lang="en">submitted by /u/OneKey3719 [link] [comments]</span></p>
   
   
   <div class="reasons"><span class="chip">社区来源</span></div>
@@ -1671,6 +1672,18 @@
     <p>按北京时间工作日窗口（当日 04:00 至次日 04:00）整理。原始抓取数据与个人项目细节不在本站点发布。</p>
   </div></footer>
   <button type="button" class="back-top" data-back-top aria-label="回到顶部">↑</button>
+  <dialog class="settings-dlg" data-settings-dialog aria-label="设置">
+    <form method="dialog" class="st-form">
+      <div class="st-head"><h2>设置</h2><button type="submit" class="icon-btn" aria-label="关闭">✕</button></div>
+      <fieldset><legend>主题</legend><div class="seg" role="radiogroup">
+        <label><input type="radio" name="pn-theme" value="dark"><span>深色</span></label><label><input type="radio" name="pn-theme" value="light"><span>浅色</span></label><label><input type="radio" name="pn-theme" value="auto"><span>跟随系统</span></label></div></fieldset>
+      <fieldset><legend>涨跌颜色</legend><div class="seg" role="radiogroup">
+        <label><input type="radio" name="pn-updown" value="cn"><span><b class="st-up">红涨</b><b class="st-down">绿跌</b></span></label><label><input type="radio" name="pn-updown" value="us"><span><b class="st-down">绿涨</b><b class="st-up">红跌</b></span></label></div></fieldset>
+      <fieldset><legend>默认语言（抓取的新闻与资料）</legend><div class="seg" role="radiogroup">
+        <label><input type="radio" name="pn-lang" value="zh"><span>中文</span></label><label><input type="radio" name="pn-lang" value="orig"><span>原文</span></label></div>
+        <p class="meta">页头的国旗 / 地球图标可随时临时切换。设置只保存在本机浏览器（localStorage）。</p></fieldset>
+    </form>
+  </dialog>
   <dialog class="search-dlg" data-search-dialog data-index="/search-index.json" aria-label="全站搜索">
     <div class="sd-head"><input type="search" placeholder="搜索页面、指标、标的、国家、议题、关键词、事件…" aria-label="搜索关键词" autocomplete="off" enterkeyhint="go"><button type="button" class="icon-btn" data-search-close aria-label="关闭">✕</button></div>
     <div class="sd-scope" role="group" aria-label="搜索范围"><button type="button" data-scope="all" aria-pressed="true">全部</button><button type="button" data-scope="ai" aria-pressed="false">AI 情报</button><button type="button" data-scope="macro" aria-pressed="false">全球宏观</button></div>

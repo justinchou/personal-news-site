@@ -1,14 +1,41 @@
 (() => {
   const root = document.documentElement;
   root.classList.add("js");
-  try { const t = localStorage.getItem("pn-theme"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
-  document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("pn-theme", next); } catch (e) {}
+  // --- site settings (localStorage): theme dark / light / auto, up-down colours, default language ---
+  const ls = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+               set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+  const applyTheme = (pref) => {
+    const t = pref === "auto" ? (mq && mq.matches ? "light" : "dark") : (pref === "light" ? "light" : "dark");
+    root.setAttribute("data-theme", t);
+    if (pref === "auto") root.setAttribute("data-theme-pref", "auto"); else root.removeAttribute("data-theme-pref");
+  };
+  applyTheme(ls.get("pn-theme") || "dark");
+  if (mq) (mq.addEventListener ? mq.addEventListener("change", () => { if ((ls.get("pn-theme") || "dark") === "auto") applyTheme("auto"); })
+                               : mq.addListener(() => { if ((ls.get("pn-theme") || "dark") === "auto") applyTheme("auto"); }));
+  const dlgS = document.querySelector("[data-settings-dialog]");
+  const syncSettings = () => {
+    if (!dlgS) return;
+    const cur = { "pn-theme": ls.get("pn-theme") || "dark", "pn-updown": root.getAttribute("data-updown") === "us" ? "us" : "cn",
+                  "pn-lang": root.getAttribute("data-lang-mode") === "orig" ? "orig" : "zh" };
+    dlgS.querySelectorAll("input[type=radio]").forEach((i) => { i.checked = cur[i.name] === i.value; });
+  };
+  document.querySelectorAll("[data-settings-open]").forEach((b) => b.addEventListener("click", () => {
+    if (!dlgS) return;
+    syncSettings();
+    if (dlgS.showModal) dlgS.showModal(); else dlgS.setAttribute("open", "");
+  }));
+  if (dlgS) {
+    dlgS.addEventListener("click", (e) => { if (e.target === dlgS) dlgS.close(); });  // backdrop click
+    dlgS.addEventListener("change", (e) => {
+      const i = e.target;
+      if (!i || i.type !== "radio") return;
+      ls.set(i.name, i.value);
+      if (i.name === "pn-theme") applyTheme(i.value);
+      else if (i.name === "pn-updown") root.setAttribute("data-updown", i.value);
+      else if (i.name === "pn-lang") { root.setAttribute("data-lang-mode", i.value); document.dispatchEvent(new CustomEvent("pn-lang-change")); }
     });
-  });
+  }
 
   // language toggle for scraped news (中文 / 原文)
   const setLang = (mode) => {
@@ -20,6 +47,7 @@
     });
   };
   setLang(root.getAttribute("data-lang-mode") === "orig" ? "orig" : "zh");
+  document.addEventListener("pn-lang-change", () => setLang(root.getAttribute("data-lang-mode") === "orig" ? "orig" : "zh"));
   document.querySelectorAll("[data-lang-toggle]").forEach((b) => b.addEventListener("click", () => {
     const next = root.getAttribute("data-lang-mode") === "orig" ? "zh" : "orig";
     setLang(next);
@@ -407,17 +435,6 @@
   const curDomain = document.body.getAttribute("data-domain") || "ai";
   const DOM = { ai: "AI 情报", macro: "全球宏观" };
 
-  // --- 涨跌颜色：默认红涨绿跌（中国习惯），可切换为绿涨红跌 ---
-  const setUD = (m) => {
-    root.setAttribute("data-updown", m);
-    document.querySelectorAll("[data-updown-toggle]").forEach((b) => { b.textContent = m === "us" ? "绿涨" : "红涨"; b.setAttribute("aria-label", m === "us" ? "当前绿涨红跌，点击切换为红涨绿跌" : "当前红涨绿跌，点击切换为绿涨红跌"); });
-  };
-  setUD(root.getAttribute("data-updown") === "us" ? "us" : "cn");
-  document.querySelectorAll("[data-updown-toggle]").forEach((b) => b.addEventListener("click", () => {
-    const n = root.getAttribute("data-updown") === "us" ? "cn" : "us";
-    setUD(n);
-    try { localStorage.setItem("pn-updown", n); } catch (e) {}
-  }));
 
   // --- back to top ---
   const top = document.querySelector("[data-back-top]");
@@ -608,6 +625,7 @@
   setInterval(() => { if (!document.hidden) crypto(); }, 60000);
   setInterval(() => { if (!document.hidden) load(); }, 300000);
   document.querySelectorAll("[data-lang-toggle],[data-lang-set]").forEach((b) => b.addEventListener("click", () => setTimeout(render, 0)));
+  document.addEventListener("pn-lang-change", () => setTimeout(render, 0));
 })();
 
 // ===== round 17: copy-to-clipboard buttons ([data-copy]) =====
@@ -794,4 +812,34 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
   window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(balance, 150); });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", balance); else balance();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(balance);
+})();
+
+/* Tooltips (cycle lights): tap toggles on touch, keep inside the viewport, Esc / outside tap closes. */
+(function () {
+  function place(host) {
+    var tip = host.querySelector(":scope > .tip");
+    if (!tip) return;
+    host.style.removeProperty("--tip-dx");
+    host.classList.remove("tip-below");
+    var r = tip.getBoundingClientRect(), pad = 8, dx = 0;
+    var vw = document.documentElement.clientWidth || window.innerWidth;
+    if (r.left < pad) dx = pad - r.left; else if (r.right > vw - pad) dx = vw - pad - r.right;
+    if (dx) host.style.setProperty("--tip-dx", dx + "px");
+    if (r.top < 60) host.classList.add("tip-below");
+  }
+  function closeAll(except) {
+    document.querySelectorAll(".tip-host.is-open").forEach(function (h) { if (h !== except) h.classList.remove("is-open"); });
+  }
+  document.addEventListener("mouseover", function (e) { var h = e.target.closest && e.target.closest(".tip-host"); if (h) place(h); });
+  document.addEventListener("focusin", function (e) { var h = e.target.closest && e.target.closest(".tip-host"); if (h) place(h); });
+  document.addEventListener("click", function (e) {
+    var h = e.target.closest && e.target.closest(".tip-host");
+    closeAll(h);
+    if (h) { h.classList.toggle("is-open"); if (h.classList.contains("is-open")) place(h); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAll(null);
+    var h = document.activeElement && document.activeElement.closest && document.activeElement.closest(".tip-host");
+    if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); h.classList.toggle("is-open"); place(h); }
+  });
 })();
