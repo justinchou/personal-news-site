@@ -1071,3 +1071,11 @@ h1 .en-sub { display: block; font-size: .42em; letter-spacing: .02em; font-famil
 .lang-btn .li-orig { display: none; }
 html[data-lang-mode="orig"] .lang-btn .li-zh { display: none; }
 html[data-lang-mode="orig"] .lang-btn .li-orig { display: block; }
+/* LLM blocks */
+.llm-block { border-left: 3px solid var(--accent, #5b8cff); padding-left: 14px; }
+.llm-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.llm-list li p { margin: 4px 0; }
+.llm-themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.llm-theme { background: var(--card, rgba(127,127,127,.06)); border-radius: 10px; padding: 10px 12px; }
+.llm-theme h3 { margin: 0 0 6px; font-size: 15px; }
+.ai-draft { border-left: 3px solid var(--accent, #5b8cff); }
