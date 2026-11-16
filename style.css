@@ -1052,3 +1052,16 @@ html:not(.js) .nav-group:focus-within .nav-menu { display: grid; gap: 2px; }
 }
 .ind-chart .grid line.band { stroke: var(--warn); stroke-dasharray: 5 4; opacity: .8; }
 .ind-chart .grid text.band-t { fill: var(--warn); font-size: 10px; }
+/* watchlist tiles + bilingual names */
+.wl-tile { display: inline-flex; flex-direction: column; min-width: 96px; margin: 3px; padding: 6px 9px; border-radius: 8px; color: inherit; text-decoration: none; line-height: 1.3; vertical-align: top; }
+.wl-tile small { opacity: .85; font-variant-numeric: tabular-nums; }
+.en-sub { color: var(--muted); font-size: .78em; font-weight: 400; margin-right: .15em; }
+h1 .en-sub { display: block; font-size: .42em; letter-spacing: .02em; font-family: var(--sans); margin-bottom: .1em; }
+/* 中文 / 原文: icon buttons left of the theme toggle */
+.lang-icons { display: inline-flex; gap: 4px; padding: 3px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); flex-shrink: 0; }
+.lang-icons button { width: 30px; height: 30px; padding: 0; border: 2px solid transparent; border-radius: 50%; background: none; cursor: pointer; display: inline-grid; place-items: center; opacity: .55; transition: all .15s; color: var(--ink); }
+.lang-icons button svg { width: 22px; height: 22px; display: block; }
+.lang-icons button:hover { opacity: .9; }
+.lang-icons button[aria-pressed="true"] { opacity: 1; border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+.kpi b span { font-size: inherit; color: inherit; }
+.kpi b .is-up { color: var(--up); } .kpi b .is-down { color: var(--down); }
