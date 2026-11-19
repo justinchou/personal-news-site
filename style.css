@@ -183,6 +183,7 @@ a.stat:hover { border-color: var(--line-2); transform: translateY(-2px); color: 
 .stat.danger b { color: var(--danger); }
 .stat.ok b { color: var(--ok); }
 .window-line { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.stale-banner { margin: 0 0 1rem; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-elev); }
 .status-pill { display: inline-block; font-size: .72rem; padding: .05rem .5rem; border-radius: 6px; background: var(--card-2); color: var(--ink-2); }
 .status-pill.st-final, .status-pill.st-complete, .status-pill.st-ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, transparent); }
 .status-pill.st-partial { color: var(--warn); background: color-mix(in srgb, var(--warn) 14%, transparent); }
