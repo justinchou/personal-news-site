@@ -10,34 +10,6 @@ X-WR-TIMEZONE:Asia/Shanghai
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:05b66044f9c5730e0ebd@personal-news-site
-DTSTAMP:20261119T234633Z
-DTSTART:20261020T013000Z
-DTEND:20261020T014500Z
-SUMMARY:🇨🇳 季度分行业增加值初步核算
-DESCRIPTION:中国 · 增长 · 重要性 低\n北京时间 2026-10-20 09:3
- 0\n来源：国家统计局 · 主要统计信息发布日程表\n日历
- ：https://personal-news-site.vercel.app/macro/calendar
-CATEGORIES:增长
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.stats.gov.cn/sj/fbrc/bnxxfb/
-END:VEVENT
-BEGIN:VEVENT
-UID:18a4e20e77ead2ad832d@personal-news-site
-DTSTAMP:20261119T234633Z
-DTSTART:20261020T123000Z
-DTEND:20261020T124500Z
-SUMMARY:🇺🇸 新屋开工与营建许可（September 2026）
-DESCRIPTION:美国 · 地产 · 重要性 中\n北京时间 2026-10-20 20:3
- 0；当地 08:30（美东）\n来源：Census 经济指标日历\n日历
- ：https://personal-news-site.vercel.app/macro/calendar
-CATEGORIES:地产
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-URL:https://www.census.gov/economic-indicators/calendar-listview-2026.html
-END:VEVENT
-BEGIN:VEVENT
 UID:a80f86d4696b735889b0@personal-news-site
 DTSTAMP:20261119T234633Z
 DTSTART:20261027T013000Z

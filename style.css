@@ -1387,3 +1387,22 @@ html.js #x-feed .x-fold.is-long:not(.is-open) .x-text {
 .x-ctl:hover { border-color: var(--accent); }
 .x-ctl:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .x-ctl[hidden] { display: none; }
+.x-who { display: inline-flex; align-items: center; gap: .35rem; color: inherit; font-weight: 650; }
+.x-who:has(img) .avatar { display: none; }
+.x-who .avatar-img { width: 1.6rem; height: 1.6rem; border-radius: 50%; object-fit: cover; }
+.xwall-tools { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: 0 0 1rem; }
+.xwall-tools input[type="search"] { flex: 1 1 14rem; min-width: 0; border: 1px solid var(--line); background: var(--bg-elev); color: inherit; border-radius: 999px; padding: .4rem .8rem; font: inherit; }
+.xwall-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.xwall-card { border: 1px solid var(--line); border-radius: 14px; padding: .85rem .9rem; background: var(--bg-elev); }
+.xwall-card[hidden] { display: none; }
+.xwall-id { display: flex; gap: .7rem; align-items: center; color: inherit; text-decoration: none; }
+.xwall-id b { display: block; }
+.xwall-avatar { width: 2.6rem; height: 2.6rem; display: inline-grid; flex: none; }
+.xwall-avatar > * { grid-area: 1 / 1; width: 2.6rem; height: 2.6rem; border-radius: 50%; }
+.xwall-avatar img { object-fit: cover; position: relative; z-index: 1; }
+.xwall-fallback { display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 18%, var(--bg)); font-weight: 700; }
+.xwall-bio { margin: .55rem 0; }
+.xwall-card .tag { margin-right: .25rem; }
+@media (max-width: 680px) {
+  .xwall-grid { grid-template-columns: 1fr; }
+}
