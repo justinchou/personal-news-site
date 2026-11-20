@@ -843,3 +843,302 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); h.classList.toggle("is-open"); place(h); }
   });
 })();
+
+/* Reading layout: pair ordinary news rows, fold long X posts, balance the X wall by measured height. */
+(function () {
+  var NARROW = 680;
+  var ro = window.ResizeObserver ? new ResizeObserver(onResize) : null;
+
+  function shown(el) {
+    return !!(el && (el.offsetWidth || el.offsetHeight || (el.getClientRects && el.getClientRects().length)));
+  }
+  function onResize(entries) {
+    entries.forEach(function (e) {
+      var el = e.target;
+      if (el._pnLock) return;
+      var w = e.contentRect.width;
+      if (el._pnW != null && Math.abs(el._pnW - w) < 1) return;
+      el._pnLock = true;
+      try {
+        if (el.classList.contains("item-rows")) syncList(el);
+        else if (el.classList.contains("masonry")) refreshWall(el);
+        el._pnW = el.getBoundingClientRect().width;
+      } finally { el._pnLock = false; }
+    });
+  }
+  function titleTip(a) {
+    var zh = a.querySelector(".l-zh"), orig = a.querySelector(".l-orig");
+    var text = zh && orig ? (zh.textContent + " — " + orig.textContent) : (a.textContent || "");
+    return text.replace(/\s+/g, " ").trim();
+  }
+  function stampTitles(root) {
+    (root || document).querySelectorAll(".row-title a").forEach(function (a) {
+      var tip = titleTip(a);
+      if (tip) a.setAttribute("title", tip);
+    });
+  }
+  function toCard(li) {
+    if (li.tagName !== "LI") return li;
+    var card = document.createElement("div");
+    card.className = li.className;
+    if (li.id) card.id = li.id;
+    while (li.firstChild) card.appendChild(li.firstChild);
+    return card;
+  }
+  function pairList(list) {
+    var items = Array.prototype.filter.call(list.children, function (el) { return el.classList.contains("item-row"); });
+    if (!items.length) { list.dataset.paired = "1"; return list; }
+    var box = document.createElement("div");
+    box.className = "item-rows";
+    box.dataset.paired = "1";
+    for (var i = 0; i < items.length; i += 2) {
+      var pair = document.createElement("div");
+      pair.className = "pair" + (items[i + 1] ? "" : " is-odd");
+      pair.appendChild(toCard(items[i]));
+      if (items[i + 1]) pair.appendChild(toCard(items[i + 1]));
+      var slot = document.createElement("div");
+      slot.className = "pair-read";
+      slot.hidden = true;
+      pair.appendChild(slot);
+      box.appendChild(pair);
+    }
+    list.parentNode.replaceChild(box, list);
+    if (ro) ro.observe(box);
+    return box;
+  }
+  function ensureBody(det) {
+    var card = det.closest(".item-row");
+    var body = det.querySelector(":scope > .row-body");
+    if (!body && card && card.id) body = document.querySelector('.row-body[data-owner="' + card.id + '"]');
+    if (body) return body;
+    body = document.createElement("div");
+    body.className = "row-body";
+    if (card && card.id) body.dataset.owner = card.id;
+    var summary = det.querySelector(":scope > summary");
+    var node = det.firstChild;
+    while (node) {
+      var next = node.nextSibling;
+      if (node !== summary) body.appendChild(node);
+      node = next;
+    }
+    det.appendChild(body);
+    return body;
+  }
+  function layoutPair(pair) {
+    var list = pair.closest(".item-rows");
+    var slot = pair.querySelector(":scope > .pair-read");
+    if (!slot) return;
+    var narrow = !!(list && list.classList.contains("is-narrow"));
+    var cards = Array.prototype.filter.call(pair.children, function (el) { return el.classList.contains("item-row"); });
+    // Put every body back before clearing the slot. A later toggle/resize
+    // must not discard text that is currently parked in the slot.
+    cards.forEach(function (card) {
+      var det = card.querySelector("details.row-more");
+      if (!det) return;
+      var body = card.id ? document.querySelector('.row-body[data-owner="' + card.id + '"]') : null;
+      if (!body) body = det.querySelector(":scope > .row-body");
+      if (body && body.parentNode !== det) det.appendChild(body);
+    });
+    slot.replaceChildren();
+    var openCards = [];
+    cards.forEach(function (card) {
+      var det = card.querySelector("details.row-more");
+      if (det && det.open) openCards.push(card);
+    });
+    // One detail per row. If a resize or a second toggle left two open, keep the later one.
+    if (openCards.length > 1) {
+      openCards.slice(0, -1).forEach(function (card) {
+        var extra = card.querySelector("details.row-more");
+        if (extra) extra.open = false;
+      });
+      openCards = [openCards[openCards.length - 1]];
+    }
+    var source = openCards[0] || null;
+    cards.forEach(function (card) { card.classList.toggle("is-source", card === source); });
+    pair.classList.toggle("is-from-left", !!source && source === cards[0]);
+    pair.classList.toggle("is-from-right", !!source && source !== cards[0]);
+    if (!source) { slot.hidden = true; return; }
+    var det = source.querySelector("details.row-more");
+    var body = ensureBody(det);
+    var block = document.createElement("div");
+    block.className = "pair-read-block";
+    if (source.id) block.id = "read-" + source.id;
+    var summary = det.querySelector("summary");
+    if (summary && block.id) summary.setAttribute("aria-controls", block.id);
+    block.appendChild(body);
+    slot.appendChild(block);
+    slot.hidden = false;
+  }
+  function syncList(list) {
+    if (!list || !list.isConnected) return list;
+    if (!list.dataset.paired) list = pairList(list);
+    var w = list.getBoundingClientRect().width;
+    if (w < 8) return list;
+    list.classList.toggle("is-narrow", w < NARROW);
+    Array.prototype.forEach.call(list.querySelectorAll(":scope > .pair"), layoutPair);
+    return list;
+  }
+  function markAll(wall) {
+    var folds = Array.prototype.slice.call(wall.querySelectorAll(":scope > .x-card .x-fold"));
+    folds.forEach(function (f) { if (!f.classList.contains("is-open")) f.classList.remove("is-long"); });
+    var full = folds.map(function (f) {
+      if (f.classList.contains("is-open")) return 0;
+      var t = f.querySelector(".x-text");
+      return t ? t.getBoundingClientRect().height : 0;
+    });
+    folds.forEach(function (f) { if (!f.classList.contains("is-open")) f.classList.add("is-long"); });
+    folds.forEach(function (f, i) {
+      var btn = f.querySelector(".x-ctl");
+      var text = f.querySelector(".x-text");
+      if (!btn || !text) return;
+      if (f.classList.contains("is-open")) { btn.hidden = false; return; }
+      if (full[i] > text.getBoundingClientRect().height + 2) btn.hidden = false;
+      else { f.classList.remove("is-long"); btn.hidden = true; }
+    });
+  }
+  function enhanceWall(wall) {
+    if (wall.dataset.xWall) return;
+    wall.dataset.xWall = "1";
+    Array.prototype.forEach.call(wall.querySelectorAll(":scope > .x-card"), function (card) {
+      var text = card.querySelector(":scope > p.x-text");
+      if (!text || card.querySelector(".x-fold")) return;
+      var fold = document.createElement("div");
+      fold.className = "x-fold";
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "x-ctl";
+      btn.hidden = true;
+      btn.textContent = "展开全文";
+      btn.setAttribute("aria-expanded", "false");
+      text.parentNode.insertBefore(fold, text);
+      fold.appendChild(text);
+      fold.appendChild(btn);
+      if (text.id) btn.setAttribute("aria-controls", text.id);
+      else { text.id = "xtext-" + Math.random().toString(36).slice(2, 8); btn.setAttribute("aria-controls", text.id); }
+      btn.addEventListener("click", function () {
+        var open = fold.classList.toggle("is-open");
+        fold.classList.add("is-long");
+        btn.textContent = open ? "收起" : "展开全文";
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        var host = card.closest(".masonry");
+        if (host) placeWall(host, false);
+      });
+    });
+    if (ro) ro.observe(wall);
+  }
+  function wallCards(wall) {
+    return Array.prototype.filter.call(wall.children, function (el) { return el.classList.contains("x-card"); });
+  }
+  function clearCardPos(card) {
+    card.style.position = "";
+    card.style.top = "";
+    card.style.left = "";
+    card.style.width = "";
+  }
+  function placeWall(wall, recolumn) {
+    if (!shown(wall)) return;
+    var cards = wallCards(wall);
+    var narrow = wall.getBoundingClientRect().width < NARROW;
+    wall.classList.add("is-measured");
+    wall.classList.toggle("is-narrow", narrow);
+    if (narrow || cards.length < 2) {
+      wall.style.height = "";
+      cards.forEach(clearCardPos);
+      return;
+    }
+    var gap = 12;
+    var colW = (wall.clientWidth - gap) / 2;
+    if (recolumn || cards.some(function (c) { return c.dataset.xCol == null; })) {
+      cards.forEach(function (c) { clearCardPos(c); c.style.width = colW + "px"; });
+      wall.style.height = "auto";
+      markAll(wall);
+      var acc = [0, 0];
+      cards.forEach(function (card, i) {
+        var h = card.offsetHeight;
+        var k = Math.abs(acc[0] - acc[1]) < 40 ? (i % 2) : (acc[0] <= acc[1] ? 0 : 1);
+        card.dataset.xCol = String(k);
+        acc[k] += h + gap;
+      });
+    }
+    var tops = [0, 0];
+    cards.forEach(function (card) {
+      var k = Number(card.dataset.xCol || 0);
+      card.style.position = "absolute";
+      card.style.width = colW + "px";
+      card.style.left = (k ? colW + gap : 0) + "px";
+      card.style.top = tops[k] + "px";
+      tops[k] += card.offsetHeight + gap;
+    });
+    wall.style.height = Math.max(tops[0], tops[1]) + "px";
+  }
+  function refreshWall(wall) {
+    if (!wall.dataset.xWall) enhanceWall(wall);
+    placeWall(wall, true);
+  }
+  function boot() {
+    try {
+      stampTitles(document);
+      Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
+      Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+      window.pnReadingReady = true;
+    } catch (err) {
+      window.pnReadingError = String(err && err.stack || err);
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var sum = e.target.closest && e.target.closest("details.row-more > summary");
+    if (!sum) return;
+    var det = sum.parentNode;
+    var pair = det.closest(".pair");
+    if (!pair) return;
+    var list = pair.closest(".item-rows");
+    if (!list) return;
+    e.preventDefault();
+    var willOpen = !det.open;
+    if (willOpen) {
+      Array.prototype.forEach.call(pair.querySelectorAll(":scope > .item-row details.row-more"), function (other) {
+        if (other !== det && other.open) other.open = false;
+      });
+    }
+    det.open = willOpen;
+    layoutPair(pair);
+  }, true);
+  document.addEventListener("toggle", function (e) {
+    var t = e.target;
+    if (!t || !t.classList) return;
+    if (t.classList.contains("more-rows")) {
+      Array.prototype.forEach.call(t.querySelectorAll(".item-rows"), syncList);
+      return;
+    }
+    if (t.classList.contains("row-more")) {
+      var pair = t.closest(".pair");
+      if (pair) layoutPair(pair);
+    }
+  }, true);
+  document.addEventListener("click", function (e) {
+    var tab = e.target.closest && e.target.closest("#x-feed [data-tab]");
+    if (!tab) return;
+    requestAnimationFrame(function () {
+      Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+    });
+  });
+  document.addEventListener("pn-lang-change", function () {
+    stampTitles(document);
+    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+  });
+  window.addEventListener("resize", function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
+    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+  });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
+    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+  });
+  document.querySelectorAll("#x-feed img").forEach(function (img) {
+    if (!img.complete) img.addEventListener("load", function () {
+      var wall = img.closest(".masonry");
+      if (wall) refreshWall(wall);
+    });
+  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
