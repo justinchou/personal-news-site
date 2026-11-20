@@ -1035,49 +1035,160 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     card.style.left = "";
     card.style.width = "";
   }
+  // Match the no-JS rule `.masonry { columns: 3 280px; column-gap: .8rem }`:
+  // at most 3 columns, each at least 280px. News rows use NARROW and stay at 2.
+  var X_COL_MIN = 280;
+  var X_GAP = 13;
+  function xColumnCount(width) {
+    if (!(width > 0)) return 1;
+    var n = Math.floor((width + X_GAP) / (X_COL_MIN + X_GAP));
+    if (n < 1) n = 1;
+    if (n > 3) n = 3;
+    return n;
+  }
   function placeWall(wall, recolumn) {
     if (!shown(wall)) return;
     var cards = wallCards(wall);
-    var narrow = wall.getBoundingClientRect().width < NARROW;
+    var width = wall.clientWidth;
+    var cols = cards.length < 2 ? 1 : xColumnCount(width);
     wall.classList.add("is-measured");
-    wall.classList.toggle("is-narrow", narrow);
-    if (narrow || cards.length < 2) {
+    wall.classList.toggle("is-narrow", cols === 1);
+    var anchor = null;
+    if (recolumn && window.scrollY > 40) {
+      var mid = window.innerHeight / 2;
+      cards.forEach(function (card) {
+        var r = card.getBoundingClientRect();
+        var dist = Math.abs(r.top + r.height / 2 - mid);
+        if (!anchor || dist < anchor.dist) anchor = { el: card, dist: dist, top: r.top + window.scrollY };
+      });
+    }
+    if (cols === 1) {
       wall.style.height = "";
-      cards.forEach(clearCardPos);
+      wall.dataset.xColsApplied = "1";
+      cards.forEach(function (c) { clearCardPos(c); delete c.dataset.xCol; });
       return;
     }
-    var gap = 12;
-    var colW = (wall.clientWidth - gap) / 2;
-    if (recolumn || cards.some(function (c) { return c.dataset.xCol == null; })) {
+    var gap = X_GAP;
+    var colW = (width - gap * (cols - 1)) / cols;
+    var countChanged = wall.dataset.xColsApplied !== String(cols);
+    var missing = cards.some(function (c) { return c.dataset.xCol == null || Number(c.dataset.xCol) >= cols; });
+    if (recolumn && (countChanged || missing)) {
       cards.forEach(function (c) { clearCardPos(c); c.style.width = colW + "px"; });
       wall.style.height = "auto";
       markAll(wall);
-      var acc = [0, 0];
+      var acc = [];
+      for (var i = 0; i < cols; i++) acc.push(0);
       cards.forEach(function (card, i) {
         var h = card.offsetHeight;
-        var k = Math.abs(acc[0] - acc[1]) < 40 ? (i % 2) : (acc[0] <= acc[1] ? 0 : 1);
+        var shortest = 0;
+        for (var j = 1; j < cols; j++) if (acc[j] < acc[shortest]) shortest = j;
+        var spread = 0;
+        for (var s = 0; s < cols; s++) spread = Math.max(spread, Math.abs(acc[s] - acc[shortest]));
+        var k = spread < 40 ? (i % cols) : shortest;
         card.dataset.xCol = String(k);
         acc[k] += h + gap;
       });
+    } else if (recolumn) {
+      cards.forEach(function (c) { c.style.width = colW + "px"; });
+      markAll(wall);
     }
-    var tops = [0, 0];
+    wall.dataset.xColsApplied = String(cols);
+    var tops = [];
+    for (var t = 0; t < cols; t++) tops.push(0);
     cards.forEach(function (card) {
       var k = Number(card.dataset.xCol || 0);
       card.style.position = "absolute";
       card.style.width = colW + "px";
-      card.style.left = (k ? colW + gap : 0) + "px";
+      card.style.left = (k * (colW + gap)) + "px";
       card.style.top = tops[k] + "px";
       tops[k] += card.offsetHeight + gap;
     });
-    wall.style.height = Math.max(tops[0], tops[1]) + "px";
+    wall.style.height = Math.max.apply(null, tops) + "px";
+    if (anchor && anchor.el && countChanged) {
+      var now = anchor.el.getBoundingClientRect().top + window.scrollY;
+      var shift = now - anchor.top;
+      if (Math.abs(shift) > 2) window.scrollBy(0, shift);
+    }
   }
   function refreshWall(wall) {
     if (!wall.dataset.xWall) enhanceWall(wall);
     placeWall(wall, true);
   }
+  function normDetail(s) {
+    return (s || "").replace(/\s+/g, "").replace(/^[\s。．.!！?？…·,，;；:："“”'‘’()（）\[\]【】<>《》]+|[\s。．.!！?？…·,，;；:："“”'‘’()（）\[\]【】<>《》]+$/g, "").toLowerCase();
+  }
+  function isPlaceholderDetail(raw) {
+    var text = (raw || "").trim();
+    if (!text) return false;
+    if (/^https?:\/\/\S+$/i.test(text)) return true;
+    var n = normDetail(text);
+    if (!n) return true;
+    if ({ end: 1, na: 1, "n/a": 1, none: 1, "null": 1, "无": 1, "暂无": 1, "无摘要": 1, "暂无摘要": 1, "暂无内容": 1, "分享链接": 1, "仅标题": 1, "仅收录标题": 1, "帖子未提供具体内容": 1, "帖子未提供文字内容": 1, "帖子未提供内容": 1 }[n]) return true;
+    if (n.indexOf("付费墙") === 0 && (n.indexOf("仅收录标题") >= 0 || n.slice(-3) === "仅标题") && n.length <= 24) return true;
+    return false;
+  }
+  function isSubstantiveDetail(raw, titles) {
+    var n = normDetail(raw);
+    if (!n || isPlaceholderDetail(raw)) return false;
+    for (var i = 0; i < titles.length; i++) {
+      var t = normDetail(titles[i]);
+      if (!t) continue;
+      if (n === t) return false;
+      if (n.indexOf(t) === 0 && n.length - t.length <= 2) return false;
+      if (t.indexOf(n) === 0 && t.length - n.length <= 2) return false;
+    }
+    return true;
+  }
+  function rowTitles(row) {
+    var title = row.querySelector(".row-title");
+    var out = [];
+    if (!title) return out;
+    title.querySelectorAll(".l-zh, .l-orig").forEach(function (el) { out.push(el.textContent || ""); });
+    if (!out.length) out.push(title.textContent || "");
+    var tip = title.getAttribute("title") || "";
+    if (tip) out.push(tip);
+    var link = title.querySelector("a");
+    if (link && link.getAttribute("title")) out.push(link.getAttribute("title"));
+    return out;
+  }
+  function pruneEmptyDetails(root) {
+    (root || document).querySelectorAll(".item-row details.row-more").forEach(function (det) {
+      if (det.dataset.pruned) return;
+      det.dataset.pruned = "1";
+      var row = det.closest(".item-row");
+      var titles = rowTitles(row);
+      var sawPlaceholder = false;
+      Array.prototype.slice.call(det.children).forEach(function (el) {
+        if (el.tagName === "SUMMARY") return;
+        if (el.querySelector && el.querySelector("a[href]")) return;
+        var text = el.textContent || "";
+        if (isPlaceholderDetail(text)) sawPlaceholder = true;
+        if (!isSubstantiveDetail(text, titles)) el.remove();
+      });
+      var orig = det.querySelector("[data-l='orig']");
+      if (orig && !det.querySelector("[data-l='zh']")) {
+        orig.removeAttribute("data-l");
+        orig.classList.remove("l-orig");
+      }
+      var rest = Array.prototype.filter.call(det.children, function (el) { return el.tagName !== "SUMMARY"; });
+      if (rest.length) return;
+      var meta = det.querySelector("summary .meta");
+      var line = document.createElement("p");
+      line.className = "meta";
+      if (meta) line.appendChild(meta);
+      if (sawPlaceholder || titles.length) {
+        var hint = document.createElement("span");
+        hint.className = "title-only";
+        hint.textContent = "仅标题";
+        line.appendChild(hint);
+      }
+      det.replaceWith(line);
+    });
+  }
   function boot() {
     try {
       stampTitles(document);
+      pruneEmptyDetails(document);
       Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
       Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
       window.pnReadingReady = true;
@@ -1124,7 +1235,11 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
   });
   document.addEventListener("pn-lang-change", function () {
     stampTitles(document);
-    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+    // Keep each post in its column; only restack so the reading place does not jump sideways.
+    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), function (wall) {
+      if (!wall.dataset.xWall) enhanceWall(wall);
+      placeWall(wall, false);
+    });
   });
   window.addEventListener("resize", function () {
     Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);

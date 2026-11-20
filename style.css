@@ -277,6 +277,7 @@ details.more-rows > :not(summary) { padding: 0; animation: none; }
 .tabs button { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: .32rem .85rem; cursor: pointer; font: inherit; font-size: .86rem; transition: all .15s; }
 .tabs button:hover { border-color: var(--line-2); }
 .tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+/* X wall, before JS measures it. Count and 280px minimum match xColumnCount() in app.js. */
 .masonry { columns: 3 280px; column-gap: .8rem; }
 .masonry > * { break-inside: avoid; margin-bottom: .8rem; display: block; }
 .x-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .85rem 1rem; }
@@ -1330,6 +1331,7 @@ html:not(.js) .item-rows { display: grid; grid-template-columns: 1fr 1fr; column
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
 }
 .row-more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.title-only { margin-left: .45rem; font-size: .72rem; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 0 .35rem; cursor: default; }
 .pair-read { grid-column: 1 / -1; }
 .pair-read-block { padding: .85rem 1rem 1rem; background: transparent; border: 0; }
 .pair-read .summary, .pair-read .impact, .pair-read .relevance { font-size: 1rem; line-height: 1.7; }
