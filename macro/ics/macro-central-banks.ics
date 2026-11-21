@@ -11,7 +11,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:26ff74482505e69335dc@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -26,7 +26,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:6aef45ac17c62653ec13@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
@@ -42,7 +42,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:7a484e4e22cfb8dd9f9a@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
@@ -57,7 +57,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:d41aea0c620c149144fc@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261209
 DTEND;VALUE=DATE:20261210
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议（含经济预测 SEP）
@@ -72,7 +72,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:32999254b19461db07ef@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -87,7 +87,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:63c39a3b4d14e61f5f19@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议
@@ -102,7 +102,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:1a958f117f38df7a638b@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
@@ -117,7 +117,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:45789fe917b73ce41078@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270122
 DTEND;VALUE=DATE:20270123
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
@@ -133,7 +133,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:e3d6098a2bb03650294c@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270127
 DTEND;VALUE=DATE:20270128
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -148,7 +148,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:0939c0dcb028f40267ca@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -163,7 +163,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:e2f7eb9a9e73f23b562d@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
@@ -178,7 +178,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:6aba67651bf96f8ee7ab@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270317
 DTEND;VALUE=DATE:20270318
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -193,7 +193,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:0e7e8413b4203d2170cc@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270318
 DTEND;VALUE=DATE:20270319
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -208,7 +208,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:61f5ada9a7ea6efe39d0@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270318
 DTEND;VALUE=DATE:20270319
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
@@ -223,7 +223,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:12bc9fd0e8650215a43f@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270318
 DTEND;VALUE=DATE:20270319
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议
@@ -238,7 +238,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:abc1e8f04c23c2b72502@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270428
 DTEND;VALUE=DATE:20270429
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
@@ -254,7 +254,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:47623b5f006e0f654187@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270428
 DTEND;VALUE=DATE:20270429
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -269,7 +269,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:393b688340301e48ea2a@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270429
 DTEND;VALUE=DATE:20270430
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -284,7 +284,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:e36a9644a8abcd216cd6@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270429
 DTEND;VALUE=DATE:20270430
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
@@ -299,7 +299,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:67d01d19c07198686890@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270609
 DTEND;VALUE=DATE:20270610
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -314,7 +314,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:9ab956ee76cede2b9e63@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270610
 DTEND;VALUE=DATE:20270611
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -329,7 +329,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:2b1f523d68643c184948@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270611
 DTEND;VALUE=DATE:20270612
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
@@ -344,7 +344,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:169c83d678baea9988aa@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270617
 DTEND;VALUE=DATE:20270618
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议
@@ -359,7 +359,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:c16cf5231cf246014b62@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270722
 DTEND;VALUE=DATE:20270723
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -374,7 +374,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:20f0ecc1fa6970b61631@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270722
 DTEND;VALUE=DATE:20270723
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
@@ -390,7 +390,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:4a8bd6923e70b6c5e020@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270728
 DTEND;VALUE=DATE:20270729
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -405,7 +405,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:105f0434f4ee1ab35237@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270729
 DTEND;VALUE=DATE:20270730
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
@@ -420,7 +420,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:5d4d4c99a80b8aff32e6@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270909
 DTEND;VALUE=DATE:20270910
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -435,7 +435,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:c683ed5420bb0065e11e@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270915
 DTEND;VALUE=DATE:20270916
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -450,7 +450,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:d7bd97423204bf6601ba@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270916
 DTEND;VALUE=DATE:20270917
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议
@@ -465,7 +465,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:9313fe63f901641b4c2b@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20270922
 DTEND;VALUE=DATE:20270923
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
@@ -480,7 +480,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:a5f29dddbf1febb15243@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271027
 DTEND;VALUE=DATE:20271028
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -495,7 +495,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:ab1752d2d938bcf22e75@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271028
 DTEND;VALUE=DATE:20271029
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -510,7 +510,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:3679c5a5943f41633273@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271029
 DTEND;VALUE=DATE:20271030
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM），发布展望
@@ -526,7 +526,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:b7da9dd50fba7ea93146@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271104
 DTEND;VALUE=DATE:20271105
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议及货币政策报告
@@ -541,7 +541,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:1c6a8011632eed57999f@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271117
 DTEND;VALUE=DATE:20271118
 SUMMARY:🇺🇸 美联储 · FOMC 议息会议
@@ -556,7 +556,7 @@ URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:6957ae44293bd5e9b1fb@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271216
 DTEND;VALUE=DATE:20271217
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -571,7 +571,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:6348caeed049b2cc6888@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271216
 DTEND;VALUE=DATE:20271217
 SUMMARY:🇬🇧 英国央行 · MPC 利率决议
@@ -586,7 +586,7 @@ URL:https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 END:VEVENT
 BEGIN:VEVENT
 UID:4b63cd5d04912c311aba@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20271217
 DTEND;VALUE=DATE:20271218
 SUMMARY:🇯🇵 日本央行 · 货币政策会议（MPM）
@@ -601,7 +601,7 @@ URL:https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm
 END:VEVENT
 BEGIN:VEVENT
 UID:961f62eaa6a5cd015067@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280203
 DTEND;VALUE=DATE:20280204
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -616,7 +616,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ab990cb5b184342b9dc5@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280323
 DTEND;VALUE=DATE:20280324
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -631,7 +631,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:0c7ab41b40e6c43d197d@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280504
 DTEND;VALUE=DATE:20280505
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -646,7 +646,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:8fdc79343cd861895af0@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280608
 DTEND;VALUE=DATE:20280609
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -661,7 +661,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:69aa2b5cca188dccaed6@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280720
 DTEND;VALUE=DATE:20280721
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -676,7 +676,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:eccad62acc2e89506ed4@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20280907
 DTEND;VALUE=DATE:20280908
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
@@ -691,7 +691,7 @@ URL:https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html
 END:VEVENT
 BEGIN:VEVENT
 UID:c7f44b66c37390618ff4@personal-news-site
-DTSTAMP:20261119T234633Z
+DTSTAMP:20261120T234852Z
 DTSTART;VALUE=DATE:20281012
 DTEND;VALUE=DATE:20281013
 SUMMARY:🇪🇺 欧洲央行 · 货币政策会议及新闻发布会
