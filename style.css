@@ -1406,3 +1406,27 @@ html.js #x-feed .x-fold.is-long:not(.is-open) .x-text {
 @media (max-width: 680px) {
   .xwall-grid { grid-template-columns: 1fr; }
 }
+.c3-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin: 0 0 1.2rem; }
+.c3-card { border: 1px solid var(--line); border-radius: 14px; padding: .8rem .9rem; background: var(--bg-elev); }
+.c3-card span, .c3-card small { display: block; color: var(--muted); font-size: .78rem; }
+.c3-card b { display: block; font-size: 1.35rem; margin: .2rem 0; }
+.c3-tools { display: flex; flex-direction: column; gap: .7rem; margin-bottom: .8rem; }
+.c3-funds { display: flex; flex-wrap: wrap; gap: .45rem .9rem; }
+.c3-fund { display: inline-flex; align-items: center; gap: .35rem; font-size: .9rem; }
+.c3-plot { width: 100%; overflow: hidden; }
+.c3-row { display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center; }
+.c3-k { min-width: 2.4rem; color: var(--muted); font-size: .82rem; }
+.c3-stage { position: relative; width: 100%; }
+.c3-stage canvas, .c3-overview { width: 100%; display: block; touch-action: pan-y; cursor: grab; }
+.c3-stage canvas[data-gesture="box"] { cursor: crosshair; }
+.c3-overview { cursor: ew-resize; margin-top: .35rem; touch-action: none; }
+.c3-tip { position: absolute; z-index: 2; max-width: 18rem; padding: .4rem .55rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-elev); color: inherit; font-size: .78rem; white-space: pre-line; pointer-events: none; }
+.c3-legend { display: flex; flex-wrap: wrap; gap: .35rem; margin: .45rem 0; }
+.c3-leg { display: inline-flex; align-items: center; gap: .35rem; border: 1px solid var(--line); background: transparent; color: inherit; border-radius: 999px; padding: .15rem .55rem; font: inherit; font-size: .78rem; cursor: pointer; }
+.c3-leg[aria-pressed="false"] { opacity: .4; }
+.c3-leg i { width: .7rem; height: .7rem; border-radius: 2px; display: inline-block; }
+.c3-read { min-height: 2.4rem; font-size: .86rem; color: var(--muted); margin: .2rem 0 .4rem; }
+@media (max-width: 680px) {
+  .c3-cards { grid-template-columns: 1fr 1fr; }
+  .c3-card b { font-size: 1.1rem; }
+}
