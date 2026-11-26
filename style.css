@@ -277,8 +277,8 @@ details.more-rows > :not(summary) { padding: 0; animation: none; }
 .tabs button { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: .32rem .85rem; cursor: pointer; font: inherit; font-size: .86rem; transition: all .15s; }
 .tabs button:hover { border-color: var(--line-2); }
 .tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
-/* X wall, before JS measures it. Count and 280px minimum match xColumnCount() in app.js. */
-.masonry { columns: 3 280px; column-gap: .8rem; }
+/* X feed is one vertical list. News rows stay in .item-rows at two columns. */
+.masonry { columns: 1; }
 .masonry > * { break-inside: avoid; margin-bottom: .8rem; display: block; }
 .x-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .85rem 1rem; }
 .x-card .handle { display: flex; align-items: center; gap: .5rem; margin: 0 0 .4rem; font-weight: 600; }
@@ -1383,8 +1383,14 @@ html.js #x-feed .masonry.is-measured > .x-card { margin: 0; min-width: 0; }
 html.js #x-feed .x-fold.is-long:not(.is-open) .x-text {
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden;
 }
+.x-head-side { display: inline-flex; align-items: center; gap: .45rem; margin-left: auto; }
+.x-info-wrap { position: relative; display: inline-flex; }
+.x-info { width: 1.35rem; height: 1.35rem; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--muted); font: inherit; font-size: .78rem; font-style: italic; cursor: pointer; }
+.x-info[aria-expanded="true"], .x-info:hover, .x-info:focus-visible { color: var(--ink); border-color: var(--accent); }
+.x-info-tip { display: none; position: absolute; right: 0; top: calc(100% + .35rem); width: min(16rem, 70vw); z-index: 4; pointer-events: none; padding: .55rem .7rem; border-radius: 10px; background: var(--card); border: 1px solid var(--line); color: var(--ink-2); font-size: .78rem; line-height: 1.45; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.x-info-wrap:hover .x-info-tip, .x-info[aria-expanded="true"] + .x-info-tip, .x-info:focus-visible + .x-info-tip { display: block; }
 .x-controls { display: flex; flex-wrap: wrap; gap: .45rem .7rem; align-items: center; margin: 0 0 .8rem; }
-.x-controls .note { flex: 1 1 100%; margin: 0; }
+.x-controls .chip-bar { display: flex; flex-wrap: wrap; gap: .35rem; }
 .x-group > .handle { margin-bottom: .35rem; }
 .x-group > .handle .meta { margin-left: auto; }
 .x-person-posts { display: flex; flex-direction: column; gap: .55rem; }

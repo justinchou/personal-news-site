@@ -61,9 +61,13 @@
   // date picker navigation (change tracker history)
   document.querySelectorAll("[data-nav-select]").forEach((sel) => sel.addEventListener("change", () => { if (sel.value) location.href = sel.value; }));
 
-  // keep the active nav item visible on narrow screens
+  // keep the active nav item visible on narrow screens, without moving the page
   document.querySelectorAll(".nav a.is-active, .subnav a.is-active").forEach((a) => {
-    a.scrollIntoView({ block: "nearest", inline: "center" });
+    const bar = a.closest(".nav, .subnav");
+    if (!bar) return;
+    const c = bar.getBoundingClientRect(), r = a.getBoundingClientRect();
+    if (r.left >= c.left && r.right <= c.right) return;
+    bar.scrollLeft += r.left - c.left - (c.width - r.width) / 2;
   });
 
   // product filters
@@ -423,7 +427,11 @@
       if (!first) return;
       links.forEach((a, id) => a.classList.toggle("is-current", id === first));
       const cur = links.get(first);
-      if (cur && getComputedStyle(toc).flexDirection === "row") cur.scrollIntoView({ block: "nearest", inline: "center" });
+      // Scroll only the sticky chip row. scrollIntoView here also moves the page and hitches touch scrolling.
+      if (cur && getComputedStyle(toc).flexDirection === "row") {
+        const c = toc.getBoundingClientRect(), r = cur.getBoundingClientRect();
+        if (r.left < c.left || r.right > c.right) toc.scrollLeft += r.left - c.left - (c.width - r.width) / 2;
+      }
     }, { rootMargin: "-120px 0px -55% 0px" });
     links.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   }
@@ -808,8 +816,12 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
       });
     });
   }
-  var t;
-  window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(balance, 150); });
+  var t, width = window.innerWidth;
+  window.addEventListener("resize", function () {
+    if (window.innerWidth === width) return;
+    width = window.innerWidth;
+    clearTimeout(t); t = setTimeout(balance, 150);
+  });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", balance); else balance();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(balance);
 })();
@@ -1036,16 +1048,10 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     card.style.left = "";
     card.style.width = "";
   }
-  // Match the no-JS rule `.masonry { columns: 3 280px; column-gap: .8rem }`:
-  // at most 3 columns, each at least 280px. News rows use NARROW and stay at 2.
-  var X_COL_MIN = 280;
+  // The X feed is one vertical list. News rows use NARROW and stay at 2.
   var X_GAP = 13;
-  function xColumnCount(width) {
-    if (!(width > 0)) return 1;
-    var n = Math.floor((width + X_GAP) / (X_COL_MIN + X_GAP));
-    if (n < 1) n = 1;
-    if (n > 3) n = 3;
-    return n;
+  function xColumnCount() {
+    return 1;
   }
   function placeWall(wall, recolumn) {
     if (!shown(wall)) return;
@@ -1223,6 +1229,7 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
       handle: card.getAttribute("data-x-handle") || "",
       imp: Number(card.getAttribute("data-x-imp") || 0),
       index: Number(card.getAttribute("data-x-index") || 0),
+      group: card.getAttribute("data-x-group") || "",
       card: card
     };
   }
@@ -1233,12 +1240,13 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
   function xFeedPrefs() {
     var raw = null;
     try { raw = localStorage.getItem(xFeedKey()); } catch (e) {}
-    var prefs = { mode: "single", sort: "source" };
+    var prefs = { mode: "single", sort: "source", filter: "all" };
     if (raw) {
       try { prefs = Object.assign(prefs, JSON.parse(raw)); } catch (e) {}
     }
     if (prefs.mode !== "person") prefs.mode = "single";
     if (["time", "name", "importance", "source"].indexOf(prefs.sort) < 0) prefs.sort = "source";
+    if (["all", "official", "researcher", "media"].indexOf(prefs.filter) < 0) prefs.filter = "all";
     return prefs;
   }
   function xFeedSave(prefs) {
@@ -1250,6 +1258,9 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     });
     Array.prototype.forEach.call(feed.querySelectorAll("[data-x-sort]"), function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-x-sort") === prefs.sort ? "true" : "false");
+    });
+    Array.prototype.forEach.call(feed.querySelectorAll("[data-x-filter]"), function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-x-filter") === prefs.filter ? "true" : "false");
     });
   }
   function xFeedFlat(wall) {
@@ -1264,6 +1275,7 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     var top = ranked[0];
     var group = document.createElement("article");
     group.className = "x-card x-group" + (ranked.length > 1 ? " is-collapsed" : "");
+    group.setAttribute("data-x-group", ranked[0].group || ranked[0].card.getAttribute("data-x-group") || "");
     var head = document.createElement("p");
     head.className = "handle";
     var name = document.createElement("span");
@@ -1299,7 +1311,9 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     xFeedPress(feed, prefs);
     Array.prototype.forEach.call(feed.querySelectorAll(".masonry"), function (wall) {
       var cards = xFeedFlat(wall);
-      var metas = cards.map(xFeedMeta);
+      var metas = cards.map(xFeedMeta).filter(function (row) {
+        return prefs.filter === "all" || row.group === prefs.filter;
+      });
       wall.replaceChildren();
       if (prefs.mode === "person") {
         var buckets = {};
@@ -1324,6 +1338,8 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
       }
       if (wall.dataset.xWall) placeWall(wall, true);
     });
+    var empty = feed.querySelector("[data-x-empty]");
+    if (empty) empty.hidden = feed.querySelectorAll(".masonry > .x-card").length !== 0;
   }
   function setupXFeed() {
     var feed = document.getElementById("x-feed");
@@ -1331,13 +1347,28 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     var prefs = xFeedPrefs();
     feed.dataset.xReady = "1";
     feed.addEventListener("click", function (event) {
+      var info = event.target.closest && event.target.closest("[data-x-info]");
+      if (info) {
+        event.stopPropagation();
+        var open = info.getAttribute("aria-expanded") !== "true";
+        info.setAttribute("aria-expanded", open ? "true" : "false");
+        return;
+      }
       var mode = event.target.closest && event.target.closest("[data-x-mode]");
       var sort = event.target.closest && event.target.closest("[data-x-sort]");
-      if (!mode && !sort) return;
+      var filter = event.target.closest && event.target.closest("[data-x-filter]");
+      if (!mode && !sort && !filter) return;
       if (mode) prefs.mode = mode.getAttribute("data-x-mode");
       if (sort) prefs.sort = sort.getAttribute("data-x-sort");
+      if (filter) prefs.filter = filter.getAttribute("data-x-filter");
       xFeedSave(prefs);
       applyXFeed(feed, prefs);
+    });
+    document.addEventListener("click", function (event) {
+      var info = feed.querySelector("[data-x-info]");
+      if (!info) return;
+      if (event.target.closest && event.target.closest(".x-info-wrap")) return;
+      info.setAttribute("aria-expanded", "false");
     });
     applyXFeed(feed, prefs);
   }
@@ -1398,18 +1429,19 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
       placeWall(wall, false);
     });
   });
+  var feedWidth = window.innerWidth, feedResize;
   window.addEventListener("resize", function () {
-    Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
-    Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+    // Phone browsers change height as the address bar shows and hides. That is not a relayout.
+    if (window.innerWidth === feedWidth) return;
+    feedWidth = window.innerWidth;
+    clearTimeout(feedResize);
+    feedResize = setTimeout(function () {
+      Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
+      Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
+    }, 150);
   });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
     Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
-  });
-  document.querySelectorAll("#x-feed img").forEach(function (img) {
-    if (!img.complete) img.addEventListener("load", function () {
-      var wall = img.closest(".masonry");
-      if (wall) refreshWall(wall);
-    });
   });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
