@@ -416,12 +416,23 @@
     let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
   });
 
+  // Sticky header height changes when the nav wraps. Sections and the TOC read --header-h.
+  const header = document.querySelector(".header");
+  const syncHeader = () => {
+    if (!header) return 0;
+    const h = Math.ceil(header.getBoundingClientRect().height);
+    if (h > 0) root.style.setProperty("--header-h", h + "px");
+    return h;
+  };
+  syncHeader();
+  if (header && "ResizeObserver" in window) new ResizeObserver(syncHeader).observe(header);
+
   // daily TOC scroll-spy
   const toc = document.querySelector(".toc");
   if (toc && "IntersectionObserver" in window) {
     const links = new Map([...toc.querySelectorAll("a[href^='#']")].map((a) => [a.getAttribute("href").slice(1), a]));
     const visible = new Set();
-    const io = new IntersectionObserver((entries) => {
+    const onSpy = (entries) => {
       entries.forEach((e) => { if (e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id); });
       const first = [...links.keys()].find((id) => visible.has(id));
       if (!first) return;
@@ -432,8 +443,27 @@
         const c = toc.getBoundingClientRect(), r = cur.getBoundingClientRect();
         if (r.left < c.left || r.right > c.right) toc.scrollLeft += r.left - c.left - (c.width - r.width) / 2;
       }
-    }, { rootMargin: "-120px 0px -55% 0px" });
-    links.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    };
+    const spyMargin = () => {
+      const n = parseFloat(getComputedStyle(root).getPropertyValue("--header-h"));
+      const headerH = Number.isFinite(n) ? Math.ceil(n) : 120;
+      const row = getComputedStyle(toc).flexDirection === "row";
+      const top = headerH + (row ? Math.ceil(toc.getBoundingClientRect().height) : 0) + 8;
+      return `-${top}px 0px -55% 0px`;
+    };
+    let io = null;
+    const watch = () => {
+      if (io) io.disconnect();
+      io = new IntersectionObserver(onSpy, { rootMargin: spyMargin() });
+      links.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    };
+    watch();
+    let spyWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      if (window.innerWidth === spyWidth) return;
+      spyWidth = window.innerWidth;
+      watch();
+    });
   }
 })();
 
