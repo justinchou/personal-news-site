@@ -1383,6 +1383,13 @@ html.js #x-feed .masonry.is-measured > .x-card { margin: 0; min-width: 0; }
 html.js #x-feed .x-fold.is-long:not(.is-open) .x-text {
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden;
 }
+.x-controls { display: flex; flex-wrap: wrap; gap: .45rem .7rem; align-items: center; margin: 0 0 .8rem; }
+.x-controls .note { flex: 1 1 100%; margin: 0; }
+.x-group > .handle { margin-bottom: .35rem; }
+.x-group > .handle .meta { margin-left: auto; }
+.x-person-posts { display: flex; flex-direction: column; gap: .55rem; }
+.x-person-posts > .x-card { position: static !important; width: auto !important; left: auto !important; top: auto !important; }
+.x-group.is-collapsed .x-person-posts > .x-card:not(:first-child) { display: none; }
 .x-ctl { display: inline-flex; margin-top: .45rem; border: 1px solid var(--line); background: transparent; color: var(--accent); border-radius: 999px; padding: .12rem .7rem; font: inherit; font-size: .78rem; cursor: pointer; }
 .x-ctl:hover { border-color: var(--accent); }
 .x-ctl:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

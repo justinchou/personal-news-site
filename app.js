@@ -997,9 +997,7 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     });
   }
   function enhanceWall(wall) {
-    if (wall.dataset.xWall) return;
-    wall.dataset.xWall = "1";
-    Array.prototype.forEach.call(wall.querySelectorAll(":scope > .x-card"), function (card) {
+    Array.prototype.forEach.call(wall.querySelectorAll(".x-card"), function (card) {
       var text = card.querySelector(":scope > p.x-text");
       if (!text || card.querySelector(".x-fold")) return;
       var fold = document.createElement("div");
@@ -1024,7 +1022,10 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
         if (host) placeWall(host, false);
       });
     });
-    if (ro) ro.observe(wall);
+    if (!wall.dataset.xWall) {
+      wall.dataset.xWall = "1";
+      if (ro) ro.observe(wall);
+    }
   }
   function wallCards(wall) {
     return Array.prototype.filter.call(wall.children, function (el) { return el.classList.contains("x-card"); });
@@ -1111,7 +1112,7 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     }
   }
   function refreshWall(wall) {
-    if (!wall.dataset.xWall) enhanceWall(wall);
+    enhanceWall(wall);
     placeWall(wall, true);
   }
   function normDetail(s) {
@@ -1185,11 +1186,164 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
       det.replaceWith(line);
     });
   }
+  /* xfeed-rank */
+  function xFeedRank(rows, sort) {
+    var copy = rows.slice();
+    function timeValue(row) {
+      var t = Date.parse(row.time || "");
+      return isNaN(t) ? -1 : t;
+    }
+    function nameKey(row) {
+      return (row.name || row.handle || "").toLowerCase();
+    }
+    copy.sort(function (a, b) {
+      var cmp = 0;
+      if (sort === "name") cmp = nameKey(a).localeCompare(nameKey(b), "zh");
+      else if (sort === "importance") cmp = (Number(b.imp) || 0) - (Number(a.imp) || 0);
+      else if (sort === "time") cmp = timeValue(b) - timeValue(a);
+      else cmp = (a.index || 0) - (b.index || 0);
+      if (cmp) return cmp;
+      if (sort !== "time" && sort !== "source") {
+        var time = timeValue(b) - timeValue(a);
+        if (time) return time;
+      }
+      if (sort !== "name") {
+        var name = nameKey(a).localeCompare(nameKey(b), "zh");
+        if (name) return name;
+      }
+      return (a.index || 0) - (b.index || 0);
+    });
+    return copy;
+  }
+  /* /xfeed-rank */
+  function xFeedMeta(card) {
+    return {
+      time: card.getAttribute("data-x-time") || "",
+      name: card.getAttribute("data-x-name") || "",
+      handle: card.getAttribute("data-x-handle") || "",
+      imp: Number(card.getAttribute("data-x-imp") || 0),
+      index: Number(card.getAttribute("data-x-index") || 0),
+      card: card
+    };
+  }
+  function xFeedKey() {
+    var feed = document.getElementById("x-feed");
+    return "pn-x-feed:" + ((feed && feed.getAttribute("data-x-domain")) || "ai");
+  }
+  function xFeedPrefs() {
+    var raw = ls.get(xFeedKey());
+    var prefs = { mode: "single", sort: "source" };
+    if (raw) {
+      try { prefs = Object.assign(prefs, JSON.parse(raw)); } catch (e) {}
+    }
+    if (prefs.mode !== "person") prefs.mode = "single";
+    if (["time", "name", "importance", "source"].indexOf(prefs.sort) < 0) prefs.sort = "source";
+    return prefs;
+  }
+  function xFeedSave(prefs) { ls.set(xFeedKey(), JSON.stringify(prefs)); }
+  function xFeedPress(feed, prefs) {
+    Array.prototype.forEach.call(feed.querySelectorAll("[data-x-mode]"), function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-x-mode") === prefs.mode ? "true" : "false");
+    });
+    Array.prototype.forEach.call(feed.querySelectorAll("[data-x-sort]"), function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-x-sort") === prefs.sort ? "true" : "false");
+    });
+  }
+  function xFeedFlat(wall) {
+    if (!wall._xCards) {
+      wall._xCards = wallCards(wall).filter(function (card) { return card.hasAttribute("data-x-post"); });
+    }
+    wall._xCards.forEach(clearCardPos);
+    return wall._xCards;
+  }
+  function xFeedGroup(members, wall) {
+    var ranked = xFeedRank(members, "time");
+    var top = ranked[0];
+    var group = document.createElement("article");
+    group.className = "x-card x-group" + (ranked.length > 1 ? " is-collapsed" : "");
+    var head = document.createElement("p");
+    head.className = "handle";
+    var name = document.createElement("span");
+    name.className = "x-name";
+    name.textContent = top.name || top.handle || "";
+    var meta = document.createElement("span");
+    meta.className = "meta";
+    meta.textContent = (ranked.length) + " 条 · 重要 " + (top.imp || "—");
+    head.appendChild(name);
+    head.appendChild(meta);
+    var posts = document.createElement("div");
+    posts.className = "x-person-posts";
+    ranked.forEach(function (row) { posts.appendChild(row.card); });
+    group.appendChild(head);
+    group.appendChild(posts);
+    if (ranked.length > 1) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "x-ctl";
+      btn.textContent = "展开其余 " + (ranked.length - 1) + " 条";
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function () {
+        var collapsed = group.classList.toggle("is-collapsed");
+        btn.textContent = collapsed ? ("展开其余 " + (ranked.length - 1) + " 条") : "收起";
+        btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        placeWall(wall, false);
+      });
+      group.appendChild(btn);
+    }
+    return group;
+  }
+  function applyXFeed(feed, prefs) {
+    xFeedPress(feed, prefs);
+    Array.prototype.forEach.call(feed.querySelectorAll(".masonry"), function (wall) {
+      var cards = xFeedFlat(wall);
+      var metas = cards.map(xFeedMeta);
+      wall.replaceChildren();
+      if (prefs.mode === "person") {
+        var buckets = {};
+        metas.forEach(function (row) {
+          var key = row.card.getAttribute("data-x-key") || row.handle;
+          (buckets[key] || (buckets[key] = [])).push(row);
+        });
+        var groups = Object.keys(buckets).map(function (key) {
+          var members = buckets[key];
+          var latest = xFeedRank(members, "time")[0];
+          return {
+            time: latest.time, name: latest.name, handle: latest.handle, imp: latest.imp,
+            index: Math.min.apply(null, members.map(function (row) { return row.index; })),
+            members: members
+          };
+        });
+        xFeedRank(groups, prefs.sort).forEach(function (group) {
+          wall.appendChild(xFeedGroup(group.members, wall));
+        });
+      } else {
+        xFeedRank(metas, prefs.sort).forEach(function (row) { wall.appendChild(row.card); });
+      }
+      if (wall.dataset.xWall) placeWall(wall, true);
+    });
+  }
+  function setupXFeed() {
+    var feed = document.getElementById("x-feed");
+    if (!feed || feed.dataset.xReady) return;
+    feed.dataset.xReady = "1";
+    var prefs = xFeedPrefs();
+    feed.addEventListener("click", function (event) {
+      var mode = event.target.closest && event.target.closest("[data-x-mode]");
+      var sort = event.target.closest && event.target.closest("[data-x-sort]");
+      if (!mode && !sort) return;
+      if (mode) prefs.mode = mode.getAttribute("data-x-mode");
+      if (sort) prefs.sort = sort.getAttribute("data-x-sort");
+      xFeedSave(prefs);
+      applyXFeed(feed, prefs);
+    });
+    applyXFeed(feed, prefs);
+  }
   function boot() {
     try {
       stampTitles(document);
       pruneEmptyDetails(document);
       Array.prototype.forEach.call(document.querySelectorAll(".item-rows"), syncList);
+      setupXFeed();
       Array.prototype.forEach.call(document.querySelectorAll("#x-feed .masonry"), refreshWall);
       window.pnReadingReady = true;
     } catch (err) {
