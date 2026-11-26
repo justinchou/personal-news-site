@@ -1231,7 +1231,8 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     return "pn-x-feed:" + ((feed && feed.getAttribute("data-x-domain")) || "ai");
   }
   function xFeedPrefs() {
-    var raw = ls.get(xFeedKey());
+    var raw = null;
+    try { raw = localStorage.getItem(xFeedKey()); } catch (e) {}
     var prefs = { mode: "single", sort: "source" };
     if (raw) {
       try { prefs = Object.assign(prefs, JSON.parse(raw)); } catch (e) {}
@@ -1240,7 +1241,9 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
     if (["time", "name", "importance", "source"].indexOf(prefs.sort) < 0) prefs.sort = "source";
     return prefs;
   }
-  function xFeedSave(prefs) { ls.set(xFeedKey(), JSON.stringify(prefs)); }
+  function xFeedSave(prefs) {
+    try { localStorage.setItem(xFeedKey(), JSON.stringify(prefs)); } catch (e) {}
+  }
   function xFeedPress(feed, prefs) {
     Array.prototype.forEach.call(feed.querySelectorAll("[data-x-mode]"), function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-x-mode") === prefs.mode ? "true" : "false");
@@ -1325,8 +1328,8 @@ document.querySelectorAll("[data-mini-cal]").forEach((cal) => {
   function setupXFeed() {
     var feed = document.getElementById("x-feed");
     if (!feed || feed.dataset.xReady) return;
-    feed.dataset.xReady = "1";
     var prefs = xFeedPrefs();
+    feed.dataset.xReady = "1";
     feed.addEventListener("click", function (event) {
       var mode = event.target.closest && event.target.closest("[data-x-mode]");
       var sort = event.target.closest && event.target.closest("[data-x-sort]");
